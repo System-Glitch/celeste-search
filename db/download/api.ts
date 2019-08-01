@@ -15,13 +15,13 @@ import { download } from "./download"
 const cache = {}
 
 async function fetch(path: string) {
-  const url = "https://celeste-api.netlify.com" + path
+  const url = "https://api.projectceleste.com" + path
   const options = { headers: { Accept: "application/json" } }
 
   const filename = await download(url, options)
   const res = await readJson(filename)
 
-  return res.data
+  return res
 }
 
 async function get<T extends { data: any }>(path: string): Promise<T["data"]> {
@@ -49,24 +49,32 @@ function lowerCaseProtounit<T>(json: T) {
   })
 }
 
+function find(json: any[], attributeName: string, value: string) {
+  json.forEach(entry => {
+    if(entry[attributeName] === value)
+      return entry
+  })
+  return undefined
+}
+
 export class API {
 
   static async getTraits() {
-    const json = await get<Traits>("/game/traits")
+    const json = await get<Traits>("/gamedb/traits")
     lowerCaseKeys(json)
     lowerCaseName(json)
     return json
   }
 
   static async getAdvisors() {
-    const json = await get<Advisors>("/game/advisors")
+    const json = await get<Advisors>("/gamedb/advisors")
     lowerCaseKeys(json)
     lowerCaseName(json)
     return json
   }
 
   static async getBlueprints() {
-    const json = await get<Blueprints>("/game/blueprints")
+    const json = await get<Blueprints>("/gamedb/blueprints")
 
     lowerCaseKeys(json)
     lowerCaseName(json)
@@ -82,7 +90,7 @@ export class API {
   }
 
   static async getDesigns() {
-    const json = await get<Designs>("/game/designs")
+    const json = await get<Designs>("/gamedb/designs")
 
     lowerCaseKeys(json)
     lowerCaseName(json)
@@ -103,26 +111,35 @@ export class API {
   }
 
   static async getPrototypes() {
-    const json = await get<Prototypes>("/game/protodata")
-    lowerCaseKeys(json)
-    lowerCaseName(json)
-    return json
+    const json = await get<Prototypes>("/gamedb/units")
+    // Convert new format to old format
+    // Change array to object
+    const obj = {}
+    for(let key in json) {
+      const entry = json[key]
+      obj[entry.name] = entry
+    }
+
+    lowerCaseKeys(obj)
+    lowerCaseName(obj)
+
+    return obj
   }
 
   static async getMaterials() {
-    const json = await get<Materials>("/game/materials")
+    const json = await get<Materials>("/gamedb/materials")
     lowerCaseKeys(json)
     lowerCaseName(json)
     return json
   }
 
   static async getLanguages() {
-    const json = await get<Languages>("/game/languages")
+    const json = await get<Languages>("/gamedb/languages?language=English")
     return json
   }
 
   static async getVendors() {
-    const json = await get<any>("/game/vendors")
+    const json = await get<any>("/gamedb/vendors")
 
     lowerCaseKeys(json)
     lowerCaseName(json)
@@ -141,7 +158,7 @@ export class API {
   }
 
   static async getMarketplace() {
-    const json = await get<Marketplace>("/marketplace")
+    const json = await get<Marketplace>("/marketplace") // Missing
     json.forEach(offering => {
       offering.ItemID = offering.ItemID.toLowerCase()
     })

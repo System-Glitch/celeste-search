@@ -57,6 +57,15 @@ export async function download(url: string, options: AxiosRequestConfig): Promis
     data = isApiRequest.test(filename)
       ? JSON.stringify(response.data, null, 2)
       : response.data
+
+    // Patch for wrong format
+    if(url == "https://api.projectceleste.com/gamedb/languages?language=English") {
+      const obj = keyLanguage(response.data)
+      data = JSON.stringify(obj, null, 2)
+    } else if(url == "https://api.projectceleste.com/gamedb/materials" || url == "https://api.projectceleste.com/gamedb/traits") {
+      const obj = keyName(response.data)
+      data = JSON.stringify(obj, null, 2)
+    }
   } catch (error) {
     console.error(error.stack)
   }
@@ -65,4 +74,48 @@ export async function download(url: string, options: AxiosRequestConfig): Promis
   await writeFile(filename, data)
 
   return filename
+}
+
+
+function keyLanguage<T>(json: T) {
+  // Convert new format to old format
+  // Change array to object
+  const obj = {}
+
+  for(let key in json) {
+    const entry = json[key]
+    obj[entry['id']] = entry
+
+    const langObj = {}
+    for(let keyLang in entry['language']) {
+      const lang = entry['language'][keyLang]
+      langObj[lang.name] = lang
+    }
+    delete entry['language']
+    entry['language'] = langObj
+
+    // Use key-value instead of array
+    for(let keyLang in entry['language']) {
+      const lang = obj[entry['id']]['language'][keyLang]
+      const str = {}
+      for(let keyStr in lang.string) {
+        const strEntry = lang.string[keyStr]
+        str[strEntry["_locid"]] = strEntry
+        delete strEntry["_locid"]
+      }
+      delete lang.string
+      lang.string = str
+    }
+  }
+  return obj
+}
+
+function keyName<T>(json: T) {
+  const obj = {}
+
+  for(let key in json) {
+    const entry = json[key]
+    obj[entry['name']] = entry
+  }
+  return obj
 }
