@@ -7,30 +7,9 @@
  Find items by name, slot, quality, level, effect, material or shop.
 </p>
 
-<p align="center">
-  <a href="https://items.projectceleste.com">
-    <img alt="Latest" src="https://flat.badgen.net/badge/App/Latest?icon=chrome&color=fb3">
-  </a>
-  <a href="https://celeste-search.netlify.com">
-    <img alt="Next" src="https://flat.badgen.net/badge/App/Next?icon=chrome&color=488489">
-  </a>
-  <a href="https://raw.githubusercontent.com/n4bb12/celeste-search/master/LICENSE">
-    <img alt="License" src="https://flat.badgen.net/github/license/n4bb12/celeste-search?icon=github">
-  </a>
-  <a href="https://github.com/n4bb12/celeste-search/issues/new">
-    <img alt="Create issue" src="https://flat.badgen.net/badge/GitHub/Create issue/pink?icon=github">
-  </a>
-  <a href="https://circleci.com/gh/n4bb12/workflows/celeste-search">
-    <img alt="CI" src="https://flat.badgen.net/circleci/github/n4bb12/celeste-search?icon=circleci">
-  </a>
-  <a href="https://app.netlify.com/sites/celeste-search/deploys">
-    <img alt="Deploys" src="https://flat.badgen.net/badge/netlify/deploys/?icon=terminal&color=00ad9e">
-  </a>
-</p>
-
 ## Contributing
 
-Want to suggest a feature or report a bug? [Create an issue](https://github.com/n4bb12/celeste-search/issues/new).  
+Want to suggest a feature or report a bug? [Create an issue](https://github.com/System-Glitch/celeste-search/issues).  
 Interested in writing a pull request? See the [contribution guide](CONTRIBUTING.md).
 
 #
