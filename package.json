@@ -23,9 +23,9 @@
     "slot",
     "stats"
   ],
-  "homepage": "https://github.com/n4bb12/celeste-search/blob/master/README.md",
-  "bugs": "https://github.com/n4bb12/celeste-search/issues",
-  "repository": "github:n4bb12/celeste-search",
+  "homepage": "https://github.com/System-Glitch/celeste-search/blob/master/README.md",
+  "bugs": "https://github.com/System-Glitch/celeste-search/issues",
+  "repository": "github:System-Glitch/celeste-search",
   "license": "ISC",
   "author": "Abraham Schilling",
   "scripts": {
