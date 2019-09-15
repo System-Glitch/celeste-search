@@ -89,4 +89,5 @@ export const vendorLocations: {
   pv_cap_basicstoresparta03: "Sparta",
   pv_cap_basicstoresparta04: "Sparta",
   wu_cap_basicstore01: "Well of Urd",
+  gn_cap_vanitystore07: "Rhakotis",
 }
