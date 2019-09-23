@@ -1,4 +1,4 @@
-import { Design as ApiDesign } from "celeste-api-types"
+import { Design as ApiDesign } from "../../api-types"
 import chalk from "chalk"
 import yn from "yn"
 

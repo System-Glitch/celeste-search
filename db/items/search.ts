@@ -1,4 +1,4 @@
-import { Trait } from "celeste-api-types"
+import { Trait } from "../../api-types"
 
 import { Item } from "../interfaces"
 import { SearchBuilder } from "../shared/search-helpers"
@@ -22,6 +22,7 @@ import {
   isSoldByDelianLeague,
   isSoldByLegionOfCarthage,
   isWinter2018Reward,
+  isSummer2019Reward,
 } from "./source"
 
 export async function buildSearchString(item: Item, trait: Trait): Promise<string> {
@@ -57,6 +58,9 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   }
   if (isWinter2018Reward(trait)) {
     builder.add("Winter Event 2018 Reward")
+  }
+  if (isSummer2019Reward(trait)) {
+    builder.add("Summer Event 2019 Reward")
   }
   if (isQuestReward(trait)) {
     builder.add("Quest Reward")

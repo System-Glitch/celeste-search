@@ -1,4 +1,4 @@
-import { Trait } from "celeste-api-types"
+import { Trait } from "../../api-types"
 import { uniqBy } from "lodash"
 import yn from "yn"
 

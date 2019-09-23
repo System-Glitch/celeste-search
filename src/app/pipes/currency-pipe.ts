@@ -21,6 +21,8 @@ export class CurrencyPipe implements PipeTransform {
       return "Halloween Points"
     case "winter":
       return "Winter Points"
+    case "summer":
+      return "Summer Points"
     default:
       console.error("Unknown currency:", currency)
       return ""

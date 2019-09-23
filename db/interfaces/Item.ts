@@ -16,8 +16,8 @@ export interface Item {
   vendors: Vendor[] | undefined
   quest: string | undefined
   event: {
-    name: "halloween" | "winter"
-    year: 2018,
+    name: "halloween" | "winter" | "summer"
+    year: 2018 | 2019,
   } | undefined
   starting: string[] | undefined
   search: string

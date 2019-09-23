@@ -1,4 +1,4 @@
-import { Material as ApiMaterial } from "celeste-api-types"
+import { Material as ApiMaterial } from "../../api-types"
 
 import { downloadIcon } from "../download"
 import { Material } from "../interfaces"

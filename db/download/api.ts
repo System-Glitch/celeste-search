@@ -7,7 +7,7 @@ import {
   Materials,
   Prototypes,
   Traits,
-} from "celeste-api-types"
+} from "../../api-types"
 import { readJson } from "fs-extra"
 
 import { download } from "./download"

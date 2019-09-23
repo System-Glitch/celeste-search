@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http"
 import { ApplicationRef, Injectable } from "@angular/core"
 
-import { Marketplace, MarketplaceItem } from "celeste-api-types"
+import { Marketplace, MarketplaceItem } from "../../../api-types"
 import { interval, Observable, of } from "rxjs"
 import {
   catchError,

@@ -1,4 +1,4 @@
-import { Blueprint } from "celeste-api-types"
+import { Blueprint } from "../../api-types"
 
 export function convertMaterials(blueprint: Blueprint) {
   const materials = blueprint.cost.material.map(mat => {

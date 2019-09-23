@@ -1,4 +1,4 @@
-import { Design as ApiDesign } from "celeste-api-types"
+import { Design as ApiDesign } from "../../api-types"
 
 import { Design } from "../interfaces"
 import { SearchBuilder } from "../shared/search-helpers"

@@ -1,4 +1,4 @@
-import { Trait } from "celeste-api-types"
+import { Trait } from "../../api-types"
 
 import { quests } from "./quests"
 
@@ -47,6 +47,15 @@ const eventWinter2018 = [
   "axe2h_iceking_leg",
   "staff2h_iceking_leg",
   "sling2h_iceking_leg",
+]
+
+const eventSummer2019 = [
+  "se2019_gear_bldg",
+  "se2019_armormed",
+  "se2019_shield1h",
+  "se2019_gear_prst",
+  "se2019_spear1h",
+  "se2019_scepter2h"
 ]
 
 const persianStartingGear = [
@@ -116,9 +125,14 @@ export function isWinter2018Reward(trait: Trait) {
   return eventWinter2018.includes(trait.name)
 }
 
+export function isSummer2019Reward(trait: Trait) {
+  return eventSummer2019.includes(trait.name)
+}
+
 export function isEventReward(trait: Trait) {
   return isHalloween2018Reward(trait)
     || isWinter2018Reward(trait)
+    || isSummer2019Reward(trait)
 }
 
 /**

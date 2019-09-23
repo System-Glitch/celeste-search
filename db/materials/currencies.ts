@@ -28,6 +28,10 @@ export const currencies = [
     iconName: "winter",
   },
   {
+    resource: "Art/Celeste/SummerEvent/SummerPoints_ua",
+    iconName: "summer",
+  },
+  {
     resource: "Art/UserInterface/Icons/Buildings/AvatarMarket_ua",
     iconName: "market",
   },

@@ -1,4 +1,4 @@
-import { Design } from "celeste-api-types"
+import { Design } from "../../api-types"
 
 export function convertMaterials(design: Design) {
   const materials = design.input.material.map(mat => {

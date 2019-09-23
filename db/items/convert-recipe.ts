@@ -1,4 +1,4 @@
-import { Design, Trait } from "celeste-api-types"
+import { Design, Trait } from "../../api-types"
 
 import { API } from "../download"
 import { Recipe } from "../interfaces"

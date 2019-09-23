@@ -1,4 +1,4 @@
-import { TraitEffect } from "celeste-api-types"
+import { TraitEffect } from "../../api-types"
 
 /**
  * Static mapping of effect subtypes to display names.

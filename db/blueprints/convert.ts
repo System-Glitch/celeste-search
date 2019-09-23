@@ -1,4 +1,4 @@
-import { Blueprint as ApiBlueprint } from "celeste-api-types"
+import { Blueprint as ApiBlueprint } from "../../api-types"
 
 import { API, downloadIcon } from "../download"
 import { Blueprint } from "../interfaces"
