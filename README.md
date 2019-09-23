@@ -9,7 +9,7 @@
 
 ## Contributing
 
-Want to suggest a feature or report a bug? [Create an issue](https://github.com/System-Glitch/celeste-search/issues).  
+Want to suggest a feature or report a bug? [Create an issue](https://github.com/ProjectCeleste/celeste-search/issues).  
 Interested in writing a pull request? See the [contribution guide](CONTRIBUTING.md).
 
 #
