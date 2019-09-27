@@ -18,5 +18,5 @@ exports.sprites = sprites
 
 exports.default = series(
   parallel(bg, icons, meta, sprites),
-  parallel(optimize, copy),
+  parallel(/*optimize, */copy),
 )
