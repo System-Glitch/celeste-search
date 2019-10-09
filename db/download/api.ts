@@ -73,6 +73,13 @@ export class API {
     return json
   }
 
+  static async getConsumables() {
+    const json = await get<Advisors>("/gamedb/consumables")
+    lowerCaseKeys(json)
+    lowerCaseName(json)
+    return json
+  }
+
   static async getBlueprints() {
     const json = await get<Blueprints>("/gamedb/blueprints")
 
