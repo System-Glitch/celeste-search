@@ -1,6 +1,5 @@
 import { Consumable } from "../interfaces"
-import { API, downloadIcon } from '../download'
-import { translateEn } from "../shared/convert-text"
+import { API } from '../download'
 
 import { convertConsumable } from "./convert"
 import { includeConsumable } from "./filter"

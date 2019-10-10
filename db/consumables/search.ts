@@ -8,6 +8,7 @@ export async function buildSearchString(consumable: Consumable): Promise<string>
 
   builder.addStrict(consumable.id)
   builder.add(consumable.name)
+  builder.add(consumable.rarity)
 
   return builder.build()
 }
