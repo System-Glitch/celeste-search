@@ -15,6 +15,13 @@ const cyprusLegendaries = [
   "armorplt_l001",
 ]
 
+const rhakotisLegendaries = [
+  "bow1h_bom",
+  "armorclth_rot",
+  "sword1h_sck",
+  "ballista2h_ssa",
+]
+
 const allianceCouncilOfImhotep = [
   "armorbldg_lc01",
   "fishingnet1h_lc01",
@@ -36,6 +43,7 @@ const allianceLegionOfCarthage = [
 const questRewards = [
   "spears2h_als",
   "bow1h_uasb",
+  "arrowoh_ssa",
 ]
 
 const eventHalloween2018 = [
@@ -88,6 +96,7 @@ const celesteLegendariesStart = 2259
 
 export function isSoldByCyprus(trait: Trait) {
   return cyprusLegendaries.includes(trait.name)
+      || rhakotisLegendaries.includes(trait.name)
 }
 
 export function isSoldByCouncilOfImhotep(trait: Trait) {
