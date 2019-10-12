@@ -2,10 +2,9 @@ import { merge } from "lodash"
 
 import { API, downloadIcon } from "../download"
 import { Advisor } from "../interfaces"
-import { translateEn } from "../shared/convert-text"
+import { translateEn, convertCivilization } from "../shared/convert-text"
 import { findVendors } from "../vendors"
 
-import { convertCivilization } from "./convert-civilization"
 import { includeAdvisor } from "./filter"
 import { buildSearchString } from "./search"
 import { compareAdvisors } from "./sort"

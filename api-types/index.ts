@@ -1,5 +1,6 @@
 export * from "./Advisors"
 export * from "./Blueprints"
+export * from "./Consumable"
 export * from "./Designs"
 export * from "./EconQuests"
 export * from "./Languages"

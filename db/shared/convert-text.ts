@@ -21,3 +21,9 @@ export async function translateEn(id: number, fallback?: string) {
 
   return translation || fallback
 }
+
+export function convertCivilization(civilization: string | undefined) {
+  if (civilization) {
+    return civilization == 'eCivMatchingTypeAny' ? undefined : civilization.substr("eCivMatchingType".length).toLowerCase()
+  }
+}

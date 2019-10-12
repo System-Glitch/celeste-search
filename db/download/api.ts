@@ -1,6 +1,7 @@
 import {
   Advisors,
   Blueprints,
+  Consumables,
   Designs,
   Languages,
   Marketplace,
@@ -68,6 +69,13 @@ export class API {
 
   static async getAdvisors() {
     const json = await get<Advisors>("/gamedb/advisors")
+    lowerCaseKeys(json)
+    lowerCaseName(json)
+    return json
+  }
+
+  static async getConsumables() {
+    const json = await get<Consumables>("/gamedb/consumables")
     lowerCaseKeys(json)
     lowerCaseName(json)
     return json
