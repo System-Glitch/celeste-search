@@ -1,3 +1,30 @@
 :host {
   display: block;
 }
+
+.row.--header {
+  justify-content: flex-end;
+}
+
+.row.--rarities {
+  .__rarity {
+    position: relative;
+    background: transparent;
+    margin: 0;
+    padding: 0 .2rem;
+    transform: translate3d(0,0,0);
+    transition: .1s ease-out;
+    transition-property: color;
+    box-shadow: none;
+    text-transform: capitalize;
+
+    &:hover, &:active {
+      transition: none;
+    }
+  }
+}
+
+.row.--footer {
+  margin-top: 1rem;
+  justify-content: space-between;
+}

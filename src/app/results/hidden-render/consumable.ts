@@ -3,9 +3,13 @@ import { Consumable } from "../../interfaces"
 export const consumable: Consumable = {
   id: "consumable_id",
   name: "name",
-  description: "description",
-  icon: "bBglsTxp",
-  rarity: "uncommon",
+  rarities: {
+    common: {
+      id: "powernuclearconsumable4",
+      icon: "BQtEUqjU",
+      description: "description"
+    }
+  },
   vendors: [
     {
       id: "gn_Cap_LootStore06",
@@ -18,6 +22,7 @@ export const consumable: Consumable = {
       rotation: "classic",
     },
   ],
+  civilization: undefined,
   marketplace: [
     {
       id: "alexander_l_iv",

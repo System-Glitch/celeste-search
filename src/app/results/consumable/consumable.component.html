@@ -1,12 +1,61 @@
 <cis-shell
   [id]="consumable.id"
-  [name]="consumable.name"
-  type="Consumable"
-  [rarity]="consumable.rarity"
-  [icon]="consumable.icon"
   sprite="consumables"
-  [description]="consumable.description"
   [vendors]="consumable.vendors"
   [marketplace]="consumable.marketplace"
 >
+    <div class="row --header">
+        <div
+          class="row --rarities"
+          *ngIf="rarities.length > 0"
+        >
+          <ng-container *ngFor="let rarity of rarities">
+
+            <cis-tooltip
+              [text]="rarity | titlecase"
+              *ngIf="rarities.length > 1"
+            >
+              <button
+                type="button"
+                class="__rarity --{{ rarity }}"
+                (click)="setRarity(rarity)"
+              >
+                {{ rarity }}
+              </button>
+            </cis-tooltip>
+
+            <div
+              class="__rarity --{{ rarity }}"
+              *ngIf="rarities.length === 1"
+            >
+              {{ rarity }}
+            </div>
+
+          </ng-container>
+        </div>
+    </div>
+
+    <!-- NAME -->
+    <div class="row --name">
+        <div class="icon--consumables icon--consumables--{{ rarity.icon }}"></div>
+        <div class="__name --{{ rarity }}">
+            {{ consumable.name }}
+        </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="row --description --positive">
+        {{ rarity.description }}
+    </div>
+
+    <div class="row --footer">
+        <!-- REQUIRED CIV -->
+        <div
+          class="row --civ"
+          *ngIf="consumable.civilization"
+        >
+          <strong>Requires {{ consumable.civilization | titlecase }}
+            civilization</strong>
+        </div>
+    </div>
 </cis-shell>
