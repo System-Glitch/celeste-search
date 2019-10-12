@@ -67,7 +67,7 @@ export async function convertItem(trait: Trait): Promise<Item> {
   item.vendors = await findVendors(item.id)
 
   if (trait.rarity === "legendary") {
-    addToLegendaryRotation(item, trait)
+    //addToLegendaryRotation(item, trait)
     if (item.effects) {
       item.effectsRange = isReforgeable(trait) || undefined
     }
