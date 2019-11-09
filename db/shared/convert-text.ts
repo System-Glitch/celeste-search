@@ -19,7 +19,13 @@ export async function translateEn(id: number, fallback?: string) {
     console.log(chalk.yellow(`No translation found for ${id}, falling back to "${fallback}"`))
   }
 
-  return translation || fallback
+  return cleanFormat(translation || fallback)
+}
+
+export function cleanFormat(translation: string) {
+  return translation ? 
+    translation.replace(/\\n/g, "\n").replace(/<color="(.*?)">(.*?)<\/color>/g, "$2"):
+    translation
 }
 
 export function convertCivilization(civilization: string | undefined) {
