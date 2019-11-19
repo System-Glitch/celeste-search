@@ -50,6 +50,12 @@ const eventHalloween2018 = [
   "sword1h_r005_leg",
 ]
 
+const eventHalloween2019 = [
+  "spear1h_halloween2019",
+  "spear2h_halloween2019",
+  "gear_vill_halloween2019"
+]
+
 const eventWinter2018 = [
   "arrows_iceking_leg",
   "axe2h_iceking_leg",
@@ -138,10 +144,15 @@ export function isSummer2019Reward(trait: Trait) {
   return eventSummer2019.includes(trait.name)
 }
 
+export function isHalloween2019Reward(trait: Trait) {
+  return eventHalloween2019.includes(trait.name)
+}
+
 export function isEventReward(trait: Trait) {
   return isHalloween2018Reward(trait)
     || isWinter2018Reward(trait)
     || isSummer2019Reward(trait)
+    || isHalloween2019Reward(trait)
 }
 
 /**

@@ -2,7 +2,12 @@ import { Trait } from "../../api-types"
 
 import { Item } from "../interfaces"
 
-import { isHalloween2018Reward, isWinter2018Reward, isSummer2019Reward } from "./source"
+import {
+  isHalloween2018Reward,
+  isWinter2018Reward,
+  isSummer2019Reward,
+  isHalloween2019Reward
+} from "./source"
 
 export function convertEvent(trait: Trait): Item["event"] | undefined {
   if (isHalloween2018Reward(trait)) {
@@ -20,6 +25,12 @@ export function convertEvent(trait: Trait): Item["event"] | undefined {
   if (isSummer2019Reward(trait)) {
     return {
       name: "summer",
+      year: 2019,
+    }
+  }
+  if (isHalloween2019Reward(trait)) {
+    return {
+      name: "halloween",
       year: 2019,
     }
   }
