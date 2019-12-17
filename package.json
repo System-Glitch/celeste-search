@@ -82,7 +82,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash": "^4.14.123",
     "@types/nanoid": "^1.2.1",
-    "@types/node": "~11.13.4",
+    "@types/node": "~12.12.18",
     "axios": "^0.18.0",
     "bottleneck": "^2.18.0",
     "codelyzer": "~5.0.0",
