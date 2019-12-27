@@ -120,8 +120,10 @@
         class="icon--materials icon--materials--{{ item.event?.name || 'quest' }}"
       ></span>
       <span *ngIf="item.quest">{{ item.quest }}</span>
-      <span *ngIf="item.event">{{ item.event!.name | titlecase }} Event
-        {{ item.event!.year }}</span>
+      <span *ngIf="item.event">
+        {{ item.event!.name | titlecase }} Event
+        <span *ngIf="item.event.year">{{ item.event!.year }}</span>
+      </span>
     </div>
   </div>
 

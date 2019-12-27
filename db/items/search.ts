@@ -21,7 +21,7 @@ import {
   isSoldByCyprus,
   isSoldByDelianLeague,
   isSoldByLegionOfCarthage,
-  isWinter2018Reward,
+  isWinterReward,
   isSummer2019Reward,
   isHalloween2019Reward,
 } from "./source"
@@ -57,8 +57,8 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   if (isHalloween2018Reward(trait)) {
     builder.add("Halloween Event 2018 Reward")
   }
-  if (isWinter2018Reward(trait)) {
-    builder.add("Winter Event 2018 Reward")
+  if (isWinterReward(trait)) {
+    builder.add("Winter Event Reward")
   }
   if (isSummer2019Reward(trait)) {
     builder.add("Summer Event 2019 Reward")

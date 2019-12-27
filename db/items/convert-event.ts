@@ -4,7 +4,7 @@ import { Item } from "../interfaces"
 
 import {
   isHalloween2018Reward,
-  isWinter2018Reward,
+  isWinterReward,
   isSummer2019Reward,
   isHalloween2019Reward
 } from "./source"
@@ -16,10 +16,10 @@ export function convertEvent(trait: Trait): Item["event"] | undefined {
       year: 2018,
     }
   }
-  if (isWinter2018Reward(trait)) {
+  if (isWinterReward(trait)) {
     return {
       name: "winter",
-      year: 2018,
+      year: 0,
     }
   }
   if (isSummer2019Reward(trait)) {

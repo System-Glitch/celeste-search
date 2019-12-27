@@ -37,7 +37,7 @@ export interface Material {
   rarity: "cRarityCommon" | "cRarityUncommon" | "cRarityRare" | "cRarityEpic" | "cRarityJunk"
   budgetcost: 1 | 2 | 4 | 5 | 10
   contentpack: 1 | 22
-  event?: "Halloween" | "Winter"
+  event?: "Halloween" | "Winter" | "Summer"
 }
 
 export interface Materials {
