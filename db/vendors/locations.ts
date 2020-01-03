@@ -92,5 +92,6 @@ export const vendorLocations: {
   gn_cap_vanitystore07: "Rhakotis",
   gn_cap_vanitystore08: "Haunted Isle",
   gn_cap_vanitystore09: "Bahram's Material Store",
-  gn_cap_vanitystore10: "Vanity Island"
+  gn_cap_vanitystore10: "Vanity Island",
+  gn_cap_vanitystore11: "Winter Isle"
 }
