@@ -41,6 +41,7 @@
               "src/manifest.json",
               "src/netlify.toml",
               "src/robots.txt",
+              "src/robots.prod.txt",
               "src/sitemap.xml"
             ],
             "index": "src/index.html",
