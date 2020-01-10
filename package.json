@@ -108,7 +108,7 @@
     "nanoid": "^2.0.1",
     "nodemon": "^1.18.11",
     "protractor": "~5.4.2",
-    "ts-node": "~8.0.3",
+    "ts-node": "~8.6.0",
     "tslint": "^5.15.0",
     "tslint-angular": "^2.0.0",
     "tslint-eslint-rules": "^5.4.0",
