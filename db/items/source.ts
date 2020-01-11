@@ -104,7 +104,6 @@ const celesteLegendariesStart = 2259
 
 export function isSoldByCyprus(trait: Trait) {
   return cyprusLegendaries.includes(trait.name)
-      || rhakotisLegendaries.includes(trait.name)
 }
 
 export function isSoldByCouncilOfImhotep(trait: Trait) {

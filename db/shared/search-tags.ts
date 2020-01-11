@@ -71,7 +71,7 @@ export async function searchByVendor(builder: SearchBuilder, vendors?: Vendor[])
     builder.add("vendors")
     builder.add("sold")
 
-    builder.addStrict(vendor.id)
+    // builder.addStrict(vendor.id)
     builder.add(vendor.name)
     builder.add(vendor.location)
 
