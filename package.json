@@ -97,7 +97,7 @@
     "gulp-svgmin": "^2.2.0",
     "gulp-tinify": "^1.0.2",
     "gulp.spritesmith": "^6.11.0",
-    "http-server": "^0.11.1",
+    "http-server": "^0.12.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.1",
