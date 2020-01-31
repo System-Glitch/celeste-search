@@ -51,7 +51,7 @@
     "@angular/forms": "^8.2.14",
     "@angular/platform-browser": "^8.2.14",
     "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/pwa": "0.13.8",
+    "@angular/pwa": "0.803.24",
     "@angular/router": "^8.2.14",
     "@angular/service-worker": "^8.2.14",
     "@material/elevation": "^1.1.0",
