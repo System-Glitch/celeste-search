@@ -70,7 +70,7 @@
     "@angular-devkit/build-angular": "^0.803.23",
     "@angular/cli": "^8.3.23",
     "@angular/compiler-cli": "^8.2.14",
-    "@angular/language-service": "^8.2.14",
+    "@angular/language-service": "^9.1.0",
     "@babel/core": "^7.8.3",
     "@babel/register": "^7.8.3",
     "@n4bb12/config-svgo": "^1.0.1",
