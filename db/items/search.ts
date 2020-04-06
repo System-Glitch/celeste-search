@@ -107,7 +107,7 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
     builder.add("weapon")
   }
 
-  if ([
+  /* if ([
     "ArmorBuilding",
     "ArmorCloth",
     "ArmorLgt",
@@ -132,7 +132,7 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
     "Warpaint",
   ].includes(trait.traittype)) {
     builder.add("armor")
-  }
+  } */
 
   if ([
     "VanityHelm",
