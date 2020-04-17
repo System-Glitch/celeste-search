@@ -107,7 +107,7 @@
     "karma-jasmine-html-reporter": "^1.5.1",
     "nanoid": "^2.1.10",
     "nodemon": "^1.19.4",
-    "protractor": "~5.4.2",
+    "protractor": "~5.4.4",
     "ts-node": "~8.0.3",
     "tslint": "^5.20.1",
     "tslint-angular": "^2.0.3",
