@@ -53,6 +53,7 @@ export const vendorLocations: {
   gn_cap_vanitystore04: "Blueprint, Bountiful Bushes",
   gn_cap_vanitystore05: "Blueprint, Tantalizing Topiary",
   gn_cap_vanitystore06: "Vanity Island",
+  gn_cap_vanitystore12: "Lodi",
   gn_spartaspecialstore01: "Sparta",
   gr_cap_basicstore01: "Greek Capital City",
   gr_cap_basicstoreargos01: "Argos",
