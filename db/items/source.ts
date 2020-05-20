@@ -40,6 +40,13 @@ const allianceLegionOfCarthage = [
   "gear_lc01",
 ]
 
+const rhakotis = [
+  "bow1h_bom",
+  "armorclth_rot",
+  "sword1h_sck",
+  "ballista2h_ssa"
+]
+
 const questRewards = [
   "spears2h_als",
   "bow1h_uasb",
@@ -119,11 +126,16 @@ export function isSoldByLegionOfCarthage(trait: Trait) {
   return allianceLegionOfCarthage.includes(trait.name)
 }
 
+export function isSoldByRhakotis(trait: Trait) {
+  return rhakotis.includes(trait.name)
+}
+
 export function isSoldForCoin(trait: Trait) {
   return isSoldByCyprus(trait)
     || isSoldByCouncilOfImhotep(trait)
     || isSoldByDelianLeague(trait)
     || isSoldByLegionOfCarthage(trait)
+    || isSoldByRhakotis(trait)
 }
 
 export function isQuestReward(trait: Trait) {
