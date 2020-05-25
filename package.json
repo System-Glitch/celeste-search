@@ -87,7 +87,7 @@
     "bottleneck": "^2.19.5",
     "codelyzer": "~5.0.0",
     "del": "^4.1.0",
-    "execa": "^1.0.0",
+    "execa": "^4.0.2",
     "filenamify": "^4.1.0",
     "fs-extra": "^7.0.1",
     "gulp": "^4.0.0",
