@@ -94,7 +94,7 @@
     "gulp-debug": "^4.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-responsive": "^3.0.1",
-    "gulp-svgmin": "^2.2.0",
+    "gulp-svgmin": "^3.0.0",
     "gulp-tinify": "^1.0.2",
     "gulp.spritesmith": "^6.11.0",
     "http-server": "^0.12.1",
