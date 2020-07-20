@@ -7,6 +7,7 @@ import { findVendors } from "../vendors"
 
 import { convertMaterials } from "./convert-materials"
 import { buildSearchString } from "./search"
+import { convertLootTable } from './convert-loot-table'
 
 export async function convertBlueprint(blueprint: ApiBlueprint): Promise<Blueprint> {
   const prototypes = await API.getPrototypes()
@@ -28,6 +29,7 @@ export async function convertBlueprint(blueprint: ApiBlueprint): Promise<Bluepri
     vendors: undefined,
     search: "",
     marketplace: [],
+    lootTable: convertLootTable(blueprint)
   }
 
   result.vendors = await findVendors(result.id)

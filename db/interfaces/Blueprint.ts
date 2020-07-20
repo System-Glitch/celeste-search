@@ -10,5 +10,6 @@ export interface Blueprint {
   materials: Array<{ id: string, quantity: number }> | undefined
   vendors: Vendor[] | undefined
   search: string
-  marketplace: MarketplaceQuery[]
+  marketplace: MarketplaceQuery[],
+  lootTable: string | undefined
 }

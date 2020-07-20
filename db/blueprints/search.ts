@@ -12,6 +12,15 @@ export async function buildSearchString(blueprint: Blueprint): Promise<string> {
   builder.add(blueprint.description || "")
   builder.add(blueprint.rarity)
 
+  if (blueprint.lootTable) {
+    builder.add(blueprint.lootTable)
+    if (blueprint.lootTable == "skirmish hall") {
+      builder.add("Skirmish-Exclusive")
+    } else {
+      builder.add(blueprint.lootTable + "-Exclusive")
+    }
+  }
+
   await searchByMaterial(builder, blueprint.materials)
   await searchByVendor(builder, blueprint.vendors)
 
