@@ -32,6 +32,10 @@ export const currencies = [
     iconName: "summer",
   },
   {
+    resource: "Art/UserInterface/Game_Modes/Booster02/TeamBlue",
+    iconName: "skirmish_hall",
+  },
+  {
     resource: "Art/UserInterface/Icons/Buildings/AvatarMarket_ua",
     iconName: "market",
   },

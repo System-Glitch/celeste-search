@@ -89,6 +89,14 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   if (isNorseStartingGear(trait)) {
     builder.add("Norse Starting Gear")
   }
+  if (item.lootTable) {
+    builder.add(item.lootTable)
+    if (item.lootTable == "skirmish hall") {
+      builder.add("Skirmish-Exclusive")
+    } else {
+      builder.add(item.lootTable + "-Exclusive")
+    }
+  }
 
   if ([
     "BallistaArms",

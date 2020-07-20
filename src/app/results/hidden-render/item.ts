@@ -60,4 +60,5 @@ export const item: Item = {
   event: { name: "halloween", year: 2018 },
   starting: ["persian", "babylonian", "norse"],
   search: "search",
+  lootTable: undefined
 }

@@ -21,5 +21,6 @@ export interface Item {
   } | undefined
   starting: string[] | undefined
   search: string
-  marketplace: MarketplaceQuery[]
+  marketplace: MarketplaceQuery[],
+  lootTable: string | undefined
 }

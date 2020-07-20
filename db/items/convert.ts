@@ -8,7 +8,7 @@ import { findVendors } from "../vendors"
 import { convertEffects } from "./convert-effects"
 import { convertEvent } from "./convert-event"
 import { findAndConvertRecipe } from "./convert-recipe"
-import { addToLegendaryRotation } from "./legendary-rotation"
+import { convertLootTable } from "./convert-loot-table"
 import { buildSearchString } from "./search"
 import {
   getQuestName,
@@ -42,6 +42,7 @@ export async function convertItem(trait: Trait): Promise<Item> {
     marketplace: [],
     quest: getQuestName(trait),
     event: convertEvent(trait),
+    lootTable: convertLootTable(trait),
     starting: [
       isPersianStartingGear(trait) && "persian",
       isBabylonianStartingGear(trait) && "babylonian",
@@ -82,6 +83,5 @@ export async function convertItem(trait: Trait): Promise<Item> {
 
   item.search = await buildSearchString(item, trait)
   item.marketplace = item.levels.map(level => ({ id: item.id, level }))
-
   return item
 }
