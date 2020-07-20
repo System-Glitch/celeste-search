@@ -8,6 +8,7 @@ import { findVendors } from "../vendors"
 
 import { convertMaterials } from "./convert-materials"
 import { buildSearchString } from "./search"
+import { convertLootTable } from './convert-loot-table'
 
 export async function convertDesign(design: ApiDesign): Promise<Design> {
   const allTraits = await API.getTraits()
@@ -39,6 +40,7 @@ export async function convertDesign(design: ApiDesign): Promise<Design> {
     outputName,
     outputIcon,
     search: "",
+    lootTable: convertLootTable(design)
   }
 
   result.vendors = await findVendors(result.id)

@@ -1,11 +1,5 @@
-<cis-shell
-  [id]="design.id"
-  [type]="design.school"
-  [rarity]="design.rarity"
-  sprite="designs"
-  [vendors]="design.vendors"
-  [marketplace]="design.marketplace"
->
+<cis-shell [id]="design.id" [type]="design.school" [rarity]="design.rarity" sprite="designs" [vendors]="design.vendors"
+  [marketplace]="design.marketplace">
 
   <!-- NAME -->
   <div class="row --name">
@@ -32,8 +26,7 @@
         <div class="row --materials">
           <ng-container *ngFor="let ref of design.materials">
             <ng-container *ngIf="materials[ref.id] as mat">
-              <span
-                class="icon--materials icon--materials--{{ mat.icon }}"></span>
+              <span class="icon--materials icon--materials--{{ mat.icon }}"></span>
               <span class="__mat-amount">{{ ref.quantity }}</span>
               <span class="--{{ mat.rarity }}">{{ mat.name }}</span>
               <span></span><!-- wrap line -->
@@ -47,5 +40,15 @@
 
     </ng-container>
   </ng-container>
+
+  <!-- LOOT TABLE -->
+  <div *ngIf="design.lootTable">
+    <div class="row --loot-table">
+      <span class="icon--materials icon--materials--{{ design.lootTable.replace(' ', '_') }}"></span>
+      <span *ngIf="design.lootTable">
+        Exclusive to {{ design.lootTable | titlecase }}
+      </span>
+    </div>
+  </div>
 
 </cis-shell>

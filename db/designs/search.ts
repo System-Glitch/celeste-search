@@ -16,6 +16,11 @@ export async function buildSearchString(design: Design, apiDesign: ApiDesign): P
   builder.addStrict(design.outputId)
   builder.add(design.outputName)
 
+  if (design.lootTable) {
+    builder.add(design.lootTable)
+    builder.add(design.lootTable + "-Exclusive")
+  }
+
   await searchByMaterial(builder, design.materials)
   await searchByVendor(builder, design.vendors)
 
