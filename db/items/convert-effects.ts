@@ -21,9 +21,9 @@ export function convertEffects(trait: Trait): ItemEffect[] | undefined {
       if (effect.subtype === "CarryCapacity") {
         return false
       }
-      if (effect.subtype === "WorkRate" && effect.action === "SelfHeal") {
-        return false
-      }
+      // if (effect.subtype === "WorkRate" && effect.action === "SelfHeal") {
+      //   return false
+      // }
       return true
     })
     .map(effect => {

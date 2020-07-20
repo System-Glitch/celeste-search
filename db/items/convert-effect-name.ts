@@ -102,6 +102,9 @@ export function convertEffectName(effect: TraitEffect): string {
         return "Empower Build Rate"
       }
     }
+    if (effect.action === "SelfHeal") {
+      return "Regen. Rate"
+    }
   }
   if (effect.subtype === "DamageBonus") {
     if (effect.unittype === "AbstractInfantry") {

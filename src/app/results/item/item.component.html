@@ -6,8 +6,10 @@
     <ul>
       <li *ngFor="let effect of item.effects || []" [class.--positive]="effect.beneficial"
         [class.--negative]="!effect.beneficial">
-        <span>{{ effect.name }}<ng-container *ngIf="!effect.action">:
-          </ng-container></span>
+        <span>
+          {{ effect.name }}
+          <ng-container *ngIf="!effect.action">:</ng-container>
+        </span>
         <span class="__value --left" *ngIf="!effect.action">
           {{ effect | effectValue:level:1 }}
         </span>
