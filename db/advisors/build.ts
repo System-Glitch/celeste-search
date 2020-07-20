@@ -8,6 +8,7 @@ import { findVendors } from "../vendors"
 import { includeAdvisor } from "./filter"
 import { buildSearchString } from "./search"
 import { compareAdvisors } from "./sort"
+import { convertLootTable } from './convert-loot-table'
 
 export async function buildAdvisors(): Promise<Advisor[]> {
   console.log("Build advisors...")
@@ -41,6 +42,7 @@ export async function buildAdvisors(): Promise<Advisor[]> {
       vendors: undefined,
       search: "",
       marketplace: [],
+      lootTable: convertLootTable(advisor)
     }
 
     result.vendors = await findVendors(rarity.id);

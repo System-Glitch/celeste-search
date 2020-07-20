@@ -18,5 +18,6 @@ export interface Advisor {
     [index: string]: AdvisorRarity,
   }
   search: string
-  marketplace: MarketplaceQuery[]
+  marketplace: MarketplaceQuery[],
+  lootTable: string | undefined
 }

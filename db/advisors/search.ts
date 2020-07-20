@@ -12,6 +12,15 @@ export async function buildSearchString(advisor: Advisor): Promise<string> {
   builder.add(`age${advisor.age}`)
   builder.add(advisor.civilization || "")
 
+  if (advisor.lootTable) {
+    builder.add(advisor.lootTable)
+    if (advisor.lootTable == "skirmish hall") {
+      builder.add("Skirmish-Exclusive")
+    } else {
+      builder.add(advisor.lootTable + "-Exclusive")
+    }
+  }
+
   await searchByLevels(builder, [advisor.level])
   await searchByVendor(builder, advisor.vendors)
 

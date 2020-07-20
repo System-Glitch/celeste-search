@@ -33,4 +33,5 @@ export const advisor: Advisor = {
     },
   ],
   search: "search",
+  lootTable: undefined
 }
