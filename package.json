@@ -58,7 +58,7 @@
     "core-js": "^2.6.11",
     "fontfaceobserver": "^2.1.0",
     "linearicons": "^1.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "ng-click-outside": "^4.0.0",
     "ngx-scrollbar": "^4.2.0",
     "normalize.scss": "^0.1.0",
@@ -67,7 +67,7 @@
     "zone.js": "~0.9.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.23",
+    "@angular-devkit/build-angular": "^0.1000.3",
     "@angular/cli": "^8.3.23",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
@@ -97,7 +97,7 @@
     "gulp-svgmin": "^2.2.0",
     "gulp-tinify": "^1.0.2",
     "gulp.spritesmith": "^6.11.0",
-    "http-server": "^0.12.1",
+    "http-server": "^0.12.3",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.1",
