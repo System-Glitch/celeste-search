@@ -52,3 +52,10 @@
     flex: 0;
   }
 }
+
+@include on-mobile() {
+  .__tab .__image {
+    width: 42px;
+    height: 42px;
+  }
+}
