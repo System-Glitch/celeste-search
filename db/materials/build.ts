@@ -18,8 +18,6 @@ export async function buildMaterials(): Promise<Material[]> {
   const results = await Promise.all(conversions)
 
   // TODO reward from quests or loot table
-  // TODO ignore sack of coins
-  // TODO vendors ?
   return results
     .filter(includeMaterial)
     .map(m => {
