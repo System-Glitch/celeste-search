@@ -19,16 +19,16 @@ $spacing-buttons: $spacing-body / 2;
   .__form {
     @include elevation(2);
 
-    background: rgba(white, .25);
+    background: rgba(white, 0.25);
     border-radius: $border-radius;
     padding: ($spacing-viewport / 2);
 
     cis-search {
-      padding: .5rem;
+      padding: 0.5rem;
     }
 
     cis-tabs {
-      padding: .5rem;
+      padding: 0.5rem;
     }
   }
 }
@@ -43,7 +43,7 @@ $spacing-buttons: $spacing-body / 2;
 .__footer {
   width: 100%;
   max-width: 40rem;
-  padding: (2*$spacing-viewport) $spacing-viewport $spacing-viewport;
+  padding: (2 * $spacing-viewport) $spacing-viewport $spacing-viewport;
   margin: 0 auto;
 }
 
@@ -72,7 +72,8 @@ cis-update {
 }
 
 @include on-mobile() {
-  .__header, .__body {
+  .__header,
+  .__body {
     padding-left: $spacing-viewport;
     padding-right: $spacing-viewport;
   }
