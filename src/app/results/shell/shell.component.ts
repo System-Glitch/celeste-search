@@ -16,7 +16,7 @@ export class ShellComponent {
   @Input() type: Item["type"]
   @Input() rarity: Item["rarity"]
   @Input() icon: Item["icon"]
-  @Input() sprite: "icons" | "advisors" | "blueprints" | "designs" | "consumables"
+  @Input() sprite: "icons" | "advisors" | "blueprints" | "designs" | "consumables" | "materials"
   @Input() vendors: Item["vendors"]
   @Input() level?: number
   @Input() levels?: number[]

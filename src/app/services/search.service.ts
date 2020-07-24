@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core"
 
 import { uniq } from "lodash"
 import { BehaviorSubject, combineLatest, Observable } from "rxjs"
-import { take, tap } from "rxjs/operators"
+import { take, tap, map } from "rxjs/operators"
 
 import { Entity } from "../interfaces"
 
@@ -92,12 +92,14 @@ export class SearchService {
 
         let searchDynamic = ""
 
-        entry.marketplace.forEach(query => {
-          const offerings = marketplaceById[query.id]
-          if (offerings && offerings.length > 0) {
-            searchDynamic += " global marketplace"
-          }
-        })
+        if (entry.marketplace) {
+          entry.marketplace.forEach(query => {
+            const offerings = marketplaceById[query.id]
+            if (offerings && offerings.length > 0) {
+              searchDynamic += " global marketplace"
+            }
+          })
+        }
 
         const fullText = `${entry.search}${searchDynamic}`
 

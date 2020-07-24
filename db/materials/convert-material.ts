@@ -10,6 +10,7 @@ export async function convertMaterial(material: ApiMaterial): Promise<Material> 
   const rarity = material.rarity.substr("cRarity".length).toLowerCase()
 
   return {
+    id: material.name,
     name,
     icon,
     rarity,

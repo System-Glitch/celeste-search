@@ -8,6 +8,12 @@ import { download } from "./download"
 const pathToId: { [iconPath: string]: Promise<string> } = {}
 
 export async function downloadIcon(resource: string, spriteName: string, iconName?: string): Promise<string> {
+  if (resource.startsWith("local:")) {
+    const path = resource.substr(resource.indexOf(":") + 1)
+    return pathToId[resource + spriteName]
+      = pathToId[resource + spriteName] || fetchLocalOverride(path, spriteName, iconName)
+  }
+
   return pathToId[resource + spriteName]
     = pathToId[resource + spriteName] || fetch(resource, spriteName, iconName)
 }
@@ -33,4 +39,12 @@ async function fetch(path: string, spriteName: string, iconName?: string) {
   await copy(filename, spriteInput)
 
   return iconId
+}
+
+async function fetchLocalOverride(path: string, spriteName: string, iconName?: string) {
+  const iconId = hash(path)
+  const imagePath = path.replace(/\\/g, "/") + ".png"
+  const spriteInput = `generated/sprites/${spriteName}/${iconName || iconId}.png`
+  await mkdirp(dirname(spriteInput))
+  await copy(imagePath, spriteInput)
 }

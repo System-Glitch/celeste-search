@@ -39,6 +39,7 @@ export class DbService {
   readonly blueprints = this.fetch<Blueprint[]>("blueprints")
   readonly designs = this.fetch<Design[]>("designs")
   readonly consumables = this.fetch<Consumable[]>("consumables")
+  readonly materials = this.fetch<Materials[]>("materials")
 
   constructor(
     private http: HttpClient,

@@ -9,8 +9,9 @@ cis-item,
 cis-advisor,
 cis-blueprint,
 cis-design,
-cis-consumable {
-  padding: .5rem;
+cis-consumable,
+cis-material {
+  padding: 0.5rem;
 }
 
 .__grid {
@@ -19,7 +20,7 @@ cis-consumable {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin: -.5rem;
+  margin: -0.5rem;
   font-weight: 400;
 }
 
@@ -28,7 +29,6 @@ cis-consumable {
   width: 100%;
   max-width: 30rem;
 }
-
 
 .__prerender {
   position: relative;
@@ -44,7 +44,7 @@ cis-consumable {
   left: 0;
   right: 0;
   bottom: 25vh;
-  border-bottom: .2rem dotted red;
+  border-bottom: 0.2rem dotted red;
   pointer-events: none;
   user-select: none;
   visibility: hidden;

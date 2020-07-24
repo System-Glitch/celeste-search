@@ -99,7 +99,7 @@ const sprite = (name, size) => {
  * `gulp sprites`
  */
 module.exports = parallel(
-  sprite("materials", 24),
+  sprite("materials", 64),
   sprite("items", 64),
   sprite("advisors", 64),
   sprite("blueprints", 64),

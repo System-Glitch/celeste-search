@@ -5,7 +5,7 @@ import { buildBlueprints } from "./blueprints/build"
 import { buildConsumables } from "./consumables/build"
 import { buildDesigns } from "./designs/build"
 import { buildItems } from "./items/build"
-import { buildMaterials } from "./materials/build"
+import { buildMaterials, buildSharedMaterials } from "./materials/build"
 
 async function cleanup() {
   console.log("Cleanup...")
@@ -31,7 +31,8 @@ async function createDB() {
   const blueprints = await buildBlueprints()
   const designs = await buildDesigns()
   const consumables = await buildConsumables()
-  const materials = await buildMaterials(items, blueprints, designs)
+  const materials = await buildMaterials()
+  const sharedMaterials = await buildSharedMaterials(items, blueprints, designs)
 
   const results = {
     items,
@@ -39,7 +40,8 @@ async function createDB() {
     blueprints,
     designs,
     consumables,
-    shared: { materials },
+    materials,
+    shared: { materials: sharedMaterials },
   }
 
   for (const key of Object.keys(results)) {

@@ -17,7 +17,7 @@ import { fadeIn } from "../animations"
 import { SearchService, StateService, TABS } from "../services"
 import { SettingsService } from "../services/settings.service"
 
-import { advisor, blueprint, consumable, design, item } from "./hidden-render"
+import { advisor, blueprint, consumable, design, item, material } from "./hidden-render"
 
 const rem = 15
 const empty = []
@@ -40,6 +40,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   readonly hiddenRenderBlueprint = blueprint
   readonly hiddenRenderDesign = design
   readonly hiddenRenderConsumable = consumable
+  readonly hiddenRenderMaterial = material
 
   numColumns = 3
   tab = 0

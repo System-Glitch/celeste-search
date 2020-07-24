@@ -1,1 +1,1 @@
-export const RARITIES = ["legendary", "epic", "rare", "uncommon", "common"]
+export const RARITIES = ["legendary", "epic", "rare", "uncommon", "common", "junk"]

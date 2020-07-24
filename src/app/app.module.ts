@@ -33,6 +33,7 @@ import {
 import { AdvisorComponent } from "./results/advisor/advisor.component"
 import { BlueprintComponent } from "./results/blueprint/blueprint.component"
 import { ConsumableComponent } from "./results/consumable/consumable.component"
+import { MaterialComponent } from "./results/material/material.component"
 import { DesignComponent } from "./results/design/design.component"
 import { ItemComponent } from "./results/item/item.component"
 import {
@@ -67,6 +68,7 @@ import { UpdateComponent } from "./update/update.component"
     BackToTopComponent,
     BlueprintComponent,
     ConsumableComponent,
+    MaterialComponent,
     CurrencyPipe,
     DesignComponent,
     DesignTypePipe,
