@@ -42,19 +42,11 @@
     border-radius: $border-radius / 2;
     background: $theme-secondary;
     color: $theme-text;
-    opacity: (2/3);
-    transition-property: background-color, opacity;
-
-    &:hover,
-    &:focus,
-    &:active {
-      opacity: 1;
-    }
+    transition-property: background-color;
 
     &.--active {
       background: $theme-primary;
       color: $theme-text;
-      opacity: 1;
 
       &:hover {
         background: $theme-primary--hover;

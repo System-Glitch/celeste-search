@@ -1,13 +1,13 @@
 @import "~@material/elevation/mixins";
 
 $theme-primary: #488489;
-$theme-secondary: #B7D6D8;
-$theme-primary--hover: mix(#488489, #B7D6D8, 50%);
-$theme-text: #FFFFFF;
-$theme-shadow: #192B33;
+$theme-secondary: #9cc6c9;
+$theme-primary--hover: mix(#488489, #b7d6d8, 50%);
+$theme-text: #ffffff;
+$theme-shadow: #192b33;
 $theme-border: #768376;
 
-$border-radius: .75rem;
+$border-radius: 0.75rem;
 $spacing-viewport: 6vmin;
 
 @mixin elevation($z) {
@@ -15,7 +15,7 @@ $spacing-viewport: 6vmin;
 }
 
 @mixin border() {
-  border: .2rem solid $theme-border;
+  border: 0.2rem solid $theme-border;
   border-radius: $border-radius;
 }
 
@@ -25,6 +25,6 @@ $spacing-viewport: 6vmin;
 
 @mixin on-mobile() {
   @media (max-width: 992px) {
-    @content
+    @content;
   }
 }
