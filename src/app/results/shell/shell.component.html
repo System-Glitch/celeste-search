@@ -1,10 +1,7 @@
 <div class="__wrapper">
 
   <!-- TYPE / RARITY -->
-  <div
-    *ngIf="type || rarity"
-    class="row --header"
-  >
+  <div *ngIf="type || rarity" class="row --header">
     <strong>{{ type }}</strong>
 
     <div class="__rarity --{{ rarity }}">
@@ -13,28 +10,16 @@
   </div>
 
   <!-- ICON / NAME -->
-  <div
-    *ngIf="icon && sprite || name"
-    class="row --name"
-  >
-    <div
-      *ngIf="icon && sprite"
-      class="icon--{{ sprite }} icon--{{ sprite }}--{{ icon }}"
-    >
+  <div *ngIf="icon && sprite || name" class="row --name">
+    <div *ngIf="icon && sprite" class="icon--{{ sprite }} icon--{{ sprite }}--{{ icon }}">
     </div>
-    <div
-      *ngIf="name"
-      class="__name --{{ rarity }}"
-    >
+    <div *ngIf="name" class="__name --{{ rarity }}">
       {{ name }}
     </div>
   </div>
 
   <!-- DESCRIPTION -->
-  <div
-    *ngIf="description"
-    class="row --description --positive"
-  >
+  <div *ngIf="description" class="row --description --positive">
     {{ description }}
   </div>
 
@@ -42,12 +27,7 @@
   <ng-content></ng-content>
 
   <!-- SOURCES -->
-  <cis-vendors
-    *ngIf="vendors"
-    [vendors]="vendors"
-    [levels]="levels"
-    [rarities]="rarities"
-  ></cis-vendors>
+  <cis-vendors *ngIf="vendors" [vendors]="vendors" [levels]="levels" [rarities]="rarities"></cis-vendors>
   <cis-marketplace [queries]="marketplace">
   </cis-marketplace>
 

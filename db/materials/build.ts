@@ -3,10 +3,9 @@ import { uniq } from "lodash"
 import { API, downloadIcon } from "../download"
 import { Blueprint, Design, Item, Materials, Material } from "../interfaces"
 
-import { convertMaterial } from "./convert-material"
+import { convertMaterial, convertMaterialForBlueprint } from "./convert-material"
 import { compareMaterials } from "./sort"
 import { currencies } from "./currencies"
-import { buildItemSearchString } from "./search"
 import { includeMaterial } from "./filter"
 
 export async function buildMaterials(): Promise<Material[]> {
@@ -20,10 +19,6 @@ export async function buildMaterials(): Promise<Material[]> {
   // TODO reward from quests or loot table
   return results
     .filter(includeMaterial)
-    .map(m => {
-      m.search = buildItemSearchString(m)
-      return m
-    })
     .sort(compareMaterials)
 }
 
@@ -54,8 +49,7 @@ export async function buildSharedMaterials(
 
   for (const material of Object.values(materials)) {
     if (allUsedMaterials.includes(material.name)) {
-      result[material.name] = await convertMaterial(material)
-      result[material.name].id = undefined
+      result[material.name] = await convertMaterialForBlueprint(material)
     }
   }
 

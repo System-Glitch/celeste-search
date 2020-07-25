@@ -1,8 +1,15 @@
 export interface Material {
-  id?: string,
+  id?: string
   name: string
+  description?: string
   icon: string
-  rarity: string,
+  rarity: string
+  event?: {
+    name: "halloween" | "winter" | "summer"
+    year: 0 | 2018 | 2019 | 2020,
+  } | undefined
+  lootTable?: string
+  quest?: string
   search?: string
 }
 

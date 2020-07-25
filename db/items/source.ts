@@ -15,13 +15,6 @@ const cyprusLegendaries = [
   "armorplt_l001",
 ]
 
-const rhakotisLegendaries = [
-  "bow1h_bom",
-  "armorclth_rot",
-  "sword1h_sck",
-  "ballista2h_ssa",
-]
-
 const allianceCouncilOfImhotep = [
   "armorbldg_lc01",
   "fishingnet1h_lc01",

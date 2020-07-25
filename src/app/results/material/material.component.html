@@ -1,3 +1,29 @@
 <cis-shell [id]="material.id" [name]="material.name" type="Material" [rarity]="material.rarity" [icon]="material.icon"
   sprite="materials" [description]="material.description" [vendors]="material.vendors">
+
+  <!-- QUEST, EVENT -->
+  <div *ngIf="material.quest || material.event">
+    <div class="row --source">
+      <span>Reward from:</span>
+    </div>
+
+    <div class="row --materials">
+      <span class="icon--materials icon--materials--{{ material.event?.name || 'quest' }}"></span>
+      <span *ngIf="material.quest">{{ material.quest }}</span>
+      <span *ngIf="material.event">
+        {{ material.event!.name | titlecase }} Event
+        <span *ngIf="material.event.year">{{ material.event!.year }}</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- LOOT TABLE -->
+  <div *ngIf="material.lootTable">
+    <div class="row --loot-table">
+      <span class="icon--materials icon--materials--{{ material.lootTable.replace(' ', '_') }}"></span>
+      <span *ngIf="material.lootTable">
+        Exclusive to {{ material.lootTable | titlecase }}
+      </span>
+    </div>
+  </div>
 </cis-shell>
