@@ -33,7 +33,7 @@
     <div class="row --loot-table">
       <span class="icon--materials icon--materials--{{ blueprint.lootTable.replace(' ', '_') }}"></span>
       <span *ngIf="blueprint.lootTable">
-        Exclusive to {{ blueprint.lootTable | titlecase }}
+        Exclusive to <strong>{{ blueprint.lootTable | titlecase }}</strong>
       </span>
     </div>
   </div>

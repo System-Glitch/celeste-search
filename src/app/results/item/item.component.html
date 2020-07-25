@@ -106,7 +106,7 @@
     <div class="row --loot-table">
       <span class="icon--materials icon--materials--{{ item.lootTable.replace(' ', '_') }}"></span>
       <span *ngIf="item.lootTable">
-        Exclusive to {{ item.lootTable | titlecase }}
+        Exclusive to <strong>{{ item.lootTable | titlecase }}</strong>
       </span>
     </div>
   </div>
