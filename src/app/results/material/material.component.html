@@ -9,7 +9,7 @@
 
     <div class="row --materials">
       <span class="icon--materials icon--materials--{{ material.event?.name || 'quest' }}"></span>
-      <span *ngIf="material.quest">{{ material.quest }}</span>
+      <span *ngIf="material.quest" [innerHTML]="material.quest"></span>
       <span *ngIf="material.event">
         {{ material.event!.name | titlecase }} Event
         <span *ngIf="material.event.year">{{ material.event!.year }}</span>
