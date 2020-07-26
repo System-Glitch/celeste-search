@@ -17,6 +17,7 @@ export interface Blueprint {
   }
   rarity: string
   protounit: string
+  event: string
   cost: {
     material: Array<{
       id: string,

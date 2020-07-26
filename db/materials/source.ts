@@ -11,7 +11,7 @@ export function getQuestName(material: Material) {
 }
 
 export function isSummer2019Material(material: Material) {
-  return material.name.startsWith("se_") // TODO new material in summer event 2020?
+  return material.name.startsWith("se_")
 }
 
 export function isHalloween2019Material(material: Material) {
@@ -25,4 +25,5 @@ export function isWinter2019Material(material: Material) {
 export function isEventReward(material: Material) {
   return isSummer2019Material(material)
     || isHalloween2019Material(material)
+    || isWinter2019Material(material)
 }

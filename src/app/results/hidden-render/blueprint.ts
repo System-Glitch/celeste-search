@@ -26,6 +26,7 @@ export const blueprint: Blueprint = {
       level: 40,
     },
   ],
+  event: { name: "halloween", year: 2018 },
   search: "search",
   lootTable: undefined
 }

@@ -28,6 +28,21 @@
     </ng-container>
   </ng-container>
 
+  <!-- QUEST, EVENT -->
+  <div *ngIf="blueprint.event">
+    <div class="row --source">
+      <span>Reward from:</span>
+    </div>
+
+    <div class="row --materials">
+      <span class="icon--materials icon--materials--{{ blueprint.event?.name || 'quest' }}"></span>
+      <span *ngIf="blueprint.event">
+        {{ blueprint.event!.name | titlecase }} Event
+        <!-- <span *ngIf="blueprint.event.year">{{ blueprint.event!.year }}</span> -->
+      </span>
+    </div>
+  </div>
+
   <!-- LOOT TABLE -->
   <div *ngIf="blueprint.lootTable">
     <div class="row --loot-table">

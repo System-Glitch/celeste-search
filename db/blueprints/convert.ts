@@ -8,6 +8,7 @@ import { findVendors } from "../vendors"
 import { convertMaterials } from "./convert-materials"
 import { buildSearchString } from "./search"
 import { convertLootTable } from './convert-loot-table'
+import { convertEvent } from './convert-event'
 
 export async function convertBlueprint(blueprint: ApiBlueprint): Promise<Blueprint> {
   const prototypes = await API.getPrototypes()
@@ -29,11 +30,12 @@ export async function convertBlueprint(blueprint: ApiBlueprint): Promise<Bluepri
     vendors: undefined,
     search: "",
     marketplace: [],
+    event: convertEvent(blueprint),
     lootTable: convertLootTable(blueprint)
   }
 
   result.vendors = await findVendors(result.id)
-  result.search = await buildSearchString(result)
+  result.search = await buildSearchString(result, blueprint)
   result.marketplace.push({ id: result.id })
 
   return result

@@ -11,5 +11,9 @@ export interface Blueprint {
   vendors: Vendor[] | undefined
   search: string
   marketplace: MarketplaceQuery[],
+  event?: {
+    name: "halloween" | "winter" | "summer"
+    year: 0 | 2018 | 2019 | 2020,
+  } | undefined
   lootTable: string | undefined
 }

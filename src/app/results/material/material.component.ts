@@ -16,7 +16,4 @@ export class MaterialComponent {
   constructor(
     private db: DbService,
   ) { }
-
-  // TODO scroll doesn't work and * doesn't give all results (fixed by switching tabs)
-
 }
