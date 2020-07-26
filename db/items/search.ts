@@ -55,16 +55,16 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
     builder.add("Legion of Carthage Alliance")
   }
   if (isHalloween2018Reward(trait)) {
-    builder.add("Halloween Event 2018 Reward")
+    builder.add("Halloween Event Reward")
   }
   if (isWinterReward(trait)) {
     builder.add("Winter Event Reward")
   }
   if (isSummer2019Reward(trait)) {
-    builder.add("Summer Event 2019 Reward")
+    builder.add("Summer Event Reward")
   }
   if (isHalloween2019Reward(trait)) {
-    builder.add("Halloween Event 2019 Reward")
+    builder.add("Halloween Event Reward")
   }
   if (isQuestReward(trait)) {
     builder.add("Quest Reward")
