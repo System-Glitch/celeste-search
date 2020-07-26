@@ -151,6 +151,10 @@ export function isSummer2019Reward(trait: Trait) {
   return eventSummer2019.includes(trait.name)
 }
 
+export function isSummer2020Reward(trait: Trait) {
+  return trait.name.startsWith("se2020_")
+}
+
 export function isHalloween2019Reward(trait: Trait) {
   return eventHalloween2019.includes(trait.name)
 }

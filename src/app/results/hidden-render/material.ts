@@ -8,5 +8,6 @@ export const material: Material = {
   icon: "M72n1hPX",
   event: { name: "halloween", year: 2018 },
   quest: undefined,
+  workshop: undefined,
   lootTable: undefined
 }

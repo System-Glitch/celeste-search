@@ -10,6 +10,7 @@ export interface Material {
   } | undefined
   lootTable?: string
   quest?: string
+  workshop?: string
   search?: string
 }
 

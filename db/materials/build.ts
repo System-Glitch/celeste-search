@@ -16,7 +16,6 @@ export async function buildMaterials(): Promise<Material[]> {
 
   const results = await Promise.all(conversions)
 
-  // TODO reward from quests or loot table
   return results
     .filter(includeMaterial)
     .sort(compareMaterials)

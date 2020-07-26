@@ -7,6 +7,7 @@ import { convertEvent } from './convert-event'
 import { convertLootTable } from './convert-loot-table'
 import { buildMaterialSearchString } from './search'
 import { getQuestName } from './source'
+import { convertWorkshop } from './convert-workshop'
 
 export async function convertMaterial(material: ApiMaterial): Promise<Material> {
   const m: Material = {
@@ -17,7 +18,8 @@ export async function convertMaterial(material: ApiMaterial): Promise<Material> 
     rarity: material.rarity.substr("cRarity".length).toLowerCase(),
     event: convertEvent(material),
     lootTable: convertLootTable(material),
-    quest: getQuestName(material)
+    quest: getQuestName(material),
+    workshop: convertWorkshop(material)
   }
   m.search = await buildMaterialSearchString(m, material)
 

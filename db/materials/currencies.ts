@@ -51,4 +51,44 @@ export const currencies = [
     resource: "Art/UserInterface/Avatar/RegionShieldC07_4_ua",
     iconName: "norse",
   },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopSawmill_ua",
+    iconName: "workshop-logger",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopMason_ua",
+    iconName: "workshop-mason",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopSkinner_ua",
+    iconName: "workshop-skinner",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopSmelter_ua",
+    iconName: "workshop-smelter",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopFarmer_ua",
+    iconName: "workshop-farmer",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopGemcutter_ua",
+    iconName: "workshop-gem-cutter",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopToolmaker_ua",
+    iconName: "workshop-toolmaker",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopAlchemist_ua",
+    iconName: "workshop-alchemist",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopWeaver_ua",
+    iconName: "workshop-weaver",
+  },
+  {
+    resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopScrivener_ua",
+    iconName: "workshop-scrivener",
+  },
 ]

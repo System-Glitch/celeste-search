@@ -8,9 +8,6 @@ import { isQuestReward, isSummer2019Material, isHalloween2019Material } from './
 export function buildMaterialSearchString(material: Material, apiMaterial: ApiMaterial): string {
   const builder = new SearchBuilder()
 
-  if (material.id) {
-    builder.add(material.id)
-  }
   builder.add(material.name)
   builder.add(material.rarity)
 
@@ -21,6 +18,10 @@ export function buildMaterialSearchString(material: Material, apiMaterial: ApiMa
   if (material.lootTable) {
     builder.add(material.lootTable)
     builder.add(material.lootTable + "-Exclusive")
+  }
+
+  if (material.workshop) {
+    builder.add(material.workshop + "'s Workshop")
   }
 
   if (isQuestReward(apiMaterial)) {

@@ -26,4 +26,17 @@
       </span>
     </div>
   </div>
+
+  <!-- WORKSHOP -->
+  <div *ngIf="material.workshop">
+    <div class="row --source">
+      <span>Made in:</span>
+      <span>&nbsp;<strong></strong></span>
+    </div>
+
+    <div class="row --materials">
+      <span class="icon--materials icon--materials--workshop-{{ material.workshop.replace(' ', '-') }}"></span>
+      <span>{{ material.workshop | titlecase }}'s Workshop</span>
+    </div>
+  </div>
 </cis-shell>
