@@ -1,5 +1,6 @@
 const { src, dest, series, parallel } = require("gulp")
 const { writeFile, ensureDir } = require("fs-extra")
+const webp = require('gulp-webp')
 const debug = require("gulp-debug")
 const del = require("del")
 const responsive = require("gulp-responsive")
@@ -24,14 +25,14 @@ function buildImagesConfigs(exponents) {
 
     // 16:9
     images.push({
-      rename: `bg-${width}-${height}.png`,
+      rename: `bg-${width}-${height}.webp`,
       width,
       height,
     })
 
     // 1:1
     images.push({
-      rename: `bg-${size}.png`,
+      rename: `bg-${size}.webp`,
       width: size,
       height: size,
       quality: 100,
@@ -99,6 +100,7 @@ async function generateBGs(done) {
 
   const writeImages = () => src(paths.in)
     .pipe(responsive({ "*": images }, { silent: true }))
+    .pipe(webp())
     .pipe(debug())
     .pipe(dest(paths.out))
     .pipe(dest("src/assets/bg"))

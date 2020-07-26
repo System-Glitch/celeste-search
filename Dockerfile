@@ -1,3 +1,3 @@
 FROM nginx:alpine
-LABEL maintainer="https://github.com/n4bb12/celeste-search"
+LABEL maintainer="https://github.com/ProjectCeleste/celeste-search"
 COPY dist/celeste-search /usr/share/nginx/html
