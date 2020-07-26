@@ -92,7 +92,6 @@
     "fs-extra": "^7.0.1",
     "gulp": "^4.0.0",
     "gulp-debug": "^4.0.0",
-    "gulp-imagemin": "^7.1.0",
     "gulp-replace": "^1.0.0",
     "gulp-responsive": "^3.0.1",
     "gulp-svgmin": "^2.2.0",

@@ -6,7 +6,6 @@ const copy = require("./scripts/copy")
 const icons = require("./scripts/icons")
 const meta = require("./scripts/meta")
 const optimize = require("./scripts/optimize")
-const optimizeSprites = require("./scripts/optimize_sprites")
 const sprites = require("./scripts/sprites")
 
 exports.build = build
@@ -19,5 +18,5 @@ exports.sprites = sprites
 
 exports.default = series(
   parallel(bg, icons, meta, sprites),
-  parallel(optimize, optimizeSprites, copy),
+  parallel(optimize, copy),
 )

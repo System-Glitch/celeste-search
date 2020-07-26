@@ -13,7 +13,7 @@
         <div class="row --materials">
           <ng-container *ngFor="let ref of blueprint.materials">
             <ng-container *ngIf="materials[ref.id] as mat">
-              <span class="icon--materials icon--materials--{{ mat.icon }}"></span>
+              <span class="icon--materials-sm icon--materials-sm--{{ mat.icon }}"></span>
               <span class="__mat-amount">{{ ref.quantity }}</span>
               <span class="--{{ mat.rarity }}">{{ mat.name }}</span>
               <span></span><!-- wrap line -->
@@ -35,7 +35,7 @@
     </div>
 
     <div class="row --materials">
-      <span class="icon--materials icon--materials--{{ blueprint.event?.name || 'quest' }}"></span>
+      <span class="icon--materials-sm icon--materials-sm--{{ blueprint.event?.name || 'quest' }}"></span>
       <span *ngIf="blueprint.event">
         {{ blueprint.event!.name | titlecase }} Event
         <!-- <span *ngIf="blueprint.event.year">{{ blueprint.event!.year }}</span> -->
@@ -46,7 +46,7 @@
   <!-- LOOT TABLE -->
   <div *ngIf="blueprint.lootTable">
     <div class="row --loot-table">
-      <span class="icon--materials icon--materials--{{ blueprint.lootTable.replace(' ', '_') }}"></span>
+      <span class="icon--materials-sm icon--materials-sm--{{ blueprint.lootTable.replace(' ', '_') }}"></span>
       <span *ngIf="blueprint.lootTable">
         Exclusive to <strong>{{ blueprint.lootTable | titlecase }}</strong>
       </span>

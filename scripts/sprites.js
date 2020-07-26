@@ -18,10 +18,9 @@ const cssTemplate = (name, size) => data => {
   const sharedClass = [
     `.icon--${name} {`,
     `  display: block;`,
-    `  background-image: url("/assets/sprites/${name}.png");`,
+    `  background-image: url("/assets/sprites/${name}.webp");`,
     `  background-repeat: no-repeat;`,
     `  background-position: -100% -100%;`,
-    `  background-size: 100%;`,
     `  background-clip: padding-box;`,
     `  width: ${size}px;`,
     `  height: ${size}px;`,
@@ -43,12 +42,13 @@ const cssTemplate = (name, size) => data => {
     + Math.max(...data.sprites.map(s => s.name.length))
 
   const iconClasses = data.sprites.map(entry => {
-    const { y, height, total_height } = entry
+    const { x, y, width, total_width, height, total_height } = entry
     const percentY = toRoundedPercent(y / (total_height - height) || 0)
+    const percentX = toRoundedPercent(x / (total_width - width) || 0)
 
     return [
       `.icon--${name}--${entry.name}`.padEnd(iconSelectorLength) + "{",
-      `  background-position: 0 ${percentY};`.trim(),
+      `  background-position: ${percentX} ${percentY};`.trim(),
       `}`,
     ].join(" ")
   }).join("\n")
@@ -62,9 +62,9 @@ const cssTemplate = (name, size) => data => {
 /**
  * Generates a single sprite.
  */
-const sprite = (name, size) => {
+const sprite = (name, size, source) => {
   const paths = {
-    in: `generated/sprites/${name}/*.png`,
+    in: `generated/sprites/${source ? source : name}/*.png`,
     out: "generated/sprites",
   }
   const config = { base: "generated" }
@@ -85,7 +85,7 @@ const sprite = (name, size) => {
       imgName: `${name}.png`,
       cssName: `${name}.scss`,
       cssTemplate: cssTemplate(name, size),
-      algorithm: "top-down",
+      algorithm: "binary-tree",
     }))
     .pipe(dest(paths.out))
     .pipe(dest("src/assets/sprites"))
@@ -100,6 +100,7 @@ const sprite = (name, size) => {
  */
 module.exports = parallel(
   sprite("materials", 64),
+  sprite("materials-sm", 24, "materials"),
   sprite("items", 64),
   sprite("advisors", 64),
   sprite("blueprints", 64),

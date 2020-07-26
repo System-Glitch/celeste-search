@@ -1,5 +1,6 @@
 @import "../assets/bg/bg";
 @import "../assets/sprites/materials";
+@import "../assets/sprites/materials-sm";
 @import "../assets/sprites/items";
 @import "../assets/sprites/advisors";
 @import "../assets/sprites/blueprints";
@@ -11,7 +12,8 @@
 @import "animation";
 @import "aoeo";
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;

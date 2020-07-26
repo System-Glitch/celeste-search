@@ -23,6 +23,7 @@ import {
   isSoldByLegionOfCarthage,
   isWinterReward,
   isSummer2019Reward,
+  isSummer2020Reward,
   isHalloween2019Reward,
 } from "./source"
 
@@ -60,7 +61,7 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   if (isWinterReward(trait)) {
     builder.add("Winter Event Reward")
   }
-  if (isSummer2019Reward(trait)) {
+  if (isSummer2019Reward(trait) || isSummer2020Reward(trait)) {
     builder.add("Summer Event Reward")
   }
   if (isHalloween2019Reward(trait)) {

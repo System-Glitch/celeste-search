@@ -4,6 +4,7 @@ const webp = require('gulp-webp')
 
 const optimize = () => src([
     `generated/meta/*.png`,
+    `generated/sprites/*.png`,
   ], { base: "generated" }) 
   .pipe(debug())
   .pipe(webp())
