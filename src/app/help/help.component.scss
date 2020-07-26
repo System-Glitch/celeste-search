@@ -21,11 +21,33 @@ cis-icon {
   margin-right: 1em;
 }
 
+details {
+  summary {
+    position: relative;
+    padding-left: 1rem;
+
+    &::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      top: 0;
+      line-height: 35px;
+      font-size: 125%;
+    }
+  }
+
+  &[open] {
+    summary::before {
+      transform: rotate(90deg);
+    }
+  }
+}
+
 summary,
 .summary {
   font-weight: 700;
   margin: 1rem 0 0;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 .__grid {
