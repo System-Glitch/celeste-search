@@ -164,6 +164,7 @@ export function isEventReward(trait: Trait) {
     || isWinterReward(trait)
     || isSummer2019Reward(trait)
     || isHalloween2019Reward(trait)
+    || isSummer2020Reward(trait)
 }
 
 /**
