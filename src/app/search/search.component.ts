@@ -57,7 +57,8 @@ export class SearchComponent implements OnInit, AfterViewInit {
   }
 
   keepInputFocused() {
-    if (document.activeElement === this.inputRef.nativeElement) {
+    const elem = document.activeElement
+    if (elem === this.inputRef.nativeElement || elem === document.body || (elem && elem.classList.contains("__rarity"))) {
       return
     }
 
@@ -71,5 +72,4 @@ export class SearchComponent implements OnInit, AfterViewInit {
     this.inputRef.nativeElement.focus()
     this.scrollbarRef.scrollYTo(y)
   }
-
 }
