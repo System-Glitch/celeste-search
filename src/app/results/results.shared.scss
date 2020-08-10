@@ -33,6 +33,21 @@
 
   .__rarity {
     text-transform: capitalize;
+
+    &:focus {
+      &.--epic {
+        color: #b04bdf;
+      }
+      &.--rare {
+        color: #3b8fff;
+      }
+      &.--uncommon {
+        color: #45ff5e;
+      }
+      &.--legendary {
+        color: #ffa500;
+      }
+    }
   }
 
   .row.--name {
