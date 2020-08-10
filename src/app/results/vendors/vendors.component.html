@@ -15,8 +15,9 @@
     </div>
 
     <div class="row --materials">
-      <span class="icon--materials-sm icon--materials-sm--{{ vendor.currency.toLowerCase() }}">
-      </span>
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--{{ vendor.currency.toLowerCase() }}"></span>
+      </div>
 
       <span>{{ vendor.price | price }}</span>
       <span>{{ vendor.currency | currency }}</span>

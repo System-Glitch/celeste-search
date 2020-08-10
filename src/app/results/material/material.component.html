@@ -8,7 +8,9 @@
     </div>
 
     <div class="row --materials">
-      <span class="icon--materials-sm icon--materials-sm--{{ material.event?.name || 'quest' }}"></span>
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--{{ material.event?.name || 'quest' }}"></span>
+      </div>
       <span *ngIf="material.quest" [innerHTML]="material.quest"></span>
       <span *ngIf="material.event">
         {{ material.event!.name | titlecase }} Event
@@ -20,7 +22,9 @@
   <!-- LOOT TABLE -->
   <div *ngIf="material.lootTable">
     <div class="row --loot-table">
-      <span class="icon--materials-sm icon--materials-sm--{{ material.lootTable.replace(' ', '_') }}"></span>
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--{{ material.lootTable.replace(' ', '_') }}"></span>
+      </div>
       <span *ngIf="material.lootTable">
         Exclusive to <strong>{{ material.lootTable | titlecase }}</strong>
       </span>
@@ -35,7 +39,9 @@
     </div>
 
     <div class="row --materials">
-      <span class="icon--materials-sm icon--materials-sm--workshop-{{ material.workshop.replace(' ', '-') }}"></span>
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--workshop-{{ material.workshop.replace(' ', '-') }}"></span>
+      </div>
       <span>{{ material.workshop | titlecase }}'s Workshop</span>
     </div>
   </div>

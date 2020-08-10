@@ -70,7 +70,9 @@
         <div class="row --materials">
           <ng-container *ngFor="let ref of item.recipe!.materials">
             <ng-container *ngIf="materials![ref.id] as mat">
-              <span class="icon--materials-sm icon--materials-sm--{{ mat.icon }}"></span>
+              <div class="icon-materials-container">
+                <span class="icon--materials icon--materials--{{ mat.icon }}"></span>
+              </div>
               <span class="__mat-amount">{{ ref.quantity }}</span>
               <span class="--{{ mat.rarity }}">{{ mat.name }}</span>
               <span></span><!-- wrap line -->
@@ -92,7 +94,9 @@
     </div>
 
     <div class="row --materials">
-      <span class="icon--materials-sm icon--materials-sm--{{ item.event?.name || 'quest' }}"></span>
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--{{ item.event?.name || 'quest' }}"></span>
+      </div>
       <span *ngIf="item.quest">{{ item.quest }}</span>
       <span *ngIf="item.event">
         {{ item.event!.name | titlecase }} Event
@@ -104,7 +108,9 @@
   <!-- LOOT TABLE -->
   <div *ngIf="item.lootTable">
     <div class="row --loot-table">
-      <span class="icon--materials-sm icon--materials-sm--{{ item.lootTable.replace(' ', '_') }}"></span>
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--{{ item.lootTable.replace(' ', '_') }}"></span>
+      </div>
       <span *ngIf="item.lootTable">
         Exclusive to <strong>{{ item.lootTable | titlecase }}</strong>
       </span>
@@ -121,7 +127,9 @@
 
     <div class="row --materials">
       <ng-container *ngFor="let civ of item.starting">
-        <span class="icon--materials-sm icon--materials-sm--{{ civ }}"></span>
+        <div class="icon-materials-container">
+          <span class="icon--materials icon--materials--{{ civ }}"></span>
+        </div>
         <span>{{ civ | titlecase }}</span>
         <span></span><!-- wrap line -->
         <span></span><!-- wrap line -->

@@ -71,9 +71,20 @@
       margin-top: 0.1rem;
     }
 
-    .icon--materials {
+    .icon-materials-container {
+      display: inline-block;
+      position: relative;
       width: 24px;
       height: 24px;
+    }
+
+    .icon--materials {
+      width: 64px;
+      min-width: 64px;
+      height: 64px;
+      min-height: 64px;
+      transform: scale(37.5%);
+      transform-origin: top left;
     }
   }
 
@@ -87,9 +98,20 @@
     align-items: center;
     cursor: text;
 
-    .icon--materials {
+    .icon-materials-container {
+      display: inline-block;
+      position: relative;
       width: 24px;
       height: 24px;
+    }
+
+    .icon--materials {
+      width: 64px;
+      min-width: 64px;
+      height: 64px;
+      min-height: 64px;
+      transform: scale(37.5%);
+      transform-origin: top left;
     }
   }
 

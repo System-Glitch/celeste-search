@@ -9,7 +9,9 @@
     <div class="row --materials">
       <ng-container *ngFor="let group of groups">
 
-        <span class="icon--materials-sm icon--materials-sm--coin"></span>
+        <div class="icon-materials-container">
+          <span class="icon--materials icon--materials--coin"></span>
+        </div>
 
         <span>{{ group.offerings | priceRange }}</span>
         <span>{{ 'coin' | currency }}</span>

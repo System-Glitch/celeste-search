@@ -26,7 +26,9 @@
         <div class="row --materials">
           <ng-container *ngFor="let ref of design.materials">
             <ng-container *ngIf="materials[ref.id] as mat">
-              <span class="icon--materials-sm icon--materials-sm--{{ mat.icon }}"></span>
+              <div class="icon-materials-container">
+                <span class="icon--materials icon--materials--{{ mat.icon }}"></span>
+              </div>
               <span class="__mat-amount">{{ ref.quantity }}</span>
               <span class="--{{ mat.rarity }}">{{ mat.name }}</span>
               <span></span><!-- wrap line -->
@@ -44,7 +46,9 @@
   <!-- LOOT TABLE -->
   <div *ngIf="design.lootTable">
     <div class="row --loot-table">
-      <span class="icon--materials-sm icon--materials-sm--{{ design.lootTable.replace(' ', '_') }}"></span>
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--{{ design.lootTable.replace(' ', '_') }}"></span>
+      </div>
       <span *ngIf="design.lootTable">
         Exclusive to <strong>{{ design.lootTable | titlecase }}</strong>
       </span>

@@ -62,9 +62,9 @@ const cssTemplate = (name, size) => data => {
 /**
  * Generates a single sprite.
  */
-const sprite = (name, size, source) => {
+const sprite = (name, size) => {
   const paths = {
-    in: `generated/sprites/${source ? source : name}/*.png`,
+    in: `generated/sprites/${name}/*.png`,
     out: "generated/sprites",
   }
   const config = { base: "generated" }
@@ -100,7 +100,6 @@ const sprite = (name, size, source) => {
  */
 module.exports = parallel(
   sprite("materials", 64),
-  sprite("materials-sm", 24, "materials"),
   sprite("items", 64),
   sprite("advisors", 64),
   sprite("blueprints", 64),
