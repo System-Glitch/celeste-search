@@ -26,6 +26,10 @@ details {
     position: relative;
     padding-left: 1rem;
 
+    &::-webkit-details-marker {
+      display: none;
+    }
+
     &::before {
       content: ">";
       position: absolute;
