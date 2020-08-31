@@ -78,7 +78,7 @@
     "@types/filenamify": "^2.0.2",
     "@types/fs-extra": "^5.0.5",
     "@types/gulp": "^4.0.6",
-    "@types/jasmine": "^3.5.11",
+    "@types/jasmine": "^3.5.14",
     "@types/jasminewd2": "^2.0.8",
     "@types/lodash": "^4.14.157",
     "@types/nanoid": "^1.2.1",
