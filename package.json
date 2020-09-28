@@ -86,7 +86,7 @@
     "axios": "^0.18.1",
     "bottleneck": "^2.19.5",
     "codelyzer": "~5.0.0",
-    "del": "^4.1.0",
+    "del": "^6.0.0",
     "execa": "^1.0.0",
     "filenamify": "^4.1.0",
     "fs-extra": "^7.0.1",
