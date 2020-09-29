@@ -15,3 +15,8 @@
   left: 40px;
   transform: scale(0.5) translate(-50%, -50%);
 }
+
+.row.--footer {
+  margin-top: 1rem;
+  justify-content: space-between;
+}

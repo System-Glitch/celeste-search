@@ -35,5 +35,6 @@ export const design: Design = {
   outputName: "name",
   outputIcon: "Qsi8Lz42",
   search: "search",
-  lootTable: undefined
+  lootTable: undefined,
+  civilization: undefined
 }

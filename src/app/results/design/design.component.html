@@ -55,4 +55,11 @@
     </div>
   </div>
 
+  <div class="row --footer">
+    <!-- REQUIRED CIV -->
+    <div class="row --civ" *ngIf="design.civilization">
+      <strong>Exclusive to the {{ design.civilization | titlecase }} civilization</strong>
+    </div>
+  </div>
+
 </cis-shell>

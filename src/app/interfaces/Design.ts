@@ -13,6 +13,7 @@ export interface Design {
   outputName: string
   outputIcon: string
   search: string
-  marketplace: MarketplaceQuery[],
+  civilization: string | undefined
+  marketplace: MarketplaceQuery[]
   lootTable: string | undefined
 }
