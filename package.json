@@ -77,7 +77,7 @@
     "@n4bb12/config-tslint": "^1.4.1",
     "@types/filenamify": "^2.0.2",
     "@types/fs-extra": "^5.0.5",
-    "@types/gulp": "^4.0.6",
+    "@types/gulp": "^4.0.7",
     "@types/jasmine": "^3.5.14",
     "@types/jasminewd2": "^2.0.8",
     "@types/lodash": "^4.14.161",
