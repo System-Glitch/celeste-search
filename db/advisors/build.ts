@@ -51,7 +51,7 @@ export async function buildAdvisors(): Promise<Advisor[]> {
     })
 
     const merged = merge(mergedByName[name], result)
-    merged.search = await buildSearchString(merged)
+    merged.search = await buildSearchString(advisor, merged)
 
     merged.marketplace = Object.keys(merged.rarities).reduce((queries, key) => {
       queries.push({

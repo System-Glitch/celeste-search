@@ -1,8 +1,9 @@
 import { Advisor } from "../interfaces"
+import { Advisor as APIAdvisor } from "../../api-types"
 import { SearchBuilder } from "../shared/search-helpers"
 import { searchByLevels, searchByVendor } from "../shared/search-tags"
 
-export async function buildSearchString(advisor: Advisor): Promise<string> {
+export async function buildSearchString(apiAdvisor: APIAdvisor, advisor: Advisor): Promise<string> {
   const builder = new SearchBuilder()
 
   builder.add("advisors")
@@ -19,6 +20,10 @@ export async function buildSearchString(advisor: Advisor): Promise<string> {
     } else {
       builder.add(advisor.lootTable + "-Exclusive")
     }
+  }
+
+  if (apiAdvisor.groupid >= 93) {
+    builder.add("celeste")
   }
 
   await searchByLevels(builder, [advisor.level])
