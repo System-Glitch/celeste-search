@@ -18,7 +18,7 @@ export async function buildConsumables(): Promise<Consumable[]> {
     const description = await translateEn(consumable.rollovertextid, "")
 
     // Mummy exception
-    if(consumable.icon == 'Celeste\\HalloweenEvent\\Mummy\\ConMummyFighter_ua') {
+    if (consumable.icon == 'Celeste\\HalloweenEvent\\Mummy\\ConMummyFighter_ua') {
       consumable.icon = 'Celeste\\HalloweenEvent\\Mummy\\Mummy64_ua'
     }
     const icon = await downloadIcon(`Art/${consumable.icon}`, "consumables")
@@ -44,7 +44,7 @@ export async function buildConsumables(): Promise<Consumable[]> {
       marketplace: [],
     }
 
-    if(result.id == 'consumablescouteg' || consumable.name == 'consumablescout' ) {
+    if (result.id == 'consumablescouteg' || consumable.name == 'consumablescout') {
       result.civilization = 'Greek or Egyptian'
     }
     const merged = merge(mergedByName[name], result)
