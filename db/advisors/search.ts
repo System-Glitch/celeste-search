@@ -22,9 +22,7 @@ export async function buildSearchString(apiAdvisor: APIAdvisor, advisor: Advisor
     }
   }
 
-  if (apiAdvisor.groupid >= 93) {
-    builder.add("celeste")
-  }
+  builder.add(apiAdvisor.groupid >= 93 ? "celeste" : "classic")
 
   await searchByLevels(builder, [advisor.level])
   await searchByVendor(builder, advisor.vendors)
