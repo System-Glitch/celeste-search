@@ -105,7 +105,7 @@
     "karma-coverage-istanbul-reporter": "^2.1.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.5.4",
-    "nanoid": "^2.1.10",
+    "nanoid": "^3.1.18",
     "nodemon": "^1.19.4",
     "protractor": "^5.4.4",
     "ts-node": "~8.0.3",
