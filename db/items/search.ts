@@ -24,6 +24,7 @@ import {
   isWinterReward,
   isSummer2019Reward,
   isSummer2020Reward,
+  isWinter2020Reward,
   isHalloween2019Reward,
 } from "./source"
 
@@ -58,7 +59,7 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   if (isHalloween2018Reward(trait)) {
     builder.add("Halloween Event Reward")
   }
-  if (isWinterReward(trait)) {
+  if (isWinterReward(trait) || isWinter2020Reward(trait)) {
     builder.add("Winter Event Reward")
   }
   if (isSummer2019Reward(trait) || isSummer2020Reward(trait)) {

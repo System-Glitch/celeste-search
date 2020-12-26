@@ -7,6 +7,7 @@ import {
   isWinterReward,
   isSummer2019Reward,
   isSummer2020Reward,
+  isWinter2020Reward,
   isHalloween2019Reward,
   isHalloween2020Reward
 } from "./source"
@@ -33,6 +34,12 @@ export function convertEvent(trait: Trait): Item["event"] | undefined {
   if (isSummer2020Reward(trait)) {
     return {
       name: "summer",
+      year: 2020,
+    }
+  }
+  if (isWinter2020Reward(trait)) {
+    return {
+      name: "winter",
       year: 2020,
     }
   }
