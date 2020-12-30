@@ -54,7 +54,7 @@
     "@angular/pwa": "0.13.8",
     "@angular/router": "^8.2.14",
     "@angular/service-worker": "^8.2.14",
-    "@material/elevation": "^1.1.0",
+    "@material/elevation": "^9.0.0",
     "core-js": "^2.6.11",
     "fontfaceobserver": "^2.1.0",
     "linearicons": "^1.0.2",
