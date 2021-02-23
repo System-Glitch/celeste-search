@@ -62,7 +62,7 @@ const weaver = [
 const scrivener = [
   "2lorescroll",
   "3vellumscript",
-  "4illuminated"
+  "4illuminatedcodex"
 ]
 
 export function convertWorkshop(material: Material): string | undefined {
