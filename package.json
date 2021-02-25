@@ -62,7 +62,7 @@
     "ng-click-outside": "^4.0.0",
     "ngx-scrollbar": "^4.2.0",
     "normalize.scss": "^0.1.0",
-    "rxjs": "^6.6.3",
+    "rxjs": "^6.6.6",
     "tslib": "^1.13.0",
     "zone.js": "~0.9.0"
   },
