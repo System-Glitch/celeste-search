@@ -49,7 +49,5 @@ export interface Consumable {
 
 export interface Consumables {
   timestamp: string
-  data: {
-    [index: string]: Consumable,
-  }
+  data: [Consumable]
 }

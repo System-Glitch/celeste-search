@@ -13,6 +13,7 @@ import { convertLootTable } from './convert-loot-table'
 export async function convertDesign(design: ApiDesign): Promise<Design> {
   const allTraits = await API.getTraits()
   const allMats = await API.getMaterials()
+  const allConsumables = await API.getConsumables()
 
   let description = await translateEn(design.rollovertextid, "")
   const icon = await downloadIcon(`Art/${design.icon}`, "designs")
@@ -24,7 +25,12 @@ export async function convertDesign(design: ApiDesign): Promise<Design> {
 
   const output = design.output[type]
   const outputId = output.id
-  const outputDetails: any = allTraits[outputId] || allMats[outputId]
+  let outputDetails: any
+  if (type === "consumable") {
+    outputDetails = allConsumables.find(c => c.name.toLowerCase() == outputId)
+  } else {
+    outputDetails = allTraits[outputId] || allMats[outputId]
+  }
   const outputName = await translateEn(outputDetails.displaynameid, outputDetails.name)
   const outputIcon = await downloadIcon(`Art/${outputDetails.icon}`, "designs")
 

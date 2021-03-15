@@ -10,9 +10,9 @@ export function includeApiDesign(design: ApiDesign) {
     return false
   }
   // FIXME: add these once we have consumables in the API
-  if ((design.output as any).consumable) {
-    return false
-  }
+  // if ((design.output as any).consumable) {
+  //   return false
+  // }
   if (design.name === "debugproduction") {
     return false
   }
