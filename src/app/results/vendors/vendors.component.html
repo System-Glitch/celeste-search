@@ -3,8 +3,8 @@
 
     <div class="row --source">
       <span>Purchasable at</span>
-      <span>&nbsp;<strong>{{ vendor.name }}</strong></span>
-      <span *ngIf="!vendor.blueprint">,&nbsp;{{ vendor.location }}</span>
+      <span>&nbsp;<strong>{{ vendor.name }}</strong>,&nbsp;</span>
+      <span *ngIf="!vendor.blueprint">{{ vendor.location }}</span>
       <span *ngIf="vendor.blueprint">&nbsp;(Blueprint)</span>
       <span>:</span>
 

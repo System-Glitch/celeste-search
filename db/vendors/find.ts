@@ -8,6 +8,18 @@ import { convertCurrency } from "./convert-currency"
 import { vendorLocations } from "./locations"
 import { compareVendors } from "./sort"
 
+const romanAdvisorCheatFilter = [
+  "caesar_l_iv",
+  "pompey_l_iv",
+  "crassus_l_iv",
+  "markantony_e_iv",
+  "octavius_e_iii",
+  "gladius_e_iii",
+  "vitruvius_e_iv",
+  "atilius_e_iv",
+  "lucius_e_iii"
+]
+
 /**
  * Searches all vendors and collects the ones that sell the
  * specified item.
@@ -41,6 +53,10 @@ export async function findVendors(id: string): Promise<Vendor[] | undefined> {
 
         const proto = prototypes[vendor.protounit]
         const name = proto.DisplayNameID && await translateEn(proto.DisplayNameID) || vendor.protounit
+
+        if (romanAdvisorCheatFilter.includes(id) && vendor.protounit === "ro_cap_basicstore01") {
+          continue
+        }
 
         let location = vendorLocations[vendor.protounit]
         let blueprint: true | undefined

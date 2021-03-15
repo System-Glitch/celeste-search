@@ -7,9 +7,5 @@ export function includeAdvisor(advisor: Advisor) {
     console.log(chalk.yellow(`SKIPPED - Advisor has no age:`), advisor)
     return false
   }
-  if (advisor.civilization === "roman") {
-    console.log(chalk.yellow(`SKIPPED Roman Advisor:`), advisor.id)
-    return false
-  }
   return true
 }

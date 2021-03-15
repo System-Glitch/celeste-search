@@ -94,5 +94,16 @@ export const vendorLocations: {
   gn_cap_vanitystore08: "Haunted Isle",
   gn_cap_vanitystore09: "Bahram's Material Store",
   gn_cap_vanitystore10: "Vanity Island",
-  gn_cap_vanitystore11: "Winter Isle"
+  gn_cap_vanitystore11: "Winter Isle",
+  ro_cap_basicstorecapua01: "Capua",
+  ro_cap_basicstorecapua02: "Capua",
+  ro_cap_basicstorecapua03: "Capua",
+  ro_cap_basicstorecapua04: "Capua",
+  ro_cap_basicstorecapua05: "Capua",
+  ro_cap_storestore01: "City of Rome",
+  ro_cap_basicstorerome02: "City of Rome",
+  ro_cap_basicstorerome03: "City of Rome",
+  ro_cap_basicstorerome04: "City of Rome",
+  ro_cap_basicstore01: "Roman Capital City",
+  ro_cap_basicstorearmycamp01: "Roman Army Camp"
 }
