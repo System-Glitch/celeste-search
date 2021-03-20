@@ -40,6 +40,19 @@ const rhakotis = [
   "ballista2h_ssa"
 ]
 
+const rome = [
+  "armormed_aoa",
+  "arrowoh_aog",
+  "armorlgt_goa",
+  "spear1h_lsoa",
+  "bellybow1h_stb",
+  "ramhead2h_srh",
+  "shield1h_soa",
+  "staff2h_soth",
+  "armorclth_tor",
+  "gear_trh"
+]
+
 const questRewards = [
   "spears2h_als",
   "bow1h_uasb",
@@ -128,12 +141,17 @@ export function isSoldByRhakotis(trait: Trait) {
   return rhakotis.includes(trait.name)
 }
 
+export function isSoldByRome(trait: Trait) {
+  return rome.includes(trait.name)
+}
+
 export function isSoldForCoin(trait: Trait) {
   return isSoldByCyprus(trait)
     || isSoldByCouncilOfImhotep(trait)
     || isSoldByDelianLeague(trait)
     || isSoldByLegionOfCarthage(trait)
     || isSoldByRhakotis(trait)
+    || isSoldByRome(trait)
 }
 
 export function isQuestReward(trait: Trait) {
