@@ -71,7 +71,7 @@
     "@angular/cli": "^8.3.29",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
-    "@babel/core": "^7.11.6",
+    "@babel/core": "^7.13.13",
     "@babel/register": "^7.11.5",
     "@n4bb12/config-svgo": "^1.0.1",
     "@n4bb12/config-tslint": "^1.4.1",
