@@ -25,7 +25,7 @@
   ],
   "homepage": "https://github.com/ProjectCeleste/celeste-search/blob/master/README.md",
   "bugs": "https://github.com/ProjectCeleste/celeste-search/issues",
-  "repository": "github:System-Glitch/celeste-search",
+  "repository": "github:ProjectCeleste/celeste-search",
   "license": "ISC",
   "author": "Abraham Schilling",
   "scripts": {

@@ -57,7 +57,10 @@ const questRewards = [
   "spears2h_als",
   "bow1h_uasb",
   "arrowoh_ssa",
-  "bow1h_ffb"
+  "bow1h_ffb",
+  "gear_l004",
+  "gear_l005",
+  "gear_l006"
 ]
 
 const eventHalloween2018 = [
