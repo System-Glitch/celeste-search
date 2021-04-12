@@ -10,10 +10,11 @@ import { getQuestName } from './source'
 import { convertWorkshop } from './convert-workshop'
 
 export async function convertMaterial(material: ApiMaterial): Promise<Material> {
+  const description = await translateEn(material.rollovertextid)
   const m: Material = {
     id: material.name,
     name: await translateEn(material.displaynameid, material.name),
-    description: await translateEn(material.rollovertextid),
+    description: description ? description.replace(/<color=1.0 1.0 0.0>(.+?)<\/color>/, "$1") : undefined,
     icon: await downloadIcon(`Art/${material.icon}`, "materials"),
     rarity: material.rarity.substr("cRarity".length).toLowerCase(),
     event: convertEvent(material),
