@@ -36,6 +36,10 @@ export const currencies = [
     iconName: "skirmish_hall",
   },
   {
+    resource: "local:assets/Coin-Bahram",
+    iconName: "bahrams_lottery",
+  },
+  {
     resource: "Art/UserInterface/Icons/Buildings/AvatarMarket_ua",
     iconName: "market",
   },

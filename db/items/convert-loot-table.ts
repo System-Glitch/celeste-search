@@ -10,4 +10,7 @@ export function convertLootTable(trait: Trait): string | undefined {
         return "skirmish hall"
     }
   }
+  if (trait.name.endsWith("_bahram")) {
+    return "bahram's lottery"
+  }
 }

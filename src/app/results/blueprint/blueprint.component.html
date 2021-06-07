@@ -51,7 +51,8 @@
   <div *ngIf="blueprint.lootTable">
     <div class="row --loot-table">
       <div class="icon-materials-container">
-        <span class="icon--materials icon--materials--{{ blueprint.lootTable.replace(' ', '_') }}"></span>
+        <span
+          class="icon--materials icon--materials--{{ blueprint.lootTable.replace(' ', '_').replace('\'', '') }}"></span>
       </div>
       <span *ngIf="blueprint.lootTable">
         Exclusive to <strong>{{ blueprint.lootTable | titlecase }}</strong>

@@ -203,6 +203,10 @@ export function isEventReward(trait: Trait) {
     || isHalloween2020Reward(trait)
 }
 
+export function isBahramReward(trait: Trait) {
+  return trait.name.endsWith("_bahram")
+}
+
 /**
  * Only legendaries are reforgeable, so we only need to look
  * at a few items.
@@ -212,6 +216,7 @@ export function isReforgeable(trait: Trait) {
     && !isSoldForCoin(trait)
     && !isQuestReward(trait)
     && !isEventReward(trait)
+    && !isBahramReward(trait)
 }
 
 export function isClassicItem(trait: Trait) {

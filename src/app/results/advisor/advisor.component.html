@@ -38,7 +38,8 @@
   <div *ngIf="advisor.lootTable">
     <div class="row --loot-table">
       <div class="icon-materials-container">
-        <span class="icon--materials icon--materials--{{ advisor.lootTable.replace(' ', '_') }}"></span>
+        <span
+          class="icon--materials icon--materials--{{ advisor.lootTable.replace(' ', '_').replace('\'', '') }}"></span>
       </div>
       <span *ngIf="advisor.lootTable">
         Exclusive to <strong>{{ advisor.lootTable | titlecase }}</strong>
