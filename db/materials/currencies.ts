@@ -40,6 +40,10 @@ export const currencies = [
     iconName: "bahrams_lottery",
   },
   {
+    resource: "local:assets/Moes-Mystorium",
+    iconName: "moes_mystorium",
+  },
+  {
     resource: "Art/UserInterface/Icons/Buildings/AvatarMarket_ua",
     iconName: "market",
   },

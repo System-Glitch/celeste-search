@@ -207,6 +207,10 @@ export function isBahramReward(trait: Trait) {
   return trait.name.endsWith("_bahram")
 }
 
+export function isMoesReward(trait: Trait) {
+  return trait.name.endsWith("_moes")
+}
+
 /**
  * Only legendaries are reforgeable, so we only need to look
  * at a few items.
@@ -217,6 +221,7 @@ export function isReforgeable(trait: Trait) {
     && !isQuestReward(trait)
     && !isEventReward(trait)
     && !isBahramReward(trait)
+    && !isMoesReward(trait)
 }
 
 export function isClassicItem(trait: Trait) {

@@ -13,4 +13,8 @@ export function convertLootTable(trait: Trait): string | undefined {
   if (trait.name.endsWith("_bahram")) {
     return "bahram's lottery"
   }
+  }
+  if (trait.name.endsWith("_moes")) {
+    return "moe's mystorium"
+  }
 }
