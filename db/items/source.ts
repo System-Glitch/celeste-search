@@ -181,6 +181,10 @@ export function isSummer2020Reward(trait: Trait) {
   return trait.name.startsWith("se2020_")
 }
 
+export function isSummer2021Reward(trait: Trait) {
+  return trait.name.startsWith("se2021_")
+}
+
 export function isWinter2020Reward(trait: Trait) {
   return trait.name.endsWith("_winter2020")
 }
@@ -199,6 +203,7 @@ export function isEventReward(trait: Trait) {
     || isSummer2019Reward(trait)
     || isHalloween2019Reward(trait)
     || isSummer2020Reward(trait)
+    || isSummer2021Reward(trait)
     || isWinter2020Reward(trait)
     || isHalloween2020Reward(trait)
 }
