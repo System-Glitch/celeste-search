@@ -226,7 +226,6 @@ export function isReforgeable(trait: Trait) {
     && !isQuestReward(trait)
     && !isEventReward(trait)
     && !isBahramReward(trait)
-    && !isMoesReward(trait)
 }
 
 export function isClassicItem(trait: Trait) {
