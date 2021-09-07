@@ -19,18 +19,24 @@ const allianceCouncilOfImhotep = [
   "armorbldg_lc01",
   "fishingnet1h_lc01",
   "gear_prst_lc01",
+  "sword1h_lc02",
+  "shield1h_lc01",
 ]
 
 const allianceDelianLeague = [
   "tool1h_lc01",
   "gear_bldg_lc01",
   "armormed_lc01",
+  "gear_vill_lc01",
+  "gear_siege_lc01",
 ]
 
 const allianceLegionOfCarthage = [
   "armorplt_lc01",
   "arrowoh_lc01",
   "gear_lc01",
+  "gear_prst_lc02",
+  "firethrower2h_lc01",
 ]
 
 const rhakotis = [
