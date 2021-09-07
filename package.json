@@ -95,7 +95,7 @@
     "gulp-responsive": "^3.0.1",
     "gulp-svgmin": "^2.2.0",
     "gulp-webp": "^4.0.1",
-    "gulp.spritesmith": "^6.11.0",
+    "gulp.spritesmith": "^6.12.1",
     "http-server": "^0.12.3",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
