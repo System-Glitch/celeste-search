@@ -17,7 +17,7 @@ export interface Item {
   quest: string | undefined
   event: {
     name: "halloween" | "winter" | "summer"
-    year: 0 | 2018 | 2019 | 2020,
+    year: 0 | 2018 | 2019 | 2020 | 2021,
   } | undefined
   starting: string[] | undefined
   search: string
