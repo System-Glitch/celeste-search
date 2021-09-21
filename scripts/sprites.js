@@ -101,8 +101,9 @@ const sprite = (name, size) => {
 module.exports = parallel(
   sprite("materials", 64),
   sprite("items", 64),
-  sprite("advisors", 64),
-  sprite("blueprints", 64),
-  sprite("designs", 64),
+  //sprite("advisors", 64),
+  //sprite("blueprints", 64),
   sprite("consumables", 64),
+  sprite("designs", 64)
+
 )

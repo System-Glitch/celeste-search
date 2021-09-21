@@ -7,5 +7,5 @@ export const quests = {
   gear_l006: "Stolen Roman Gauntlets",
   gear_l005: "Stolen Roman Gauntlets",
   gear_l004: "Stolen Roman Gauntlets",
-  gear_bldg_L004: "Blessing of the Simurgh"
+  gear_bldg_L004: "Blessing of the Simurgh",
 }

@@ -43,7 +43,7 @@ const rhakotis = [
   "bow1h_bom",
   "armorclth_rot",
   "sword1h_sck",
-  "ballista2h_ssa"
+  "ballista2h_ssa",
 ]
 
 const rome = [
@@ -56,7 +56,7 @@ const rome = [
   "shield1h_soa",
   "staff2h_soth",
   "armorclth_tor",
-  "gear_trh"
+  "gear_trh",
 ]
 
 const questRewards = [
@@ -67,7 +67,7 @@ const questRewards = [
   "gear_l004",
   "gear_l005",
   "gear_l006",
-  "gear_bldg_L004"
+  "gear_bldg_L004",
 ]
 
 const eventHalloween2018 = [
@@ -77,12 +77,12 @@ const eventHalloween2018 = [
 const eventHalloween2019 = [
   "spear1h_halloween2019",
   "spear2h_halloween2019",
-  "gear_vill_halloween2019"
+  "gear_vill_halloween2019",
 ]
 
 const eventHalloween2020 = [
   "gear_prst_halloween2020",
-  "axe2h_halloween2020"
+  "axe2h_halloween2020",
 ]
 
 const eventWinter = [
@@ -91,7 +91,7 @@ const eventWinter = [
   "staff2h_iceking_leg",
   "sling2h_iceking_leg",
   "gear_iceking_leg",
-  "armorlgt_iceking_leg"
+  "armorlgt_iceking_leg",
 ]
 
 const eventSummer2019 = [
@@ -100,7 +100,7 @@ const eventSummer2019 = [
   "se2019_shield1h",
   "se2019_gear_prst",
   "se2019_spear1h",
-  "se2019_scepter2h"
+  "se2019_scepter2h",
 ]
 
 const persianStartingGear = [
