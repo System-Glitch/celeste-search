@@ -101,6 +101,7 @@ export const vendorLocations: {
   ro_cap_basicstorecapua04: "Capua",
   ro_cap_basicstorecapua05: "Capua",
   ro_cap_storestore01: "City of Rome",
+  ro_cap_basicstorerome01: "City of Rome",
   ro_cap_basicstorerome02: "City of Rome",
   ro_cap_basicstorerome03: "City of Rome",
   ro_cap_basicstorerome04: "City of Rome",

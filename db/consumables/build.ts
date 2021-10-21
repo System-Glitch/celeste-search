@@ -8,6 +8,7 @@ import { includeConsumable } from "./filter"
 import { compareConsumables } from "./sort"
 import { buildSearchString } from "./search"
 import { convertEvent } from "./convert-event"
+import { findVendors } from "../vendors"
 
 export async function buildConsumables(): Promise<Consumable[]> {
   console.log("Build consumables...")
@@ -36,7 +37,7 @@ export async function buildConsumables(): Promise<Consumable[]> {
     }
 
     const result: Consumable = {
-      id: rarity.id.replace(/_.+/, ""),
+      id: rarity.id,
       name,
       vendors: undefined,
       rarities,
@@ -49,6 +50,28 @@ export async function buildConsumables(): Promise<Consumable[]> {
     if (result.id == 'consumablescouteg' || consumable.name == 'consumablescout') {
       result.civilization = 'Greek or Egyptian'
     }
+
+    
+    result.vendors = await findVendors(result.id);
+
+    (result.vendors || []).forEach(vendor => {
+      if (consumable.rarity === "cRarityLegendary") {
+        vendor.rarity = "legendary"
+      }
+      if (consumable.rarity === "cRarityEpic") {
+        vendor.rarity = "epic"
+      }
+      if (consumable.rarity === "cRarityRare") {
+        vendor.rarity = "rare"
+      }
+      if (consumable.rarity === "cRarityUncommon") {
+        vendor.rarity = "uncommon"
+      }
+      if (consumable.rarity === "cRarityCommon") {
+        vendor.rarity = "common"
+      }
+    })
+
     const merged = merge(mergedByName[name], result)
     merged.search = await buildSearchString(merged,consumable)
 

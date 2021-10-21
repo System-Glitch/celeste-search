@@ -1,8 +1,8 @@
 <cis-shell [id]="material.id" [name]="material.name" type="Material" [rarity]="material.rarity" [icon]="material.icon"
   sprite="materials" [description]="material.description">
 
-  <!-- QUEST, EVENT -->
-  <div *ngIf="material.quest || material.event">
+  <!-- QUEST -->
+  <div *ngIf="material.quest">
     <div class="row --source">
       <span>Reward from:</span>
     </div>
@@ -12,6 +12,19 @@
         <span class="icon--materials icon--materials--{{ material.event?.name || 'quest' }}"></span>
       </div>
       <span *ngIf="material.quest" [innerHTML]="material.quest"></span>
+    </div>
+  </div>
+
+  <!-- EVENT -->
+  <div *ngIf="material.event">
+    <div class="row --source">
+      <span>Exclusive to:</span>
+    </div>
+
+    <div class="row --materials">
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--{{ material.event?.name || 'quest' }}"></span>
+      </div>
       <span *ngIf="material.event">
         {{ material.event!.name | titlecase }} Event
         <!-- <span *ngIf="material.event.year">{{ material.event!.year }}</span> -->

@@ -2,6 +2,7 @@ import { Consumable } from "../interfaces"
 import { Consumable as ApiConsumable } from "../../api-types"
 import { SearchBuilder } from "../shared/search-helpers"
 import { isHalloween2019Consumable, isSummer2020Consumable, isWinter2019Consumable } from "./source"
+import { searchByVendor } from "../shared/search-tags"
 
 export async function buildSearchString(consumable: Consumable, apiConsumable: ApiConsumable): Promise<string> {
   const builder = new SearchBuilder()
@@ -25,6 +26,9 @@ export async function buildSearchString(consumable: Consumable, apiConsumable: A
   if (isWinter2019Consumable(apiConsumable)) {
     builder.add("Winter Event Reward")
   }
+
+  
+  await searchByVendor(builder, consumable.vendors)
 
   return builder.build()
 }

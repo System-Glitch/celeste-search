@@ -87,8 +87,8 @@
     </ng-container>
   </ng-container>
 
-  <!-- QUEST, EVENT -->
-  <div *ngIf="item.quest || item.event">
+  <!-- QUEST -->
+  <div *ngIf="item.quest">
     <div class="row --source">
       <span>Reward from:</span>
     </div>
@@ -98,6 +98,19 @@
         <span class="icon--materials icon--materials--{{ item.event?.name || 'quest' }}"></span>
       </div>
       <span *ngIf="item.quest">{{ item.quest }}</span>
+    </div>
+  </div>
+
+  <!-- EVENT -->
+  <div *ngIf="item.event">
+    <div class="row --source">
+      <span>Exclusive to:</span>
+    </div>
+
+    <div class="row --materials">
+      <div class="icon-materials-container">
+        <span class="icon--materials icon--materials--{{ item.event?.name || 'quest' }}"></span>
+      </div>
       <span *ngIf="item.event">
         {{ item.event!.name | titlecase }} Event
         <!-- <span *ngIf="item.event.year">{{ item.event!.year }}</span> -->
