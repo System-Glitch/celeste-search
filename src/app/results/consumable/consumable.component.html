@@ -48,6 +48,23 @@
         {{ rarity.description }}
     </div>
 
+    <!-- QUEST, EVENT -->
+    <div *ngIf="consumable.event">
+      <div class="row --source">
+        <span>Reward from:</span>
+      </div>
+
+      <div class="row --materials">
+        <div class="icon-materials-container">
+          <span class="icon--materials icon--materials--{{ consumable.event?.name || 'quest' }}"></span>
+        </div>
+        <span *ngIf="consumable.event">
+          {{ consumable.event!.name | titlecase }} Event
+          <!-- <span *ngIf="consumable.event.year">{{ consumable.event!.year }}</span> -->
+        </span>
+      </div>
+    </div>
+
     <div class="row --footer">
         <!-- REQUIRED CIV -->
         <div

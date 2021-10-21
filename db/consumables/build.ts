@@ -1,12 +1,13 @@
 import { merge } from "lodash"
 
-import { Consumable, ConsumableRarity } from "../interfaces"
+import { Consumable } from "../interfaces"
 import { API, downloadIcon } from '../download'
 
 import { translateEn, convertCivilization } from "../shared/convert-text"
 import { includeConsumable } from "./filter"
 import { compareConsumables } from "./sort"
 import { buildSearchString } from "./search"
+import { convertEvent } from "./convert-event"
 
 export async function buildConsumables(): Promise<Consumable[]> {
   console.log("Build consumables...")
@@ -42,13 +43,14 @@ export async function buildConsumables(): Promise<Consumable[]> {
       civilization,
       search: "",
       marketplace: [],
+      event: convertEvent(consumable)
     }
 
     if (result.id == 'consumablescouteg' || consumable.name == 'consumablescout') {
       result.civilization = 'Greek or Egyptian'
     }
     const merged = merge(mergedByName[name], result)
-    merged.search = await buildSearchString(merged)
+    merged.search = await buildSearchString(merged,consumable)
 
 
     merged.marketplace = Object.keys(merged.rarities).reduce((queries, key) => {

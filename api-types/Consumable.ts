@@ -45,6 +45,7 @@ export interface Consumable {
   civmatchingtype: string
   usable: []
   alliance: []
+  event: string
 }
 
 export interface Consumables {

@@ -1,7 +1,9 @@
 import { Consumable } from "../interfaces"
+import { Consumable as ApiConsumable } from "../../api-types"
 import { SearchBuilder } from "../shared/search-helpers"
+import { isHalloween2019Consumable, isSummer2020Consumable, isWinter2019Consumable } from "./source"
 
-export async function buildSearchString(consumable: Consumable): Promise<string> {
+export async function buildSearchString(consumable: Consumable, apiConsumable: ApiConsumable): Promise<string> {
   const builder = new SearchBuilder()
 
   builder.add("consumables")
@@ -13,6 +15,16 @@ export async function buildSearchString(consumable: Consumable): Promise<string>
     builder.add(rarity)
     builder.addStrict(consumable.rarities[rarity].description)
   })
+
+  if (isSummer2020Consumable(apiConsumable)) {
+    builder.add("Summer Event Reward")
+  }
+  if (isHalloween2019Consumable(apiConsumable)) {
+    builder.add("Halloween Event Reward")
+  }
+  if (isWinter2019Consumable(apiConsumable)) {
+    builder.add("Winter Event Reward")
+  }
 
   return builder.build()
 }

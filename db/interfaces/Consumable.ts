@@ -16,5 +16,9 @@ export interface Consumable {
   civilization: string | undefined
   vendors: Vendor[] | undefined
   search: string
-  marketplace: MarketplaceQuery[]
+  marketplace: MarketplaceQuery[],
+  event?: {
+    name: "halloween" | "winter" | "summer"
+    year: 0 | 2018 | 2019 | 2020 | 2021,
+  } | undefined
 }
