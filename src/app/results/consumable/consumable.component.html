@@ -62,21 +62,20 @@
         </div>
       </div>
 
-          <span>Class: <strong>{{ rarity.cooldownstackingclass }}</strong></span>
 
         <div *ngIf="rarity.activetime > 0">
             Duration: 
-              <strong *ngIf="rarity.activetime > 60">{{ rarity.activetime/60 - (rarity.activetime % 60)/60}}</strong> <span *ngIf="rarity.activetime > 60"> min</span>
-              <strong *ngIf="rarity.activetime % 60 != 0"> {{ rarity.activetime % 60 }}</strong> <span *ngIf="rarity.activetime % 60 != 0"> sec</span>
+              <strong *ngIf="rarity.activetime > 60">{{ rarity.activetime/60 - (rarity.activetime % 60)/60}}</strong> <span *ngIf="rarity.activetime > 60">m</span>
+              <strong *ngIf="rarity.activetime % 60 != 0"> {{ rarity.activetime % 60 }}</strong> <span *ngIf="rarity.activetime % 60 != 0">s</span>
         </div>
         <div *ngIf="rarity.activetime <= 0">
           <span>Activates immediately</span>
         </div>
 
         <div *ngIf="rarity.cooldowntime > 0">
-            Cooldown: 
-              <strong *ngIf="rarity.cooldowntime > 60">{{ rarity.cooldowntime/60 - (rarity.cooldowntime % 60)/60 }}</strong> <span *ngIf="rarity.cooldowntime > 60"> min</span>
-              <strong *ngIf="rarity.cooldowntime % 60 != 0"> {{ rarity.cooldowntime % 60 }}</strong> <span *ngIf="rarity.cooldowntime % 60 != 0"> sec</span>
+             <span>Cooldown (Class <strong>{{ rarity.cooldownstackingclass }}): </strong></span>
+              <strong *ngIf="rarity.cooldowntime > 60">{{ rarity.cooldowntime/60 - (rarity.cooldowntime % 60)/60 }}</strong> <span *ngIf="rarity.cooldowntime > 60">m</span>
+              <strong *ngIf="rarity.cooldowntime % 60 != 0"> {{ rarity.cooldowntime % 60 }}</strong> <span *ngIf="rarity.cooldowntime % 60 != 0">s</span>
         </div>
         <div *ngIf="rarity.cooldowntime <= 0">
           <span>No Cooldown</span>
