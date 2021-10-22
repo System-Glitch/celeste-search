@@ -15,6 +15,8 @@ export class ConsumableComponent {
   rarities: string[] = []
   rarity: ConsumableRarity & { id: string }
 
+  mainURL = location.origin
+
   constructor(
     private changeRef: ChangeDetectorRef,
   ) { }

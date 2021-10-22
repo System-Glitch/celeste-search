@@ -12,7 +12,9 @@ export const consumable: Consumable = {
       cooldowntime: 1,
       radius: 1,
       requiredage: 1,
-      placement: "forcedAtTC"
+      placement: "forcedAtTC",
+      cooldownstackingclass: 1,
+      design: "design"
     }
   },
   vendors: [

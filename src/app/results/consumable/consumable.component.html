@@ -55,22 +55,32 @@
 
       <div class="row --source">
         <div *ngIf="rarity.requiredage > 0">
-          <span>Required Age: {{ rarity.requiredage }}</span>
+          <span>Required Age: <strong>{{ rarity.requiredage }}</strong></span>
+        </div>
+        <div *ngIf="!rarity.requiredage">
+          <span>Required Age: <strong>1</strong></span>
         </div>
       </div>
 
       <div class="row --source">
+          <span>Class: <strong>{{ rarity.cooldownstackingclass }}</strong></span>
+      </div>
+
+      <div class="row --source">
         <div *ngIf="rarity.activetime > 0">
-          <span>Duration: {{ rarity.activetime }} sec</span>
+          <span>Duration: <strong>{{ rarity.activetime }}</strong> sec</span>
         </div>
-        <div *ngIf="rarity.activetime === -1">
+        <div *ngIf="rarity.activetime <= 0">
           <span>Activates immediately</span>
         </div>
       </div>
 
       <div class="row --source">
         <div *ngIf="rarity.cooldowntime > 0">
-          <span>Cooldown: {{ rarity.cooldowntime }} sec</span>
+          <span>Cooldown: <strong>{{ rarity.cooldowntime }}</strong> sec</span>
+        </div>
+        <div *ngIf="rarity.cooldowntime <= 0">
+          <span>No Cooldown</span>
         </div>
       </div>
 
@@ -83,12 +93,12 @@
         </div>
       </div>
 
-      <div class="row --source">
-        <div *ngIf="rarity.radius > 0">
-          <span>Affected area: {{ rarity.radius }}</span>
+      <div *ngIf="rarity.radius > 0">
+        <div class="row --source">
+          <span>Affected area: <strong>{{ rarity.radius }}</strong></span>
         </div>
       </div>
-
+      
     </div>
 
     <div *ngIf="!consumable.power">
@@ -114,14 +124,33 @@
       </div>
     </div>
 
-    <div class="row --footer">
+    <!-- Design -->
+    <div *ngIf="rarity.design">
+
+      <div class="row --source">
+        <span>Can be crafted: 
+          <strong>
+          <a href="{{mainURL}}/?tab=3&search={{rarity.design}}"> Here
+          </a>
+        </strong>
+        </span>
+      </div>
+      
+    </div>
+
+    
         <!-- REQUIRED CIV -->
-        <div
-          class="row --civ"
-          *ngIf="consumable.civilization"
-        >
+    <div
+      class="row --civ"
+      *ngIf="consumable.civilization"
+    >
+        <div class="row --footer">
           <strong>Requires {{ consumable.civilization | titlecase }}
             civilization</strong>
         </div>
     </div>
+
+    <div class="row --source">
+    </div>
+
 </cis-shell>

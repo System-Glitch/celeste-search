@@ -11,6 +11,8 @@ export interface ConsumableRarity {
   radius: number | undefined
   requiredage: number | undefined
   placement: string | undefined
+  cooldownstackingclass: number | undefined
+  design: string | undefined
 }
 
 export interface Consumable {

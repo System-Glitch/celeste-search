@@ -18,11 +18,11 @@
 
 
       <ng-container *ngIf="vendor.quantity > 1">
-        <span>{{ vendor.quantity | number }} pieces for </span>
+        <span><strong>{{ vendor.quantity | number }}</strong> pieces for </span>
       </ng-container>
 
       <ng-container *ngIf="vendor.quantity === 1">
-        <span>{{ vendor.quantity | number }} piece for </span>
+        <span><strong>{{ vendor.quantity | number }}</strong>  piece for </span>
       </ng-container>
 
       <div class="icon-materials-container">

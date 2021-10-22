@@ -10,6 +10,7 @@ import { buildSearchString } from "./search"
 import { convertEvent } from "./convert-event"
 import { findVendors } from "../vendors"
 import { findPowers } from "../powers/find"
+import { findDesigns } from "../designs/find"
 
 export async function buildConsumables(): Promise<Consumable[]> {
   console.log("Build consumables...")
@@ -32,6 +33,9 @@ export async function buildConsumables(): Promise<Consumable[]> {
     const radius = await findPowers(consumable.power, "radius")
     const requiredage = await findPowers(consumable.power, "requiredage")
     const placement = await findPowers(consumable.power, "placement")
+    const cooldownstackingclass = await findPowers(consumable.power, "cooldownstackingclass")
+
+    const design = await findDesigns(consumable.name)
 
     const rarity: Consumable["rarities"][string] = {
       id: consumable.name,
@@ -40,8 +44,10 @@ export async function buildConsumables(): Promise<Consumable[]> {
       cooldowntime: parseInt(cooldowntime[0]),
       activetime: parseInt(activetime[0]),
       radius: parseInt(radius[0]),
-      requiredage: parseInt(requiredage[0]),
-      placement: placement[0]
+      requiredage: parseInt(requiredage[0]) +1,
+      placement: placement[0],
+      cooldownstackingclass: parseInt(cooldownstackingclass[0]),
+      design: design[0]
     }
 
     const rarities: Consumable["rarities"] = {
