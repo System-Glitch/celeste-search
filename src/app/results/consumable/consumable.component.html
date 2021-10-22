@@ -62,48 +62,44 @@
         </div>
       </div>
 
-      <div class="row --source">
           <span>Class: <strong>{{ rarity.cooldownstackingclass }}</strong></span>
-      </div>
 
-      <div class="row --source">
         <div *ngIf="rarity.activetime > 0">
-          <span>Duration: <strong>{{ rarity.activetime }}</strong> sec</span>
+            Duration: 
+              <strong *ngIf="rarity.activetime > 60">{{ rarity.activetime/60 - (rarity.activetime % 60)/60}}</strong> <span *ngIf="rarity.activetime > 60"> min</span>
+              <strong *ngIf="rarity.activetime % 60 != 0"> {{ rarity.activetime % 60 }}</strong> <span *ngIf="rarity.activetime % 60 != 0"> sec</span>
         </div>
         <div *ngIf="rarity.activetime <= 0">
           <span>Activates immediately</span>
         </div>
-      </div>
 
-      <div class="row --source">
         <div *ngIf="rarity.cooldowntime > 0">
-          <span>Cooldown: <strong>{{ rarity.cooldowntime }}</strong> sec</span>
+            Cooldown: 
+              <strong *ngIf="rarity.cooldowntime > 60">{{ rarity.cooldowntime/60 - (rarity.cooldowntime % 60)/60 }}</strong> <span *ngIf="rarity.cooldowntime > 60"> min</span>
+              <strong *ngIf="rarity.cooldowntime % 60 != 0"> {{ rarity.cooldowntime % 60 }}</strong> <span *ngIf="rarity.cooldowntime % 60 != 0"> sec</span>
         </div>
         <div *ngIf="rarity.cooldowntime <= 0">
           <span>No Cooldown</span>
         </div>
-      </div>
 
-      <div class="row --source">
+        <div *ngIf="rarity.radius > 0">
+           <span>Affected area: <strong>{{ rarity.radius }}</strong></span>
+        </div>
+
         <div *ngIf="rarity.placement === 'forcedAtTC'">
           <span>Summoned at TC</span>
         </div>
         <div *ngIf="rarity.placement != 'forcedAtTC'">
           <span>Can be placed anywhere on the map</span>
         </div>
-      </div>
 
-      <div *ngIf="rarity.radius > 0">
-        <div class="row --source">
-          <span>Affected area: <strong>{{ rarity.radius }}</strong></span>
-        </div>
-      </div>
+        <span><strong>Only usable while on a quest</strong></span>
       
     </div>
 
     <div *ngIf="!consumable.power">
       <div class="row --source">
-          <span>Used outside of quests</span>
+          <span><strong>Used outside of quests</strong></span>
       </div>
     </div>
 
