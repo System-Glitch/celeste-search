@@ -46,6 +46,7 @@ export const item: Item = {
       currency: "coin",
       price: 1750,
       rarity: "common",
+      quantity: 1,
       rotation: "classic",
     },
   ],

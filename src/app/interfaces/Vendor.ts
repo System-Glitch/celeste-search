@@ -7,5 +7,6 @@ export interface Vendor {
   rarity: "legendary" | "epic" | "rare" | "uncommon" | "common" | "junk" | undefined
   price: number
   currency: "coin" | "empire" | "sparta" | "crete" | "halloween" | "winter" | "summer"
+  quantity: number
   rotation: string | undefined
 }

@@ -22,6 +22,7 @@ export const advisor: Advisor = {
       currency: "coin",
       price: 225,
       rarity: "uncommon",
+      quantity: 1,
       rotation: "classic",
     },
   ],

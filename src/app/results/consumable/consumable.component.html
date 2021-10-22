@@ -29,7 +29,9 @@
               *ngIf="rarities.length === 1"
             >
               {{ rarity }}
+              
             </div>
+            
 
           </ng-container>
         </div>
@@ -46,6 +48,53 @@
     <!-- DESCRIPTION -->
     <div class="row --description --positive">
         {{ rarity.description }}
+    </div>
+
+    <!-- POWERS -->
+    <div *ngIf="consumable.power">
+
+      <div class="row --source">
+        <div *ngIf="rarity.requiredage > 0">
+          <span>Required Age: {{ rarity.requiredage }}</span>
+        </div>
+      </div>
+
+      <div class="row --source">
+        <div *ngIf="rarity.activetime > 0">
+          <span>Duration: {{ rarity.activetime }} sec</span>
+        </div>
+        <div *ngIf="rarity.activetime === -1">
+          <span>Activates immediately</span>
+        </div>
+      </div>
+
+      <div class="row --source">
+        <div *ngIf="rarity.cooldowntime > 0">
+          <span>Cooldown: {{ rarity.cooldowntime }} sec</span>
+        </div>
+      </div>
+
+      <div class="row --source">
+        <div *ngIf="rarity.placement === 'forcedAtTC'">
+          <span>Summoned at TC</span>
+        </div>
+        <div *ngIf="rarity.placement != 'forcedAtTC'">
+          <span>Can be placed anywhere on the map</span>
+        </div>
+      </div>
+
+      <div class="row --source">
+        <div *ngIf="rarity.radius > 0">
+          <span>Affected area: {{ rarity.radius }}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="!consumable.power">
+      <div class="row --source">
+          <span>Used outside of quests</span>
+      </div>
     </div>
 
     <!-- EVENT -->

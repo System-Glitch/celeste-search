@@ -15,9 +15,20 @@
     </div>
 
     <div class="row --materials">
+
+
+      <ng-container *ngIf="vendor.quantity > 1">
+        <span>{{ vendor.quantity | number }} pieces for </span>
+      </ng-container>
+
+      <ng-container *ngIf="vendor.quantity === 1">
+        <span>{{ vendor.quantity | number }} piece for </span>
+      </ng-container>
+
       <div class="icon-materials-container">
         <span class="icon--materials icon--materials--{{ vendor.currency.toLowerCase() }}"></span>
       </div>
+
 
       <span>{{ vendor.price | price }}</span>
       <span>{{ vendor.currency | currency }}</span>

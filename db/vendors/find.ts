@@ -70,6 +70,8 @@ export async function findVendors(id: string): Promise<Vendor[] | undefined> {
           blueprint = true
         }
 
+        const quantity = p.quantity
+
         results.push({
           id: vendor.protounit,
           name,
@@ -79,6 +81,7 @@ export async function findVendors(id: string): Promise<Vendor[] | undefined> {
           rarity: undefined,
           currency: convertCurrency(price.type),
           price: price.quantity,
+          quantity: sold.quantity,
           rotation: undefined,
         })
       }

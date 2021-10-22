@@ -13,6 +13,8 @@ import { readJson } from "fs-extra"
 
 import { download } from "./download"
 
+import fs from "fs"
+
 const cache = {}
 
 async function fetch(path: string) {
@@ -57,6 +59,46 @@ function find(json: any[], attributeName: string, value: string) {
   })
   return undefined
 }
+
+/*
+function xmlToJson(xml) {
+
+  // Create the return object
+  var obj = {};
+
+  if (xml.nodeType == 1) { // element
+     // do attributes
+     if (xml.attributes.length > 0) {
+        obj["@attributes"] = {};
+        for (var j = 0; j < xml.attributes.length; j++) {
+           var attribute = xml.attributes.item(j);
+           obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+        }
+     }
+  } else if (xml.nodeType == 3) { // text
+     obj = xml.nodeValue;
+  }
+
+  // do children
+  if (xml.hasChildNodes()) {
+     for (var i = 0; i < xml.childNodes.length; i++) {
+        var item = xml.childNodes.item(i);
+        var nodeName = item.nodeName;
+        if (typeof(obj[nodeName]) == "undefined") {
+           obj[nodeName] = xmlToJson(item);
+        } else {
+           if (typeof(obj[nodeName].push) == "undefined") {
+              var old = obj[nodeName];
+              obj[nodeName] = [];
+              obj[nodeName].push(old);
+           }
+           obj[nodeName].push(xmlToJson(item));
+        }
+     }
+  }
+  return obj;
+};
+*/
 
 export class API {
 
@@ -171,6 +213,46 @@ export class API {
       offering.ItemID = offering.ItemID.toLowerCase()
     })
     return json
+  }
+
+  static async getPowers(){
+
+/*
+    const xml2js = require('xml2js');
+    const fs = require('fs');
+
+    // read XML from a file
+    const xml = fs.readFileSync("./db/Powers.xml");
+
+    // convert XML to JSON
+    xml2js.parseString(xml, { mergeAttrs: true }, (err, result) => {
+        if (err) {
+            throw err;
+        }
+
+        // `result` is a JavaScript object
+        // convert it to a JSON string
+        const json = JSON.stringify(result, null, 4);
+
+        // save JSON in a file
+        fs.writeFileSync("./db/Powers.json", json);
+
+    }) */
+    /*const res = await xmlToJson("./db/Powers.xml"); */
+
+    /*const options = { headers: { Accept: "application/json" } }
+    const filename = await download("./db/Powers.json", options)*/
+
+    /*
+    const options = {} 
+  
+    const filename = await download("./db/Powers.json",options)
+    const res = await readJson(filename)
+  
+
+  
+    return res
+    */
   }
 
 }

@@ -21,6 +21,7 @@ export const design: Design = {
       currency: "empire",
       price: 50,
       rarity: "common",
+      quantity: 1,
       rotation: "classic",
     },
   ],

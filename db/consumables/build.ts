@@ -9,6 +9,7 @@ import { compareConsumables } from "./sort"
 import { buildSearchString } from "./search"
 import { convertEvent } from "./convert-event"
 import { findVendors } from "../vendors"
+import { findPowers } from "../powers/find"
 
 export async function buildConsumables(): Promise<Consumable[]> {
   console.log("Build consumables...")
@@ -26,15 +27,27 @@ export async function buildConsumables(): Promise<Consumable[]> {
     const icon = await downloadIcon(`Art/${consumable.icon}`, "consumables")
     const civilization = convertCivilization(consumable.civmatchingtype)
 
+    const cooldowntime = await findPowers(consumable.power, "cooldowntime")
+    const activetime = await findPowers(consumable.power, "activetime")
+    const radius = await findPowers(consumable.power, "radius")
+    const requiredage = await findPowers(consumable.power, "requiredage")
+    const placement = await findPowers(consumable.power, "placement")
+
     const rarity: Consumable["rarities"][string] = {
       id: consumable.name,
       icon,
       description,
+      cooldowntime: parseInt(cooldowntime[0]),
+      activetime: parseInt(activetime[0]),
+      radius: parseInt(radius[0]),
+      requiredage: parseInt(requiredage[0]),
+      placement: placement[0]
     }
 
     const rarities: Consumable["rarities"] = {
       [consumable.rarity.replace("cRarity", "").toLowerCase()]: rarity,
     }
+
 
     const result: Consumable = {
       id: rarity.id,
@@ -44,7 +57,8 @@ export async function buildConsumables(): Promise<Consumable[]> {
       civilization,
       search: "",
       marketplace: [],
-      event: convertEvent(consumable)
+      event: convertEvent(consumable),
+      power: consumable.power
     }
 
     if (result.id == 'consumablescouteg' || consumable.name == 'consumablescout') {
@@ -71,6 +85,8 @@ export async function buildConsumables(): Promise<Consumable[]> {
         vendor.rarity = "common"
       }
     })
+
+    
 
     const merged = merge(mergedByName[name], result)
     merged.search = await buildSearchString(merged,consumable)

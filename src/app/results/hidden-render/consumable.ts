@@ -7,7 +7,12 @@ export const consumable: Consumable = {
     common: {
       id: "powernuclearconsumable4",
       icon: "BQtEUqjU",
-      description: "description"
+      description: "description",
+      activetime: 1,
+      cooldowntime: 1,
+      radius: 1,
+      requiredage: 1,
+      placement: "forcedAtTC"
     }
   },
   vendors: [
@@ -19,6 +24,7 @@ export const consumable: Consumable = {
       currency: "empire",
       price: 50,
       rarity: "common",
+      quantity: 1,
       rotation: "classic",
     },
   ],
@@ -31,4 +37,7 @@ export const consumable: Consumable = {
     },
   ],
   search: "search",
+
+      power :  "consumable_power"
+  
 }

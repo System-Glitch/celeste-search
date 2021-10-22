@@ -16,6 +16,7 @@ export const blueprint: Blueprint = {
       currency: "empire",
       price: 50,
       rarity: "common",
+      quantity: 1,
       rotation: "classic",
     },
   ],
