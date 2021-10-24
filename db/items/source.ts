@@ -85,6 +85,10 @@ const eventHalloween2020 = [
   "axe2h_halloween2020",
 ]
 
+const eventHalloween2021 = [
+  "bows1h_halloween2021",
+]
+
 const eventWinter = [
   "arrows_iceking_leg",
   "axe2h_iceking_leg",
@@ -204,6 +208,10 @@ export function isHalloween2020Reward(trait: Trait) {
   return eventHalloween2020.includes(trait.name)
 }
 
+export function isHalloween2021Reward(trait: Trait) {
+  return eventHalloween2021.includes(trait.name)
+}
+
 export function isEventReward(trait: Trait) {
   return isHalloween2018Reward(trait)
     || isWinterReward(trait)
@@ -213,6 +221,7 @@ export function isEventReward(trait: Trait) {
     || isSummer2021Reward(trait)
     || isWinter2020Reward(trait)
     || isHalloween2020Reward(trait)
+    || isHalloween2021Reward(trait)
 }
 
 export function isBahramReward(trait: Trait) {

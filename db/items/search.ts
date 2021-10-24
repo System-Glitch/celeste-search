@@ -27,6 +27,8 @@ import {
   isSummer2021Reward,
   isWinter2020Reward,
   isHalloween2019Reward,
+  isHalloween2020Reward,
+  isHalloween2021Reward,
 } from "./source"
 
 export async function buildSearchString(item: Item, trait: Trait): Promise<string> {
@@ -67,6 +69,12 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
     builder.add("Summer Event Reward")
   }
   if (isHalloween2019Reward(trait)) {
+    builder.add("Halloween Event Reward")
+  }
+  if (isHalloween2020Reward(trait)) {
+    builder.add("Halloween Event Reward")
+  }
+  if (isHalloween2021Reward(trait)) {
     builder.add("Halloween Event Reward")
   }
   if (isQuestReward(trait)) {
