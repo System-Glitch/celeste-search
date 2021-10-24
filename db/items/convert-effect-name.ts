@@ -123,6 +123,9 @@ export function convertEffectName(effect: TraitEffect): string {
       return "Ranged Bonus Damage"
     }
   }
-
+  if (effect.subtype === "Haste") {
+    return "Rate of Fire"
+  }
+  
   throw new Error(JSON.stringify(effect, null, 2))
 }
