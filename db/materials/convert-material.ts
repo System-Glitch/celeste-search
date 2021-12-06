@@ -8,9 +8,27 @@ import { convertLootTable } from './convert-loot-table'
 import { buildMaterialSearchString } from './search'
 import { getQuestName } from './source'
 import { convertWorkshop } from './convert-workshop'
+import { convertCurrency } from "../vendors/convert-currency"
 
 export async function convertMaterial(material: ApiMaterial): Promise<Material> {
-  const description = await translateEn(material.rollovertextid)
+  let sellQuantity = 0
+  let sellCurrency = "         "
+  let price = {}
+
+  const textsellcostoverride = material.sellcostoverride
+  
+  for (const item of Object.values<any>(textsellcostoverride)) {
+   
+    sellQuantity = item.quantity
+    sellCurrency = convertCurrency(item.type)  
+   }  
+
+  let description = await translateEn(material.rollovertextid)
+  description += " \n\n 1 Piece Sells for "
+  description +=  sellQuantity.toString()
+  description += " "
+  description +=  sellCurrency.toString()
+  description += "s"
   const m: Material = {
     id: material.name,
     name: await translateEn(material.displaynameid, material.name),

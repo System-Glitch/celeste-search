@@ -33,7 +33,7 @@ export interface Material {
   sellable: "true" | "false" // FIXME should be `boolean`
   tradeable: "true" | "false" // FIXME should be `boolean`
   destroyable: "true" | "false" // FIXME should be `boolean`
-  sellcostoverride: { capitalresource: { quantity: number, type: string } }
+  sellcostoverride: {}
   rarity: "cRarityCommon" | "cRarityUncommon" | "cRarityRare" | "cRarityEpic" | "cRarityJunk"
   budgetcost: 1 | 2 | 4 | 5 | 10
   contentpack: 1 | 22

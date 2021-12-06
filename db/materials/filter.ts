@@ -19,6 +19,5 @@ function isSackOfGold(material: Material): boolean {
 }
 
 export function includeMaterial(material: Material) {
-  return !isSackOfGold(material) &&
-    !ignored.includes(material.id!)
+  return !ignored.includes(material.id!)
 }
