@@ -8,11 +8,11 @@ import {
   searchByRecipe,
   searchByVendor,
 } from "../shared/search-tags"
+import { convertEvent } from "./convert-event"
 
 import {
   isBabylonianStartingGear,
   isClassicItem,
-  isHalloween2018Reward,
   isNorseStartingGear,
   isPersianStartingGear,
   isQuestReward,
@@ -21,14 +21,7 @@ import {
   isSoldByCyprus,
   isSoldByDelianLeague,
   isSoldByLegionOfCarthage,
-  isWinterReward,
-  isSummer2019Reward,
-  isSummer2020Reward,
-  isSummer2021Reward,
-  isWinter2020Reward,
-  isHalloween2019Reward,
-  isHalloween2020Reward,
-  isHalloween2021Reward,
+
 } from "./source"
 
 export async function buildSearchString(item: Item, trait: Trait): Promise<string> {
@@ -47,6 +40,16 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   await searchByRecipe(builder, item.recipe)
   await searchByVendor(builder, item.vendors)
 
+  const event = convertEvent(trait)
+
+  if (event) {
+    builder.add(event.name)
+    builder.add(event.year)
+    const together = event.name.concat(event.year.toString())
+    builder.add(together)
+    builder.add("event")
+  }
+
   if (isSoldByCyprus(trait)) {
     builder.add("Cyprus")
   }
@@ -59,24 +62,7 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   if (isSoldByLegionOfCarthage(trait)) {
     builder.add("Legion of Carthage Alliance")
   }
-  if (isHalloween2018Reward(trait)) {
-    builder.add("Halloween Event Reward")
-  }
-  if (isWinterReward(trait) || isWinter2020Reward(trait)) {
-    builder.add("Winter Event Reward")
-  }
-  if (isSummer2019Reward(trait) || isSummer2020Reward(trait) || isSummer2021Reward(trait)) {
-    builder.add("Summer Event Reward")
-  }
-  if (isHalloween2019Reward(trait)) {
-    builder.add("Halloween Event Reward")
-  }
-  if (isHalloween2020Reward(trait)) {
-    builder.add("Halloween Event Reward")
-  }
-  if (isHalloween2021Reward(trait)) {
-    builder.add("Halloween Event Reward")
-  }
+
   if (isQuestReward(trait)) {
     builder.add("Quest Reward")
   }
@@ -126,13 +112,13 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
     builder.add("weapon")
   }
 
-  /* if ([
+  if ([
     "ArmorBuilding",
     "ArmorCloth",
     "ArmorLgt",
     "ArmorMed",
     "ArmorPlt",
-    "Arrows",
+   /* "Arrows",
     "FishingNet",
     "Gear",
     "GearBldg",
@@ -148,10 +134,10 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
     "Tools",
     "Torc",
     "War Horn",
-    "Warpaint",
+    "Warpaint",*/
   ].includes(trait.traittype)) {
     builder.add("armor")
-  } */
+  } 
 
   if ([
     "VanityHelm",

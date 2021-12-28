@@ -98,6 +98,18 @@ const eventWinter = [
   "armorlgt_iceking_leg",
 ]
 
+const eventWinter2018 = [
+  "arrows_iceking_leg",
+  "axe2h_iceking_leg",
+  "staff2h_iceking_leg",
+  "sling2h_iceking_leg",
+]
+
+const eventWinter2019 = [
+  "gear_iceking_leg",
+  "armorlgt_iceking_leg",
+]
+
 const eventSummer2019 = [
   "se2019_gear_bldg",
   "se2019_armormed",
@@ -184,6 +196,13 @@ export function isWinterReward(trait: Trait) {
   return eventWinter.includes(trait.name)
 }
 
+export function isWinter2018Reward(trait: Trait) {
+  return eventWinter2018.includes(trait.name)
+}
+export function isWinter2019Reward(trait: Trait) {
+  return eventWinter2019.includes(trait.name)
+}
+
 export function isSummer2019Reward(trait: Trait) {
   return eventSummer2019.includes(trait.name)
 }
@@ -200,6 +219,10 @@ export function isWinter2020Reward(trait: Trait) {
   return trait.name.endsWith("_winter2020")
 }
 
+export function isWinter2021Reward(trait: Trait) {
+  return trait.name.endsWith("_winter2021")
+}
+
 export function isHalloween2019Reward(trait: Trait) {
   return eventHalloween2019.includes(trait.name)
 }
@@ -214,14 +237,17 @@ export function isHalloween2021Reward(trait: Trait) {
 
 export function isEventReward(trait: Trait) {
   return isHalloween2018Reward(trait)
-    || isWinterReward(trait)
+    //|| isWinterReward(trait)
+    || isWinter2018Reward(trait)
     || isSummer2019Reward(trait)
     || isHalloween2019Reward(trait)
+    || isWinter2019Reward(trait)
     || isSummer2020Reward(trait)
-    || isSummer2021Reward(trait)
-    || isWinter2020Reward(trait)
     || isHalloween2020Reward(trait)
+    || isWinter2020Reward(trait)
+    || isSummer2021Reward(trait)
     || isHalloween2021Reward(trait)
+    || isWinter2021Reward(trait)
 }
 
 export function isBahramReward(trait: Trait) {
