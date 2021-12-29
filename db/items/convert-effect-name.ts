@@ -127,5 +127,9 @@ export function convertEffectName(effect: TraitEffect): string {
     return "Rate of Fire"
   }
   
+  if (effect.subtype === "ArmorVulnerability") {
+    return "Ignore Armor"
+  }
+
   throw new Error(JSON.stringify(effect, null, 2))
 }
