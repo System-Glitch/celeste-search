@@ -15,11 +15,13 @@ const displayNames = {
   HitPercent: "Critical Hit Chance",
   Hitpoints: "Health",
   LOS: "Line-of-sight",
-  MaximumRange: "Maximum Range",
+  /*MaximumRange: "Maximum Range",*/
   MaximumVelocity: "Movement Speed",
   TargetSpeedBoost: "Snare",
   TargetSpeedBoostResist: "Snare Resist",
   TrainPoints: "Train Time",
+  Haste: "Rate of Fire",
+  ArmorVulnerability: "Ignore Armor",
 }
 
 /**
@@ -29,6 +31,13 @@ export function convertEffectName(effect: TraitEffect): string {
   if (displayNames[effect.subtype]) {
     return displayNames[effect.subtype]
   }
+  if (effect.subtype === "MaximumRange") {
+    if (effect.action === "Convert") {
+      return "Maximum Conversion Range"
+    }
+    else return "Maximum Range"
+  }
+
   if (effect.subtype === "Armor") {
     if (effect.damagetype === "Ranged") {
       return "Pierce Armor"
@@ -123,13 +132,5 @@ export function convertEffectName(effect: TraitEffect): string {
       return "Ranged Bonus Damage"
     }
   }
-  if (effect.subtype === "Haste") {
-    return "Rate of Fire"
-  }
-  
-  if (effect.subtype === "ArmorVulnerability") {
-    return "Ignore Armor"
-  }
-
   throw new Error(JSON.stringify(effect, null, 2))
 }
