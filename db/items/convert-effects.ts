@@ -35,12 +35,12 @@ export function convertEffects(trait: Trait): ItemEffect[] | undefined {
         effect.amount = 1 + (1 - effect.amount)
         effect.scaling = -effect.scaling
       }
-
+/*
       if (effect.subtype === "ArmorVulnerability") {
         effect.amount = 1 + effect.amount
         effect.scaling = effect.scaling
       }
-
+*/
       // The egyptian empower effects scale differently.
       if (effect.action === "Empower") {
         effect.amount = (effect.amount - 1) * 11 + 1

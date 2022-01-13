@@ -142,10 +142,18 @@ const norseStartingGear = [
   "spear2h_u201", "sword1h_u201", "tool1h_u201",
 ]
 
+const eventReforgeIgnoreList = [
+  "armorbldg_winter2021",
+]
+
 /**
  * Starting at this ID, all items were created by the celeste team.
  */
 const celesteLegendariesStart = 2259
+
+export function isEventReforgeIgnoreList(trait: Trait) {
+  return eventReforgeIgnoreList.includes(trait.name)
+}
 
 export function isSoldByCyprus(trait: Trait) {
   return cyprusLegendaries.includes(trait.name)
@@ -220,7 +228,7 @@ export function isWinter2020Reward(trait: Trait) {
 }
 
 export function isWinter2021Reward(trait: Trait) {
-  return trait.name.endsWith("_winter2021")
+  return trait.name.endsWith("_winter2021") 
 }
 
 export function isHalloween2019Reward(trait: Trait) {
@@ -263,10 +271,10 @@ export function isMoesReward(trait: Trait) {
  * at a few items.
  */
 export function isReforgeable(trait: Trait) {
-  return trait.rarity === "legendary"
+  return trait.rarity === "legendary" 
     && !isSoldForCoin(trait)
     && !isQuestReward(trait)
-    && !isEventReward(trait)
+    && (!isEventReward(trait) || isEventReforgeIgnoreList(trait))
     && !isBahramReward(trait)
 }
 

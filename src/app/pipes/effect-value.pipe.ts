@@ -15,7 +15,17 @@ export class EffectValuePipe implements PipeTransform {
 
   transform(effect: ItemEffect, level: number, modifier: number): string {
     const precision = +this.settings.precision.value
-    const base = effect.name === "Regen. Rate" ? effect.scaling * (level + 3) + effect.amount : (effect.amount - 1) * 100 + effect.scaling * 100 * (level + 3)
+    let base = 0
+    if (effect.name=== "Regen. Rate") {
+      base = effect.scaling * (level + 3) + effect.amount
+    }
+    else if (effect.name=== "Ignore Armor")
+    {
+      base = (effect.amount) * 100 + effect.scaling * 100 * (level + 3) 
+    }
+    else {
+      base = (effect.amount- 1) * 100 + effect.scaling * 100 * (level + 3) 
+    } 
     const sign = base < 0 ? "-" : "+"
     const unit = effect.name === "Regen. Rate" ? " Health Per Second" : "%"
 
