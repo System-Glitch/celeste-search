@@ -32,9 +32,9 @@ export async function buildConsumables(): Promise<Consumable[]> {
     const activetime = await findPowers(consumable.power, "activetime")
     const radius = await findPowers(consumable.power, "radius")
     const requiredage = await findPowers(consumable.power, "requiredage")
-    const placement = await findPowers(consumable.power, "placement")
+    const placement = await findPowers(consumable.power, "placement.text")
     const cooldownstackingclass = await findPowers(consumable.power, "cooldownstackingclass")
-
+    
     const design = await findDesigns(consumable.name)
 
     const rarity: Consumable["rarities"][string] = {

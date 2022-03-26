@@ -1,40 +1,8 @@
 
-import { readJSON } from "fs-extra"
-
+/*import { readJSON } from "fs-extra"*/
+import { API } from "../download"
 
 /*
-export async function findPowers(id: string): Promise<Power[]> {
-    const results: Power[] = []
-  
-    const powers = await readJSON("./db/Powers.json");
-
-
-    for (const power of Object.values<any>(powers)){
-
-
-        for (const p of Object.values<any>(power)){
-        
-            for (const pp of Object.values<any>(p)){
-                if (id === pp.name) {
-
-                    results.push({
-                        name: pp.name,
-                        activetime:  parseInt(pp.activetime),
-                        cooldowntime:  parseInt(pp.cooldowntime),
-                        radius:  parseInt(pp.radius),
-                        requiredage:  parseInt(pp.requiredage)
-
-                    })
-                            
-                }
-            }
-        }
-                
-    }   
-    return results
-}
-*/
-
 export async function findPowers(id: string, attribute: string): Promise<Array<string>> {
     const results: Array<string> = []
   
@@ -55,5 +23,31 @@ export async function findPowers(id: string, attribute: string): Promise<Array<s
                 }
                 
     }   
+    return results
+}
+*/
+
+export async function findPowers(id: string, attribute: string): Promise<Array<string>> {
+    const results: Array<string> = []
+  
+    const powers = await API.getPowersNuggets();
+
+    
+    for (const power of Object.values(powers)){
+        
+    /*console.log(power.name)*/
+
+        if (id === power.name) {
+        if (attribute === "placement.text" && power.placement !== null) {
+                    results.push(power.placement.text)
+            }
+            else {
+                results.push(power[attribute])
+            }
+            
+                    
+        }
+                
+    }
     return results
 }

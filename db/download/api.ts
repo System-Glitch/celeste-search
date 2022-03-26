@@ -8,6 +8,7 @@ import {
   Materials,
   Prototypes,
   Traits,
+  Powers
 } from "../../api-types"
 import { readJson } from "fs-extra"
 
@@ -253,6 +254,15 @@ export class API {
   
     return res
     */
+  }
+
+
+  static async getPowersNuggets() {
+    const json = await get<Powers>("/gamedb/nuggets")
+    /*lowerCaseKeys(json)
+    lowerCaseName(json)
+    */
+    return json
   }
 
 }
