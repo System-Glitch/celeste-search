@@ -120,7 +120,16 @@
       </div>
       <span *ngIf="item.event">
         {{ item.event!.name | titlecase }} Event
+      </span>
+    </div>
+  </div>
+
+  <div *ngIf="item.event">
+    <div class="row --source">
+      <span *ngIf="item.event">
+        <span>First Appeared in:   </span>
         <span *ngIf="item.event.year">{{ item.event!.year }}</span> 
+        <div>Event items may get discontinued. Check again next year.</div>
       </span>
     </div>
   </div>
