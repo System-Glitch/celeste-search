@@ -20,7 +20,7 @@ const displayNames = {
   TargetSpeedBoost: "Snare",
   TargetSpeedBoostResist: "Snare Resist",
   TrainPoints: "Train Time",
-  Haste: "Rate of Fire",
+  Haste: "Attack Rate",
   ArmorVulnerability: "Ignore Armor",
 }
 
