@@ -13,6 +13,7 @@ export interface Material {
       City: string
       Quest: string
       Quest_Giver: string
+      Quest_Starter: string
   } | undefined
   workshop?: string
   search?: string

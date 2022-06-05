@@ -14,7 +14,12 @@ export interface Item {
   effectsRange: boolean | undefined
   recipe: Recipe | undefined
   vendors: Vendor[] | undefined
-  quest: string | undefined
+  quest?: { 
+      City: string
+      Quest: string
+      Quest_Giver: string
+      Quest_Starter: string
+  } | undefined
   event: {
     name: "halloween" | "winter" | "summer"
     year: 0 | 2018 | 2019 | 2020 | 2021,

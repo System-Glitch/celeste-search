@@ -57,7 +57,7 @@ export const item: Item = {
       level: 40,
     },
   ],
-  quest: "quest",
+  quest: { City: "Test", Quest: "Test" , Quest_Giver: "Test" , Quest_Starter: "Test" },
   event: { name: "halloween", year: 2018 },
   starting: ["persian", "babylonian", "norse"],
   search: "search",

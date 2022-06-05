@@ -105,14 +105,17 @@
         <span>Reward from:</span>
       </div>
   </div>
-  <div class="row --source">
+  <div>
       <span *ngIf="item.quest"><b>City:</b>   {{ item.quest.City }}</span>
   </div>
-  <div class="row --source">
+  <div>
       <span *ngIf="item.quest"><b>Quest:</b>   {{ item.quest.Quest }}</span>
   </div>
-  <div class="row --source">
+  <div>
       <span *ngIf="item.quest"><b>Quest Giver:</b>   {{ item.quest.Quest_Giver }}</span>
+  </div>
+  <div>
+      <span *ngIf="item.quest"><b>Quest Giver:</b>   {{ item.quest.Quest_Starter }}</span>
   </div>
 
   <!-- EVENT -->
