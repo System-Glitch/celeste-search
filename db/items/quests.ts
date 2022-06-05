@@ -26,7 +26,7 @@ export const quests = {
             City: "Well of Urd",
             Quest: "Conquest of the 9 Realms",
             Quest_Giver: "High Priest of Urd",
-            Quest_Starter: "Finish Sea quests from Vemundr"
+            Quest_Starter: "Finish Invation of the North from Chief Vemundr"
           },
   arrowoh_ssa: {
             City: "Rhakotis",
