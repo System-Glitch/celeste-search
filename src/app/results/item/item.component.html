@@ -101,21 +101,33 @@
     <div class="row --materials">
       <div class="icon-materials-container">
         <span class="icon--materials icon--materials--{{ item.event?.name || 'quest' }}"></span>    
-        </div>
-        <span>Reward from:</span>
       </div>
-  </div>
-  <div>
-      <span *ngIf="item.quest"><b>City:</b>   {{ item.quest.City }}</span>
-  </div>
-  <div>
-      <span *ngIf="item.quest"><b>Quest:</b>   {{ item.quest.Quest }}</span>
-  </div>
-  <div>
-      <span *ngIf="item.quest"><b>Quest Giver:</b>   {{ item.quest.Quest_Giver }}</span>
-  </div>
-  <div>
-      <span *ngIf="item.quest"><b>How to Initiate:</b>   {{ item.quest.Quest_Starter }}</span>
+        <span>Reward from:</span>
+    </div>
+    <div class="row --materials">
+        <ul>
+          <li style="font-size: 13.5px">
+              <span *ngIf="item.quest"  style="color:yellowgreen"><b>City:</b></span>
+              <span>&nbsp;&nbsp;</span>
+              <span>{{ item.quest.City }}</span>
+          </li>
+          <li style="font-size: 13.5px">
+              <span *ngIf="item.quest"  style="color:yellowgreen"><b>Quest:</b></span>
+              <span>&nbsp;&nbsp;</span>
+              <span>{{ item.quest.Quest }}</span>
+          </li>
+          <li style="font-size: 13.5px">
+              <span *ngIf="item.quest"  style="color:yellowgreen"><b>Quest Giver:</b></span>
+              <span>&nbsp;&nbsp;</span>
+              <span>{{ item.quest.Quest_Giver }}</span>
+          </li>
+          <li style="font-size: 13.5px">
+              <span *ngIf="item.quest"  style="color:yellowgreen"><b>How to Initiate:</b></span>
+              <span>&nbsp;&nbsp;</span>
+              <span>{{ item.quest.Quest_Starter }}</span>
+          </li>
+        </ul>
+    </div>
   </div>
 
   <!-- EVENT -->
