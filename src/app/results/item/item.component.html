@@ -96,16 +96,23 @@
 
   <!-- QUEST -->
   <div *ngIf="item.quest">
-    <div class="row --source">
-      <span>Reward from:</span>
-    </div>
-
+    <div class="row --source"></div>
+  
     <div class="row --materials">
       <div class="icon-materials-container">
-        <span class="icon--materials icon--materials--{{ item.event?.name || 'quest' }}"></span>
+        <span class="icon--materials icon--materials--{{ item.event?.name || 'quest' }}"></span>    
+        </div>
+        <span>Reward from:</span>
       </div>
-      <span *ngIf="item.quest">{{ item.quest }}</span>
-    </div>
+  </div>
+  <div class="row --source">
+      <span *ngIf="item.quest"><b>City:</b>   {{ item.quest.City }}</span>
+  </div>
+  <div class="row --source">
+      <span *ngIf="item.quest"><b>Quest:</b>   {{ item.quest.Quest }}</span>
+  </div>
+  <div class="row --source">
+      <span *ngIf="item.quest"><b>Quest Giver:</b>   {{ item.quest.Quest_Giver }}</span>
   </div>
 
   <!-- EVENT -->

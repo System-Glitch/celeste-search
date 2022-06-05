@@ -9,7 +9,11 @@ export interface Material {
     year: 0 | 2018 | 2019 | 2020 | 2021,
   } | undefined
   lootTable?: string
-  quest?: string
+  quest?: { 
+      City: string
+      Quest: string
+      Quest_Giver: string
+  } | undefined
   workshop?: string
   search?: string
 }
