@@ -26,7 +26,7 @@ export const quests = {
             City: "Well of Urd",
             Quest: "Conquest of the 9 Realms",
             Quest_Giver: "High Priest of Urd",
-            Quest_Starter: "Finish Invation of the North from Chief Vemundr"
+            Quest_Starter: "Finish Invasion of the North from Chief Vemundr"
           },
   arrowoh_ssa: {
             City: "Rhakotis",
@@ -38,7 +38,7 @@ export const quests = {
             City: "Lodi",
             Quest: "The Forgotten Bow",
             Quest_Giver: "King Brennos",
-            Quest_Starter: "Finish Aiding King Brennos from King Socrates"
+            Quest_Starter: "Finish Aiding King Brennos from King Brennos"
           },
   gear_l006: {
             City: "Rome",
