@@ -105,7 +105,7 @@
         <span>Reward from:</span>
     </div>
     <div class="row --materials">
-        <ul>
+        <ul style="font-size: 14px">
           <li>
               <span *ngIf="item.quest"  style="color:yellowgreen"><b>City:</b></span>
               <span>&nbsp;&nbsp;</span>
@@ -122,7 +122,7 @@
               <span>{{ item.quest.Quest_Giver }}</span>
           </li>
           <li>
-              <span *ngIf="item.quest"  style="color:yellowgreen"><b>How to Initiate:</b></span>
+              <span *ngIf="item.quest"  style="color:yellowgreen"><b>Prerequisite:</b></span>
               <span>&nbsp;&nbsp;</span>
               <span>{{ item.quest.Quest_Starter }}</span>
           </li>
