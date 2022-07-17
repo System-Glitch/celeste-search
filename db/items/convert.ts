@@ -72,6 +72,10 @@ export async function convertItem(trait: Trait): Promise<Item> {
     if (item.effects) {
       item.effectsRange = isReforgeable(trait) || undefined
     }
+  } else if (isStartingGear(trait)) {
+    if (item.effects) {
+      item.effectsRange = !isStartingGear(trait) || undefined
+    }
   } else {
     if (item.effects) {
       item.effectsRange = !item.vendors
