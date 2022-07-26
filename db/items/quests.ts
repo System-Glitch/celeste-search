@@ -69,5 +69,11 @@ export const quests = {
             Quest: "Edicts from the Beloved Emperor: The Golden Gorget",
             Quest_Giver: "Marcus Pollux",
             Quest_Starter: "None"
+          },
+  armorbldg_l004: {
+            City: "Athens",
+            Quest: "Lost Blueprinst of Socrates",
+            Quest_Giver: "Socrates",
+            Quest_Starter: "None"
           }
 }
