@@ -27,7 +27,7 @@ export class EffectValuePipe implements PipeTransform {
       base = (effect.amount- 1) * 100 + effect.scaling * 100 * (level + 3) 
     } 
     const sign = base < 0 ? "-" : "+"
-    const unit = effect.name === "Regen. Rate" ? " Health Per Second" : "%"
+    const unit = effect.name === "Regen. Rate" ? " Health/s" : "%"
 
     const modified = base * modifier
     const absolute = Math.abs(modified)
