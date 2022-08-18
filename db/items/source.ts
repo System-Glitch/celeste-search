@@ -148,6 +148,10 @@ const eventReforgeIgnoreList = [
   "armorbldg_winter2021",
 ]
 
+const otherEffectsRangeFalse = [
+  "scout1h_r001",
+]
+
 /**
  * Starting at this ID, all items were created by the celeste team.
  */
@@ -271,6 +275,14 @@ export function isBahramReward(trait: Trait) {
 
 export function isMoesReward(trait: Trait) {
   return trait.name.endsWith("_moes")
+}
+
+export function isOtherEffectsRangeFalse(trait: Trait) {
+  return otherEffectsRangeFalse.includes(trait.name)
+}
+
+export function isLevel40StartingGear(trait: Trait) {
+  return trait.name.endsWith("_r202")
 }
 
 /**

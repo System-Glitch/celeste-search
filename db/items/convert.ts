@@ -17,6 +17,8 @@ import {
   isPersianStartingGear,
   isReforgeable,
   isStartingGear,
+  isLevel40StartingGear,
+  isOtherEffectsRangeFalse,
 } from "./source"
 
 /**
@@ -75,6 +77,14 @@ export async function convertItem(trait: Trait): Promise<Item> {
   } else if (isStartingGear(trait)) {
     if (item.effects) {
       item.effectsRange = !isStartingGear(trait) || undefined
+    }
+  } else if (isLevel40StartingGear(trait)) {
+    if (item.effects) {
+      item.effectsRange = !isLevel40StartingGear(trait) || undefined
+    }
+  } else if (isOtherEffectsRangeFalse(trait)) {
+    if (item.effects) {
+      item.effectsRange = !isOtherEffectsRangeFalse(trait) || undefined
     }
   } else {
     if (item.effects) {
