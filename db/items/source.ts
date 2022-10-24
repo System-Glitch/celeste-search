@@ -281,7 +281,7 @@ export function isBahramReward(trait: Trait) {
 export function isMoesReward(trait: Trait) {
   return trait.name.endsWith("_moes")
 }
-
+ 
 export function isOtherEffectsRangeFalse(trait: Trait) {
   return otherEffectsRangeFalse.includes(trait.name)
 }
