@@ -10,6 +10,10 @@ export async function buildSearchString(apiAdvisor: APIAdvisor, advisor: Advisor
 
   builder.addStrict(advisor.id)
   builder.add(advisor.name)
+  for(const rarity of Object.values(advisor.rarities)){
+    builder.add(rarity.id)
+  }
+  
   builder.add(`age${advisor.age}`)
   builder.add(advisor.civilization || "")
 

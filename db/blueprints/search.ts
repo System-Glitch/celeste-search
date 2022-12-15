@@ -9,7 +9,7 @@ export async function buildSearchString(blueprint: Blueprint, apiBlueprint: ApiB
 
   builder.add("blueprints")
 
-  builder.addStrict(blueprint.id)
+  builder.add(blueprint.id)
   builder.add(blueprint.name)
   builder.add(blueprint.description || "")
   builder.add(blueprint.rarity)

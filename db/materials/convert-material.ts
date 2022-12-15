@@ -46,11 +46,13 @@ export async function convertMaterial(material: ApiMaterial): Promise<Material> 
 }
 
 export async function convertMaterialForBlueprint(material: ApiMaterial): Promise<Material> {
+  const id = material.name
   const name = await translateEn(material.displaynameid, material.name)
   const icon = await downloadIcon(`Art/${material.icon}`, "materials")
   const rarity = material.rarity.substr("cRarity".length).toLowerCase()
 
   return {
+    id,
     name,
     icon,
     rarity,

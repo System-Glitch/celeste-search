@@ -8,6 +8,7 @@ import { isQuestReward, isSummer2019Material, isHalloween2019Material, isWinter2
 export function buildMaterialSearchString(material: Material, apiMaterial: ApiMaterial): string {
   const builder = new SearchBuilder()
 
+  builder.add(material.id)
   builder.add(material.name)
   builder.add(material.rarity)
 

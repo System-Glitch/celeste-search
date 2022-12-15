@@ -9,7 +9,8 @@ export async function buildSearchString(design: Design, apiDesign: ApiDesign): P
 
   builder.add("designs")
   builder.add("Recipe: ")
-
+  
+  builder.add(design.id)
   builder.add(design.description)
   builder.add(design.rarity)
   builder.add(design.school)
