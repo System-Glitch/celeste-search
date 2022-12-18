@@ -13,6 +13,7 @@ export async function buildSearchString(blueprint: Blueprint, apiBlueprint: ApiB
   builder.add(blueprint.name)
   builder.add(blueprint.description || "")
   builder.add(blueprint.rarity)
+  builder.add(apiBlueprint.protounit)
 
   if (blueprint.lootTable) {
     builder.add(blueprint.lootTable)
