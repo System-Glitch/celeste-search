@@ -31,7 +31,7 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   builder.add("items")
 
   builder.addStrict(item.id)
-  builder.add(trait.dbid)
+  builder.add("dbid".concat(trait.dbid.toString()))
   builder.add(item.name)
   builder.add(item.rarity)
   builder.add(item.type)
