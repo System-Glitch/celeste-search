@@ -9,6 +9,7 @@ import { buildMaterialSearchString } from './search'
 import { getQuestName } from './source'
 import { convertWorkshop } from './convert-workshop'
 import { convertCurrency } from "../vendors/convert-currency"
+import { findVendors } from "../vendors"
 
 export async function convertMaterial(material: ApiMaterial): Promise<Material> {
   let sellQuantity = 0
@@ -38,7 +39,8 @@ export async function convertMaterial(material: ApiMaterial): Promise<Material> 
     event: convertEvent(material),
     lootTable: convertLootTable(material),
     quest: getQuestName(material),
-    workshop: convertWorkshop(material)
+    workshop: convertWorkshop(material),
+    vendors: await findVendors(material.name)
   }
   m.search = await buildMaterialSearchString(m, material)
 

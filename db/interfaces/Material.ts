@@ -1,3 +1,6 @@
+
+import { Vendor } from "./Vendor"
+
 export interface Material {
   id: string
   name: string
@@ -17,6 +20,7 @@ export interface Material {
   } | undefined
   workshop?: string
   search?: string
+  vendors?: Vendor[] | undefined
 }
 
 export interface Materials {
