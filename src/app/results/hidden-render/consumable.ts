@@ -14,7 +14,8 @@ export const consumable: Consumable = {
       requiredage: 1,
       placement: "forcedAtTC",
       cooldownstackingclass: 1,
-      design: "design"
+      design: "design",
+      createdUnits: "None"
     }
   },
   vendors: [

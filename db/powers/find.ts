@@ -38,13 +38,20 @@ export async function findPowers(id: string, attribute: string): Promise<Array<s
     /*console.log(power.name)*/
 
         if (id === power.name) {
-        if (attribute === "placement.text" && power.placement !== null) {
+            if (attribute === "placement.text" && power.placement !== null) {
                     results.push(power.placement.text)
+            }
+            else if (attribute === "createdUnits") {
+                var totalUnitsCreated = ""
+                for (let i = 0; i < power.createunit.length; i++) {
+                    totalUnitsCreated = totalUnitsCreated + power.createunit[i].text
+                }
+                results.push(totalUnitsCreated)
             }
             else {
                 results.push(power[attribute])
             }
-            
+                
                     
         }
                 

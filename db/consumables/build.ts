@@ -34,6 +34,7 @@ export async function buildConsumables(): Promise<Consumable[]> {
     const requiredage = await findPowers(consumable.power, "requiredage")
     const placement = await findPowers(consumable.power, "placement.text")
     const cooldownstackingclass = await findPowers(consumable.power, "cooldownstackingclass")
+    const createdUnits = await findPowers(consumable.power, "createdUnits")
     
     const design = await findDesigns(consumable.name)
 
@@ -47,7 +48,8 @@ export async function buildConsumables(): Promise<Consumable[]> {
       requiredage: parseInt(requiredage[0]) +1,
       placement: placement[0],
       cooldownstackingclass: parseInt(cooldownstackingclass[0]),
-      design: design[0]
+      design: design[0],
+      createdUnits: createdUnits[0] || "None"
     }
 
     const rarities: Consumable["rarities"] = {

@@ -69,7 +69,6 @@
              attachmodel: string 
         },
     createunit: [
-        /*
       {
         quantity: number|null,
         radius: number|null,
@@ -83,7 +82,6 @@
         abstractunit: string|null,
         forceselectiononfirstunit: string|null
       }
-      */
     ],
     placement: { forceonmap: number, text: string } | null,
     rangeindicatorprotoid: { radius: number, indicatorcount: number, speed: number, text: string },

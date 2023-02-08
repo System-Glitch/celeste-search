@@ -15,7 +15,8 @@ export async function buildSearchString(consumable: Consumable, apiConsumable: A
   Object.keys(consumable.rarities).forEach(rarity => {
     builder.add(rarity)
     builder.addStrict(consumable.rarities[rarity].description)
-    builder.addStrict(consumable.rarities[rarity].id)
+    builder.addStrict(consumable.rarities[rarity].id) 
+    builder.addStrict(consumable.rarities[rarity].createdUnits)
   })
 
   if (isSummer2020Consumable(apiConsumable)) {

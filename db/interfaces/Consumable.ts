@@ -13,6 +13,7 @@ export interface ConsumableRarity {
   placement: string | undefined
   cooldownstackingclass: number | undefined
   design: string | undefined
+  createdUnits: string
 }
 
 export interface Consumable {
