@@ -1,6 +1,7 @@
 
 /*import { readJSON } from "fs-extra"*/
 import { API } from "../download"
+import { translateEn } from "../shared/convert-text"
 
 /*
 export async function findPowers(id: string, attribute: string): Promise<Array<string>> {
@@ -30,9 +31,9 @@ export async function findPowers(id: string, attribute: string): Promise<Array<s
 export async function findPowers(id: string, attribute: string): Promise<Array<string>> {
     const results: Array<string> = []
   
-    const powers = await API.getPowersNuggets();
+    const powers = await API.getPowersNuggets()
+    const prototypes = await API.getPrototypes()
 
-    
     for (const power of Object.values(powers)){
         
     /*console.log(power.name)*/
@@ -47,6 +48,21 @@ export async function findPowers(id: string, attribute: string): Promise<Array<s
                     totalUnitsCreated = totalUnitsCreated + power.createunit[i].text
                 }
                 results.push(totalUnitsCreated)
+            }
+            else if (attribute === "exactUnits") {
+                var tempName = ":   "
+                if (power.type === "TempUnit"){
+                    for (let i = 0; i < power.createunit.length; i++) {  
+                        const proto = prototypes[power.createunit[i].text.toLowerCase()]
+                        if (proto) {  
+                            tempName = tempName + power.createunit[i].quantity
+                            tempName = tempName + " "
+                            tempName = tempName + await translateEn(proto.DisplayNameID!, "")
+                            tempName = tempName + " "
+                        } 
+                    }
+                    results.push(tempName)
+                }
             }
             else {
                 results.push(power[attribute])

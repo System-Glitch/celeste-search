@@ -73,7 +73,7 @@
         quantity: number|null,
         radius: number|null,
         delay: number|null,
-        text: string|null,
+        text: string,
         minradius: number|null,
         maxradius: number|null,
         forceattc: string|null,

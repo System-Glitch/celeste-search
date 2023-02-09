@@ -35,13 +35,30 @@ export async function buildConsumables(): Promise<Consumable[]> {
     const placement = await findPowers(consumable.power, "placement.text")
     const cooldownstackingclass = await findPowers(consumable.power, "cooldownstackingclass")
     const createdUnits = await findPowers(consumable.power, "createdUnits")
+    const descriptionPowerID = await findPowers(consumable.power, "rolloverid")
+    var descriptionPower = await translateEn(parseInt(descriptionPowerID[0]), "")
+    const exactUnits = await findPowers(consumable.power, "exactUnits")
+      
+
+    if (descriptionPower === ""){
+      descriptionPower = description
+    } 
+    if (consumable.name === "powernuclearconsumable1" || 
+        consumable.name === "powernuclearconsumable4"  || 
+        consumable.name === "powernuclearconsumable9" || 
+        consumable.name === "consumablecivreinforcements" || 
+        consumable.name === "consumablecelticmercs_e"
+      ) {
+      descriptionPower = descriptionPower + exactUnits
+    }
     
+
     const design = await findDesigns(consumable.name)
 
     const rarity: Consumable["rarities"][string] = {
       id: consumable.name,
       icon,
-      description,
+      description: descriptionPower,
       cooldowntime: parseInt(cooldowntime[0]),
       activetime: parseInt(activetime[0]),
       radius: parseInt(radius[0]),
