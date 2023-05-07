@@ -31,20 +31,20 @@ jobs:
       - name: Delete old files
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ env.DEPLOY_HOST }}
-          username: ${{ env.DEPLOY_USERNAME }}
+          host: ${{ vars.DEPLOY_HOST }}
+          username: ${{ vars.DEPLOY_USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          port: ${{ env.DEPLOY_PORT }}
+          port: ${{ vars.DEPLOY_PORT }}
           script: |
-            cd ${{ env.DEPLOY_TARGET_PROD }}
+            cd ${{ vars.DEPLOY_TARGET_PROD }}
             rm -rf *
       - name: Upload files
         uses: appleboy/scp-action@master
         with:
-          host: ${{ env.DEPLOY_HOST }}
-          username: ${{ env.DEPLOY_USERNAME }}
+          host: ${{ vars.DEPLOY_HOST }}
+          username: ${{ vars.DEPLOY_USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          port: ${{ env.DEPLOY_PORT }}
+          port: ${{ vars.DEPLOY_PORT }}
           strip_components: 1
           source: "dist"
-          target: "${{ env.DEPLOY_TARGET_PROD }}"
+          target: "${{ vars.DEPLOY_TARGET_PROD }}"
