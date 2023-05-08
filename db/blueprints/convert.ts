@@ -15,7 +15,25 @@ export async function convertBlueprint(blueprint: ApiBlueprint): Promise<Bluepri
 
   const proto = prototypes[blueprint.protounit]
   const name = await translateEn(proto.DisplayNameID!, blueprint.name)
-  const description = await translateEn(blueprint.rollovertextid)
+  if (blueprint.rollovertextid === 801785) {
+    var description = await translateEn(800075)
+  }
+  else if (blueprint.rollovertextid === 801787) {
+    var description = await translateEn(800199)
+  }
+  else if (blueprint.rollovertextid === 801789) {
+    var description = await translateEn(800200)
+  }
+  else if (blueprint.rollovertextid === 801791) {
+    var description = await translateEn(800202)
+  }
+  else if (blueprint.rollovertextid === 801793) {
+    var description = await translateEn(800201)
+  }  
+  else {
+    var description = await translateEn(blueprint.rollovertextid)
+  }
+  
   const icon = await downloadIcon(`Art/${blueprint.icon}`, "blueprints")
   const rarity = blueprint.rarity.replace("cRarity", "").toLowerCase()
   const materials = convertMaterials(blueprint)

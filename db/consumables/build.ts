@@ -36,13 +36,15 @@ export async function buildConsumables(): Promise<Consumable[]> {
     const cooldownstackingclass = await findPowers(consumable.power, "cooldownstackingclass")
     const createdUnits = await findPowers(consumable.power, "createdUnits")
     const descriptionPowerID = await findPowers(consumable.power, "rolloverid")
-    var descriptionPower = await translateEn(parseInt(descriptionPowerID[0]), "")
     const exactUnits = await findPowers(consumable.power, "exactUnits")
       
 
-    if (descriptionPower === ""){
-      descriptionPower = description
+    if (descriptionPowerID[0] === undefined){
+      var descriptionPower = description
     } 
+    else {
+      var descriptionPower = await translateEn(parseInt(descriptionPowerID[0]), "")
+    }
     if (consumable.name === "powernuclearconsumable1" || 
         consumable.name === "powernuclearconsumable4"  || 
         consumable.name === "powernuclearconsumable9" || 

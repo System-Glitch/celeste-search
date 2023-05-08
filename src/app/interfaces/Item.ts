@@ -15,7 +15,7 @@ export interface Item {
   recipe: Recipe | undefined
   vendors: Vendor[] | undefined
   quest?: { 
-      City: string
+      Region: string
       Quest: string
       Quest_Giver: string
       Quest_Starter: string

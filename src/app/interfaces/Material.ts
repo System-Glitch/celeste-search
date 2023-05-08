@@ -13,7 +13,7 @@ export interface Material {
   } | undefined
   lootTable?: string
   quest?: { 
-      City: string
+      Region: string
       Quest: string
       Quest_Giver: string
       Quest_Starter: string
