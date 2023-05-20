@@ -24,6 +24,9 @@ export function convertEffects(trait: Trait): ItemEffect[] | undefined {
       if (effect.action === "AreaHeal") {
         return false
       }
+      if (effect.action === "BurningAttack") {
+        return false
+      }
       // if (effect.subtype === "WorkRate" && effect.action === "SelfHeal") {
       //   return false
       // }

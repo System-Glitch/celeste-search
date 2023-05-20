@@ -72,7 +72,7 @@ export const quests = {
           },
   armorbldg_l004: {
             Region: "Athens",
-            Quest: "Lost Blueprinst of Socrates",
+            Quest: "Lost Blueprints of Socrates",
             Quest_Giver: "Socrates",
             Quest_Starter: "None"
           }

@@ -31,6 +31,10 @@ export function convertEffectName(effect: TraitEffect): string {
   if (displayNames[effect.subtype]) {
     return displayNames[effect.subtype]
   }
+  if (effect.action === "BurningAttack") {
+      return "Burning Attack"
+  }
+
   if (effect.subtype === "MaximumRange") {
     if (effect.action === "Convert") {
       return "Maximum Conversion Range"
