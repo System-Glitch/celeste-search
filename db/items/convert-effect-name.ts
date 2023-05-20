@@ -35,6 +35,25 @@ export function convertEffectName(effect: TraitEffect): string {
       return "Burning Attack"
   }
 
+  if (effect.subtype === "CarryCapacity") {
+    if (effect.resource === "Food") {
+      return "Food Carry Capacity"
+    }
+    else if (effect.resource === "Wood") {
+      return "Wood Carry Capacity"
+    }
+    else if (effect.resource === "Gold") {
+      return "Gold Carry Capacity"
+    }
+    else if (effect.resource === "stone") {
+      return "Stone Carry Capacity"
+    }
+    else {
+        "Donno Carry Capacity"
+        console.log (effect.resource)
+      }
+  }
+
   if (effect.subtype === "MaximumRange") {
     if (effect.action === "Convert") {
       return "Maximum Conversion Range"

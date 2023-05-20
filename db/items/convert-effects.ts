@@ -17,10 +17,10 @@ export function convertEffects(trait: Trait): ItemEffect[] | undefined {
 
   const converted = trait.effects.effect
     // Some effects are not displayed ingame.
-    .filter(effect => {
+    .filter(effect => {/*
       if (effect.subtype === "CarryCapacity") {
         return false
-      }
+      }*/
       if (effect.action === "AreaHeal") {
         return false
       }
@@ -63,6 +63,22 @@ export function convertEffects(trait: Trait): ItemEffect[] | undefined {
 
       return itemEffect
     })
+  
+  if (trait.name === "gear_gauntlet_bahram" || trait.name === "gear_boot_bahram") {
+    converted[4] = (converted[0])
+    converted[0] = (converted[1])
+    converted[1] = (converted[2])
+    converted[2] = (converted[3])
+    converted[3] = (converted[4])
+  }
+
+  if (trait.name === "gear_mag" || trait.name === "se2021_gear" || trait.name === "gear_l004" || trait.name === "gear_l006" || trait.name === "gear_l005" || trait.name === "gear_boat_hrh"
+     || trait.name === "se2022_gear" || trait.name === "armorlgt_fbg" || trait.name === "gear_iceking_leg") {
+    converted[3] = (converted[0])
+    converted[0] = (converted[1])
+    converted[1] = (converted[2])
+    converted[2] = (converted[3])
+  }
 
   return uniqBy(converted, effect => effect.name)
 }
