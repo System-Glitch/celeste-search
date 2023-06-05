@@ -60,6 +60,7 @@ export const item: Item = {
   quest: { Region: "Test", Quest: "Test" , Quest_Giver: "Test" , Quest_Starter: "Test" },
   event: { name: "halloween", year: 2018 },
   starting: ["persian", "babylonian", "norse"],
+  visualfactor: "VanityHelmHelm101",
   search: "search",
   lootTable: undefined
 }

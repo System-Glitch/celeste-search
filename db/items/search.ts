@@ -145,7 +145,8 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
     "VanityShield",
     "VanityWeapon",
   ].includes(trait.traittype)) {
-    builder.add("vanity")
+    /*builder.add("vanity")*/
+    builder.add(item.visualfactor)
   }
 
   return builder.build()

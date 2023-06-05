@@ -25,6 +25,7 @@ export interface Item {
     year: 0 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023,
   } | undefined
   starting: string[] | undefined
+  visualfactor: string,
   search: string
   marketplace: MarketplaceQuery[],
   lootTable: string | undefined

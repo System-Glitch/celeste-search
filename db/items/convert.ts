@@ -29,6 +29,15 @@ export async function convertItem(trait: Trait): Promise<Item> {
   const name = await translateEn(trait.displaynameid, trait.name)
   const type = await translateEn(trait.rollovertextid, "")
   const icon = await downloadIcon(`Art/${trait.icon}`, "items")
+  
+  var visualfactor_text = ''
+
+  if (trait.traittype === "VanityHelm" || trait.traittype === "VanityShield" || trait.traittype === "VanityWeapon")  {
+     visualfactor_text =   trait.visualfactor[0].type.concat(trait.visualfactor[0].factor.toString())
+  }
+    
+  
+
 
   const item: Item = {
     id: trait.name,
@@ -50,6 +59,7 @@ export async function convertItem(trait: Trait): Promise<Item> {
       isBabylonianStartingGear(trait) && "babylonian",
       isNorseStartingGear(trait) && "norse",
     ].filter(Boolean) as string[],
+    visualfactor: visualfactor_text,
     search: "",
   }
 
