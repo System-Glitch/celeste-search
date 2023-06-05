@@ -94,6 +94,15 @@
     </ng-container>
   </ng-container>
 
+  <!-- Vanity -->
+  <div *ngIf="item.visualfactor">
+    <div class="row --source"></div>
+  
+    <div class="row --materials">
+        <span>Vanity in Scenario Editor: {{ item.visualfactor }}</span>
+    </div>
+  </div>
+
   <!-- QUEST -->
   <div *ngIf="item.quest">
     <div class="row --source"></div>

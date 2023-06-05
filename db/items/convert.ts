@@ -33,7 +33,7 @@ export async function convertItem(trait: Trait): Promise<Item> {
   var visualfactor_text = ''
 
   if (trait.traittype === "VanityHelm" || trait.traittype === "VanityShield" || trait.traittype === "VanityWeapon")  {
-     visualfactor_text =   trait.visualfactor[0].type.concat(trait.visualfactor[0].factor.toString())
+     visualfactor_text =   trait.visualfactor[0].type.concat(' ').concat(trait.visualfactor[0].factor.toString())
   }
     
   
