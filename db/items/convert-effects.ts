@@ -79,6 +79,76 @@ export function convertEffects(trait: Trait): ItemEffect[] | undefined {
     converted[1] = (converted[2])
     converted[2] = (converted[3])
   }
+  if(trait.traittype === "Tools") {
+    /*console.log(converted.length)*/
+    if (converted[0].name === "Food Carry Capacity") {
+      converted[converted.length] = converted[0]
+      converted[converted.length] = converted[2]
+      converted[converted.length] = converted[3]
+      converted[converted.length] = converted[1]
+
+      for (var i = 0; i<converted.length-4; i++) {
+        converted[i] = (converted[i+4])
+      }
+
+    }
+
+    //Health 3rd place so goes first and gets pushed up
+
+    var HealthArrayNumber = 0
+    for (var i = 0; i<converted.length; i++) {
+      if (converted[i].name === "Health") {
+        HealthArrayNumber = i
+      }
+    }
+
+    if (converted[HealthArrayNumber].name === "Health") {
+
+      converted[converted.length] = converted[HealthArrayNumber]
+      for (var i = converted.length; i>0; i--) {
+        converted[i] = (converted[i-1])
+      }
+      converted[0] = converted[converted.length-1]
+    }    
+
+    //Damage second so goes next and gets pushed up
+
+    var DamageArrayNumber = 0
+    for (var i = 0; i<converted.length; i++) {
+      if (converted[i].name === "Damage") {
+        DamageArrayNumber = i
+      }
+    }
+
+    if (converted[DamageArrayNumber].name === "Damage") {
+
+      converted[converted.length] = converted[DamageArrayNumber]
+      for (var i = converted.length; i>0; i--) {
+        converted[i] = (converted[i-1])
+      }
+      converted[0] = converted[converted.length-1]
+    }    
+
+
+    //Movement Speed first place so last to put in place
+
+    var MovementSpeedArrayNumber = 0
+    for (var i = 0; i<converted.length; i++) {
+      if (converted[i].name === "Movement Speed") {
+        MovementSpeedArrayNumber = i
+      }
+    }
+
+    if (converted[MovementSpeedArrayNumber].name === "Movement Speed") {
+
+      converted[converted.length] = converted[MovementSpeedArrayNumber]
+      for (var i = converted.length; i>0; i--) {
+        converted[i] = (converted[i-1])
+      }
+      converted[0] = converted[converted.length-1]
+    }    
+
+  }
 
   return uniqBy(converted, effect => effect.name)
 }
