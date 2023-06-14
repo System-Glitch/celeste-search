@@ -14,6 +14,7 @@ export interface ConsumableRarity {
   cooldownstackingclass: number | undefined
   design: string | undefined
   createdUnits: string
+  stacksize: number
 }
 
 export interface Consumable {

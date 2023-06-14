@@ -49,7 +49,8 @@ export async function convertBlueprint(blueprint: ApiBlueprint): Promise<Bluepri
     search: "",
     marketplace: [],
     event: convertEvent(blueprint),
-    lootTable: convertLootTable(blueprint)
+    lootTable: convertLootTable(blueprint),
+    stacksize: blueprint.stacksize === 0 ? 1 : blueprint.stacksize
   }
 
   result.vendors = await findVendors(result.id)

@@ -15,5 +15,6 @@ export interface Blueprint {
     name: "halloween" | "winter" | "summer"
     year: 0 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023,
   } | undefined
-  lootTable: string | undefined
+  lootTable: string | undefined,
+  stacksize: number
 }

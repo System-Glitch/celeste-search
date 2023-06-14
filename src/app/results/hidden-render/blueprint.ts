@@ -29,5 +29,6 @@ export const blueprint: Blueprint = {
   ],
   event: { name: "halloween", year: 2018 },
   search: "search",
-  lootTable: undefined
+  lootTable: undefined,
+  stacksize: 1
 }

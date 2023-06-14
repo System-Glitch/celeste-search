@@ -15,7 +15,8 @@ export const consumable: Consumable = {
       placement: "forcedAtTC",
       cooldownstackingclass: 1,
       design: "design",
-      createdUnits: "None"
+      createdUnits: "None",
+      stacksize: 1
     }
   },
   vendors: [

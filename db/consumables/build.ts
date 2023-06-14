@@ -68,7 +68,8 @@ export async function buildConsumables(): Promise<Consumable[]> {
       placement: placement[0],
       cooldownstackingclass: parseInt(cooldownstackingclass[0]),
       design: design[0],
-      createdUnits: createdUnits[0] || "None"
+      createdUnits: createdUnits[0] || "None",
+      stacksize: consumable.stacksize === 0 ? 1 : consumable.stacksize
     }
 
     const rarities: Consumable["rarities"] = {
