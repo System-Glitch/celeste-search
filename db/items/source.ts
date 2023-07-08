@@ -70,6 +70,8 @@ const questRewards = [
   "gear_bldg_l004",
   "armorlgt_l003",
   "armorbldg_l004",
+  "merchant2h_l002",
+  "tool1h_l003",
 ]
 
 const eventHalloween2018 = [

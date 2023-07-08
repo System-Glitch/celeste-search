@@ -75,5 +75,17 @@ export const quests = {
             Quest: "Lost Blueprints of Socrates",
             Quest_Giver: "Socrates",
             Quest_Starter: "None"
+          },
+  merchant2h_l002: {
+            Region: "Tarsos",
+            Quest: "Tremendous Tarsosian Treasure Troves",
+            Quest_Giver: "Tarsos Trader",
+            Quest_Starter: "None"
+          },
+  tool1h_l003: {
+            Region: "Tarsos",
+            Quest: "Tremendous Tarsosian Treasure Troves",
+            Quest_Giver: "Tarsos Trader",
+            Quest_Starter: "None"
           }
 }
