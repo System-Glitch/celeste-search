@@ -15,7 +15,7 @@ export async function buildSearchString(apiAdvisor: APIAdvisor, advisor: Advisor
   }
   
   builder.add(`age${advisor.age}`)
-  builder.add(advisor.civilization || "greek egypt celtic persian roman babylonian norse indian")
+  builder.add(advisor.civilization || "greek egyptian celtic persian roman babylonian norse indian")
 
   if (advisor.lootTable) {
     builder.add(advisor.lootTable)
