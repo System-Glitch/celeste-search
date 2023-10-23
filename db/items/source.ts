@@ -263,6 +263,10 @@ export function isHalloween2022Reward(trait: Trait) {
   return trait.name.endsWith("_halloween2022")
 }
 
+export function isHalloween2023Reward(trait: Trait) {
+  return trait.name.endsWith("_halloween2023")
+}
+
 export function isEventReward(trait: Trait) {
   return isHalloween2018Reward(trait)
     //|| isWinterReward(trait)
@@ -279,6 +283,8 @@ export function isEventReward(trait: Trait) {
     || isSummer2022Reward(trait)
     || isHalloween2022Reward(trait)
     || isWinter2022Reward(trait)
+    //no new summer 2023
+    || isHalloween2023Reward(trait)
 }
 
 export function isBahramReward(trait: Trait) {
