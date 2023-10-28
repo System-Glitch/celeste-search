@@ -55,6 +55,7 @@ export function addToLegendaryRotation(item: Item, trait: Trait): void {
     rotation,
     price,
     blueprint: undefined,
+    quantity: 0
   })
   item.vendors.sort(compareVendors)
 }

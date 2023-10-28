@@ -24,7 +24,7 @@ const romanAdvisorCheatFilter = [
  * Searches all vendors and collects the ones that sell the
  * specified item.
  */
-export async function findVendors(id: string): Promise<Vendor[] | undefined> {
+export async function findVendors(id: string): Promise<Vendor[]> {
   const results: Vendor[] = []
 
   const vendors = await API.getVendors()
@@ -95,5 +95,5 @@ export async function findVendors(id: string): Promise<Vendor[] | undefined> {
   })
   unique.sort(compareVendors)
 
-  return unique.length ? unique : undefined
+  return unique
 }

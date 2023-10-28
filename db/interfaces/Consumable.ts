@@ -24,7 +24,7 @@ export interface Consumable {
     [index: string]: ConsumableRarity,
   }
   civilization: string | undefined
-  vendors: Vendor[] | undefined
+  vendors: Vendor[] 
   search: string
   marketplace: MarketplaceQuery[],
   event?: {

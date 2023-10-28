@@ -80,7 +80,7 @@ export async function buildConsumables(): Promise<Consumable[]> {
     const result: Consumable = {
       id: rarity.id,
       name,
-      vendors: undefined,
+      vendors: [],
       rarities,
       civilization,
       search: "",
@@ -94,9 +94,9 @@ export async function buildConsumables(): Promise<Consumable[]> {
     }
 
     
-    result.vendors = await findVendors(result.id);
+    const vendorData = await findVendors(result.id);
 
-    (result.vendors || []).forEach(vendor => {
+    (vendorData || []).forEach(vendor => {
       if (consumable.rarity === "cRarityLegendary") {
         vendor.rarity = "legendary"
       }
@@ -117,6 +117,12 @@ export async function buildConsumables(): Promise<Consumable[]> {
     
 
     const merged = merge(mergedByName[name], result)
+
+    for (let i=0; i<vendorData.length;i++) {
+      merged.vendors.push(vendorData[i])
+    }
+
+    
     merged.search = await buildSearchString(merged,consumable)
 
 

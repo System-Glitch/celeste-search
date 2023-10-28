@@ -1,7 +1,7 @@
 import { merge } from "lodash"
 
 import { API, downloadIcon } from "../download"
-import { Advisor } from "../interfaces"
+import { Advisor, Vendor } from "../interfaces"
 import { translateEn, convertCivilization } from "../shared/convert-text"
 import { findVendors } from "../vendors"
 
@@ -39,18 +39,23 @@ export async function buildAdvisors(): Promise<Advisor[]> {
       level: advisor.minlevel,
       civilization,
       rarities,
-      vendors: undefined,
+      vendors: [],
       search: "",
       marketplace: [],
       lootTable: convertLootTable(advisor)
     }
-
-    result.vendors = await findVendors(rarity.id);
-    (result.vendors || []).forEach(vendor => {
+    
+    const vendorData = await findVendors(rarity.id);
+    (vendorData || []).forEach(vendor => {
       vendor.rarity = advisor.rarity
     })
 
     const merged = merge(mergedByName[name], result)
+
+    for (let i=0; i<vendorData.length;i++) {
+      merged.vendors.push(vendorData[i])
+    }
+
     merged.search = await buildSearchString(advisor, merged)
 
     merged.marketplace = Object.keys(merged.rarities).reduce((queries, key) => {
@@ -60,7 +65,7 @@ export async function buildAdvisors(): Promise<Advisor[]> {
       })
       return queries
     }, [] as typeof result.marketplace)
-
+    
     mergedByName[name] = merged
   }
 
