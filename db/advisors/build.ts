@@ -1,7 +1,7 @@
 import { merge } from "lodash"
 
 import { API, downloadIcon } from "../download"
-import { Advisor, Vendor } from "../interfaces"
+import { Advisor } from "../interfaces"
 import { translateEn, convertCivilization } from "../shared/convert-text"
 import { findVendors } from "../vendors"
 

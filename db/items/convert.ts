@@ -29,7 +29,8 @@ export async function convertItem(trait: Trait): Promise<Item> {
   const name = await translateEn(trait.displaynameid, trait.name)
   const type = await translateEn(trait.rollovertextid, "")
   const icon = await downloadIcon(`Art/${trait.icon}`, "items")
-  
+    
+
   var visualfactor_text = ''
 
   if (trait.traittype === "VanityHelm" || trait.traittype === "VanityShield" || trait.traittype === "VanityWeapon")  {
