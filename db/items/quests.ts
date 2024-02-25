@@ -87,5 +87,11 @@ export const quests = {
             Quest: "Tremendous Tarsosian Treasure Troves",
             Quest_Giver: "Tarsos Trader",
             Quest_Starter: "None"
+          },
+  gear_vill_l003: {
+            Region: "Londinium",
+            Quest: "Londinium's Savior",
+            Quest_Giver: "Wanted Board",
+            Quest_Starter: "None"
           }
 }

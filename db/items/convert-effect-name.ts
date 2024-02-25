@@ -75,6 +75,30 @@ export function convertEffectName(effect: TraitEffect): string {
       return "Melee-Cavalry Armor"
     }
   }
+  if (effect.subtype === "Yield") {
+    if (effect.action === "FishGather") {
+      return "Food Conservation"
+    }
+    if (effect.action === "Gather") {
+      if (effect.unittype === "AbstractFarm"
+        || effect.unittype === "AbstractFish"
+        || effect.unittype === "AbstractFruit"
+        || effect.unittype === "Fish"
+        || effect.unittype === "Herdable"
+        || effect.unittype === "Huntable") {
+        return "Food Conservation"
+      }
+      if (effect.unittype === "Tree") {
+        return "Wood Conservation"
+      }
+      if (effect.unittype === "Gold") {
+        return "Gold Conservation"
+      }
+      if (effect.unittype === "Stone") {
+        return "Stone Conservation"
+      }
+    }
+  }
   if (effect.subtype === "WorkRate") {
     if (effect.action === "Gather") {
       if (effect.unittype === "AbstractFarm"
