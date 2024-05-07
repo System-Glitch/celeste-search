@@ -9,7 +9,7 @@ export interface ConsumableRarity {
   cooldowntime: number | undefined
   activetime: number | undefined
   radius: number | undefined
-  requiredage: number | undefined
+  requiredage: number
   placement: string | undefined
   cooldownstackingclass: number | undefined
   design: string | undefined

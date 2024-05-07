@@ -7,16 +7,15 @@ import { searchByVendor } from "../shared/search-tags"
 export async function buildSearchString(consumable: Consumable, apiConsumable: ApiConsumable): Promise<string> {
   const builder = new SearchBuilder()
 
-  builder.add("consumables")
-
   builder.addStrict(consumable.id)
   builder.add(consumable.name)
 
   Object.keys(consumable.rarities).forEach(rarity => {
     builder.add(rarity)
-    builder.addStrict(consumable.rarities[rarity].description)
+    builder.addStrict(`${consumable.rarities[rarity].description.replace(/\s/g, "")}`)
     builder.addStrict(consumable.rarities[rarity].id) 
-    builder.addStrict(consumable.rarities[rarity].createdUnits)
+    /*builder.addStrict(consumable.rarities[rarity].createdUnits)*/
+    builder.addStrict(`age${consumable.rarities[rarity].requiredage}`)
   })
 
   if (isSummer2020Consumable(apiConsumable)) {

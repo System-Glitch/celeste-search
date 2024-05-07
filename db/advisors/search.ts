@@ -39,7 +39,7 @@ export async function buildSearchString(apiAdvisor: APIAdvisor, advisor: Advisor
 
   Object.keys(advisor.rarities).forEach(rarity => {
     builder.add(rarity)
-    builder.addStrict(advisor.rarities[rarity].description)
+    builder.addStrict(`${advisor.rarities[rarity].description.replace(/\s/g, "")}`)
   })
 
   return builder.build()
