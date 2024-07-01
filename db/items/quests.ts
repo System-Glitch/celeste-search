@@ -20,7 +20,7 @@ export const quests = {
             Region: "Athens",
             Quest: "Greek Revolt",
             Quest_Giver: "Messenger of Aristagoras",
-            Quest_Starter: "New frontiers (Athens)"
+            Quest_Starter: "New Frontiers (Athens)"
           },
   bow1h_uasb: {
             Region: "Well of Urd",
@@ -93,5 +93,11 @@ export const quests = {
             Quest: "Londinium's Savior",
             Quest_Giver: "Wanted Board",
             Quest_Starter: "None"
+          },
+  scout1h_r001: {
+            Region: "Mycenae",
+            Quest: "Last-Minute Cleanup",
+            Quest_Giver: "Engineer",
+            Quest_Starter: "A Few Good Men (Mycenae)"
           }
 }
