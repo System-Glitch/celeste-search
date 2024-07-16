@@ -99,5 +99,11 @@ export const quests = {
             Quest: "Last-Minute Cleanup",
             Quest_Giver: "Engineer",
             Quest_Starter: "A Few Good Men (Mycenae)"
+          },
+  scout1h_l002: {
+            Region: "Tarsos",
+            Quest: "Four Bad Apples",
+            Quest_Giver: "Tarsos Trader",
+            Quest_Starter: "Three Bad Apples (Tarsos)"
           }
 }
