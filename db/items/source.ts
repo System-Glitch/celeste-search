@@ -198,7 +198,8 @@ export function isSoldForCoin(trait: Trait) {
 }
 
 export function isQuestReward(trait: Trait) {
-  return questRewards.includes(trait.name)
+  /*return questRewards.includes(trait.name)*/
+  return quests[trait.name]
 }
 
 export function getQuestName(trait: Trait) {
