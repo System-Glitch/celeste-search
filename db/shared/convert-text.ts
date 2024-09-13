@@ -24,7 +24,7 @@ export async function translateEn(id: number, fallback?: string) {
 
 export function cleanFormat(translation: string) {
   return translation ? 
-    translation.replace(/\\n/g, "\n").replace(/<color="(.*?)">(.*?)<\/color>/g, "$2").replace(/<color=(.*?)>/g, "- ").replace(/<\/color>/g,""):
+    translation.replace(/\\n/g, "\n").replace(/<color="(.*?)">(.*?)<\/color>/g, "$2").replace(/<color=(.*?)>/g, "").replace(/<\/color>/g,""):
     translation
 }
 
