@@ -16,7 +16,7 @@ jobs:
       - run: npm run build
       - run: mv dist/celeste-search/robots.prod.txt dist/celeste-search/robots.txt
       - name: Upload artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist/celeste-search
