@@ -12,9 +12,7 @@ import { convertLootTable } from "./convert-loot-table"
 import { buildSearchString } from "./search"
 import {
   getQuestName,
-  isBabylonianStartingGear,
-  isNorseStartingGear,
-  isPersianStartingGear,
+  isProStartingGear,
   isReforgeable,
   isStartingGear,
   isLevel40StartingGear,
@@ -56,9 +54,19 @@ export async function convertItem(trait: Trait): Promise<Item> {
     event: convertEvent(trait),
     lootTable: convertLootTable(trait),
     starting: [
-      isPersianStartingGear(trait) && "persian",
-      isBabylonianStartingGear(trait) && "babylonian",
-      isNorseStartingGear(trait) && "norse",
+      isProStartingGear(trait) && "persian",
+      isProStartingGear(trait) && "babylonian",
+      isProStartingGear(trait) && "norse",
+      isProStartingGear(trait) && "indian",
+      
+      isLevel40StartingGear(trait) && "greek",
+      isLevel40StartingGear(trait) && "egyptian",
+      isLevel40StartingGear(trait) && "celtic",
+      isLevel40StartingGear(trait) && "persian",
+      isLevel40StartingGear(trait) && "roman",
+      isLevel40StartingGear(trait) && "babylonian",
+      isLevel40StartingGear(trait) && "norse",
+      isLevel40StartingGear(trait) && "indian",
     ].filter(Boolean) as string[],
     visualfactor: visualfactor_text,
     search: "",
@@ -68,9 +76,9 @@ export async function convertItem(trait: Trait): Promise<Item> {
     if (trait.traittype.toLowerCase().startsWith("vanity")) {
       item.levels = [1]
     }
-    if (isStartingGear(trait)) {
+    /*if (isStartingGear(trait)) {
       item.levels = [20]
-    }
+    }*/
   }
 
   if (!item.starting!.length) {
@@ -85,9 +93,9 @@ export async function convertItem(trait: Trait): Promise<Item> {
     if (item.effects) {
       item.effectsRange = isReforgeable(trait) || undefined
     }
-  } else if (isStartingGear(trait)) {
+  } else if (isProStartingGear(trait)) {
     if (item.effects) {
-      item.effectsRange = !isStartingGear(trait) || undefined
+      item.effectsRange = !isProStartingGear(trait) || undefined
     }
   } else if (isLevel40StartingGear(trait)) {
     if (item.effects) {

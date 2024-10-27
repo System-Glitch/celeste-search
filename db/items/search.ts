@@ -11,10 +11,9 @@ import {
 import { convertEvent } from "./convert-event"
 
 import {
-  isBabylonianStartingGear,
+  isProStartingGear,
+  isLevel40StartingGear,
   isClassicItem,
-  isNorseStartingGear,
-  isPersianStartingGear,
   isQuestReward,
   isReforgeable,
   isSoldByCouncilOfImhotep,
@@ -77,7 +76,7 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
     builder.add("Classic")
   } else {
     builder.add("Celeste")
-  }
+  }/*
   if (isBabylonianStartingGear(trait)) {
     builder.add("Babylonian Starting Gear")
   }
@@ -86,6 +85,12 @@ export async function buildSearchString(item: Item, trait: Trait): Promise<strin
   }
   if (isNorseStartingGear(trait)) {
     builder.add("Norse Starting Gear")
+  }*/
+  if (isProStartingGear(trait)) {
+    builder.add("Pro Starting Gear")
+  }
+  if (isLevel40StartingGear(trait)) {
+    builder.add("Level 40 Starting Gear")
   }
   if (item.lootTable) {
     builder.add(item.lootTable)

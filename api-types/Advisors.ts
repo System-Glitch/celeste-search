@@ -43,7 +43,7 @@ export interface Advisor {
   sellable: "true" | "false" // FIXME should be `boolean`
   tradeable: "true" | "false" // FIXME should be `boolean`
   destroyable: "true" | "false" // FIXME should be `boolean`
-  civilization?: "Egypt" | "Greek" | "Celt" | "Persia" | "Norse" | "Babylonian"
+  civilization?: "Egypt" | "Greek" | "Celt" | "Persia" | "Norse" | "Babylonian" | "Indian"
   shortdescriptionid?: string // FIXME should be `number`
   specialborder?: "true" // FIXME should be `boolean`
 }

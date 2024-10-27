@@ -179,24 +179,48 @@
 
   <!-- STARTING GEAR -->
   <div *ngIf="item.starting?.length">
-    <div class="row --source">
-      <span>
-        Pro Civilization Starting Gear:
-      </span>
+    <div *ngIf="level < 21">
+      <div class="row --source">
+        <span>
+          Pro Civilization Starting Gear:
+        </span>
+      </div>
+
+      <div class="row --materials">
+        <ng-container *ngFor="let civ of item.starting">
+          <div class="icon-materials-container">
+            <span class="icon--materials icon--materials--{{ civ }}"></span>
+          </div>
+          <span>{{ civ | titlecase }}</span>
+          <span></span><!-- wrap line -->
+          <span></span><!-- wrap line -->
+          <span></span><!-- wrap line -->
+          <span></span><!-- wrap line -->
+          <span></span><!-- wrap line -->
+        </ng-container>
+      </div>
     </div>
 
-    <div class="row --materials">
-      <ng-container *ngFor="let civ of item.starting">
-        <div class="icon-materials-container">
-          <span class="icon--materials icon--materials--{{ civ }}"></span>
-        </div>
-        <span>{{ civ | titlecase }}</span>
-        <span></span><!-- wrap line -->
-        <span></span><!-- wrap line -->
-        <span></span><!-- wrap line -->
-        <span></span><!-- wrap line -->
-        <span></span><!-- wrap line -->
-      </ng-container>
+    <div *ngIf="level > 22">
+      <div class="row --source">
+        <span>
+          Level 40 Civilization Starting Gear:
+        </span>
+      </div>
+
+      <div class="row --materials">
+        <ng-container *ngFor="let civ of item.starting">
+          <div class="icon-materials-container">
+            <span class="icon--materials icon--materials--{{ civ }}"></span>
+          </div>
+          <span>{{ civ | titlecase }}</span>
+          <span></span><!-- wrap line -->
+          <span></span><!-- wrap line -->
+          <span></span><!-- wrap line -->
+          <span></span><!-- wrap line -->
+          <span></span><!-- wrap line -->
+        </ng-container>
+      </div>
     </div>
   </div>
 

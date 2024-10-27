@@ -123,7 +123,7 @@ const eventSummer2019 = [
   "se2019_spear1h",
   "se2019_scepter2h",
 ]
-
+/*
 const persianStartingGear = [
   "armorbldg_u201", "armorclth_r201", "armorlgt_r201", "armormed_r201",
   "armorplt_u201", "arrowoh_u201_vr", "ballista2h_u201_vr", "bow1h_u201",
@@ -145,7 +145,24 @@ const norseStartingGear = [
   "bow1h_u201", "firethrower2h_u201", "fishingnet1h_u201", "javalin2h_u201",
   "ramhead2h_u201", "scepter2h_u201", "shield1h_u201", "spear1h_u201",
   "spear2h_u201", "sword1h_u201", "tool1h_u201",
+]*/
+
+const proStartingGear = [
+  "armorbldg_u201", "armorclth_r201", "armorlgt_r201", "armormed_r201",
+  "armorplt_u201", "arrowoh_u201_vr", "axe2h_u201", "ballista2h_u201_vr",
+  "bow1h_u201", "firethrower2h_u201", "fishingnet1h_u201", "javalin2h_u201",
+  "ramhead2h_u201", "scepter2h_u201", "shield1h_u201", "spear1h_u201",
+  "spear2h_u201", "sword1h_u201", "tool1h_u201", "clubh_u201",
 ]
+/*
+const level40StartingGear = [
+  "arrowoh_r202", "axe2h_r202", "gear_siege_r202", "banner_r202", "warhorn_r202", 
+  "bellybow1h_r202", "bow1h_r202", "armormed_r202", "club2h_r202", "firethrower2h_r202",
+  "armorlgt_r202", "tool1h_r202", "spear2h_r202", "gear_r202", "scout1h_r202",
+  "javalin2h_r202", "spear1h_r202", "gear_bldg_los_r202", "merchant2h_r202",
+  "fishingnet1h_r202", "armorplt_r202", "ramhead2h_r202", "armorbldg_r202",
+  "gear_boat_r202", "",
+]*/
 
 const eventReforgeIgnoreList = [
   "armorbldg_winter2021",
@@ -326,21 +343,23 @@ export function isReforgeable(trait: Trait) {
 export function isClassicItem(trait: Trait) {
   return trait.dbid < celesteLegendariesStart
 }
-
+/*
 export function isPersianStartingGear(trait: Trait) {
   return persianStartingGear.includes(trait.name)
 }
 
 export function isBabylonianStartingGear(trait: Trait) {
-  return babylonianStartingGear.includes(trait.name)
+  return trait.name.startsWith("_bahram")
 }
 
 export function isNorseStartingGear(trait: Trait) {
-  return norseStartingGear.includes(trait.name)
-}
+  return proStartingGear.includes(trait.name)
+}*/
 
+export function isProStartingGear(trait: Trait) {
+  return proStartingGear.includes(trait.name)
+}
 export function isStartingGear(trait: Trait) {
-  return isPersianStartingGear(trait)
-    || isBabylonianStartingGear(trait)
-    || isNorseStartingGear(trait)
+  return isProStartingGear(trait)
+  && isLevel40StartingGear(trait)
 }

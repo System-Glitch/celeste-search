@@ -48,8 +48,24 @@ export const currencies = [
     iconName: "market",
   },
   {
+    resource: "Art/UserInterface/Avatar/RegionShieldC01_4_ua",
+    iconName: "greek",
+  },
+  {
+    resource: "Art/UserInterface/Avatar/RegionShieldC02_4_ua",
+    iconName: "egyptian",
+  },
+  {
+    resource: "Art/UserInterface/Avatar/RegionShieldC03_4_ua",
+    iconName: "celtic",
+  },
+  {
     resource: "Art/UserInterface/Avatar/RegionShieldC04_4_ua",
     iconName: "persian",
+  },
+  {
+    resource: "Art/UserInterface/Avatar/RegionShieldC05_4_ua",
+    iconName: "roman",
   },
   {
     resource: "Art/UserInterface/Avatar/RegionShieldC06_4_ua",
@@ -58,6 +74,10 @@ export const currencies = [
   {
     resource: "Art/UserInterface/Avatar/RegionShieldC07_4_ua",
     iconName: "norse",
+  },
+  {
+    resource: "Art/UserInterface/Avatar/RegionShieldC08_4_ua",
+    iconName: "indian",
   },
   {
     resource: "Art/UserInterface/Icons/Blueprints/BlueprintIcons_All/Blueprint_WorkshopSawmill_ua",
