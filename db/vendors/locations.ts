@@ -106,5 +106,10 @@ export const vendorLocations: {
   ro_cap_basicstorerome03: "City of Rome",
   ro_cap_basicstorerome04: "City of Rome",
   ro_cap_basicstore01: "Roman Capital City",
-  ro_cap_basicstorearmycamp01: "Roman Army Camp"
+  ro_cap_basicstorearmycamp01: "Roman Army Camp",
+  in_cap_basicstore01: "Indian Capital City",
+  in_cap_basicstoreindian01: "Blueprint, Advanced Recipe Store",
+  in_cap_basicstoreindian02: "Blueprint, Advanced General Store",
+  in_cap_basicstoreindian05: "Blueprint, Advanced Crafting Store",
+  in_cap_storestore01: "Indian Capital City"
 }
