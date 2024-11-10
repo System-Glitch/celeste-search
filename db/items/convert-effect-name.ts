@@ -5,7 +5,7 @@ import { TraitEffect } from "../../api-types"
  */
 const displayNames = {
   ActionEnable: "Enables Self-Heal Action",
-  AreaDamageReduction: "Splash Damage Reduction",
+  AreaDamageReduction: "Splash Damage Armor",
   BuildingWorkRate: "Train/Research Rate",
   BuildPoints: "Build Time",
   ConvertResist: "Conversion Resistance",
